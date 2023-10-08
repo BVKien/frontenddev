@@ -10,7 +10,7 @@ import Footer01 from './Footer01';
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Header title='header Van Kien dep trai vai dai' />
       <Content01 />
       <Footer01 />
     </div>
