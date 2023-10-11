@@ -1,6 +1,5 @@
 import React from "react";
 import { createContext, useState, useEffect } from "react";
-import { useHistory } from 'react-router-dom';
 import api from '../api/posts'
 import { format } from 'date-fns';
 import useAxiosFetch from '../hooks/useAxiosFetch';
@@ -12,9 +11,6 @@ export const DataProvider = ({ children }) => {
     const [search, setSearch] = useState('')
     // results is an array
     const [searchResults, setSearchResults] = useState([])
-
-    // history
-    // const history = useHistory()
 
     const { data, fetchError, isLoading } = useAxiosFetch('http://localhost:3500/posts')
 
@@ -56,6 +52,7 @@ export const DataProvider = ({ children }) => {
         setSearchResults(filteredResults.reverse())
     }, [posts, search])
 
+    /*
     const handleEdit = async (id) => {
         const datetime = format(new Date(), 'MMMM dd, yyyy pp'); // pp for time
         const updatePost = { id, title: editTitle, datetime, body: editBody }
@@ -80,6 +77,7 @@ export const DataProvider = ({ children }) => {
             console.log(`Error: ${error.message}`)
         }
     }
+    */
 
     return (
         <DataContext.Provider value={{
