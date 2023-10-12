@@ -17,8 +17,8 @@ const NewPost = () => {
         const datetime = format(new Date(), 'MMMM dd, yyyy pp'); // pp for time
         const newPost = { id, title: postTitle, datetime, body: postBody }
         try {
-            const response = await api.post('/posts', response.data)
-            const allPosts = [...posts, newPost] // an array
+            const response = await api.post('/posts', newPost)
+            const allPosts = [...posts, response.data] // an array
             setPosts(allPosts)
             setPostTitle('')
             setPostBody('')
