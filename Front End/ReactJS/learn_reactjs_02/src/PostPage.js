@@ -12,10 +12,10 @@ const PostPage = () => {
 
     const handleDelete = async (id) => {
         try {
-            await api.delete(`/posts/${id}`)
-            const postList = posts.filter(post => post.id !== id)
-            setPosts(postList)
-            //history.push('/') 
+            //await api.delete(`/posts/${id}`)
+            // const postList = posts.filter(post => post.id !== id)
+            // setPosts(postList)
+            // history.push('/') 
         } catch (error) {
             console.log(`Error: ${error.message}`)
         }
