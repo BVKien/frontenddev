@@ -1,44 +1,3 @@
-/*import React from 'react'
-import { useState, useEffect, useContext } from 'react'
-
-const TestAPI = () => {
-
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        fetchDataFromApi();
-    }, []);
-
-    const fetchDataFromApi = async () => {
-        try {
-            const response = await fetch('https://localhost:7054/GetAllCourses');
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const responseData = await response.json();
-            setData(responseData);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    };
-
-    return (
-        <div>
-            <h1>Data from API</h1>
-            <ul>
-                {data.map(item => (
-                    <li key={item.id}>
-                        {item.name}
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
-}
-
-export default TestAPI
-*/
-
 import React, { useState, useEffect } from 'react';
 
 const TestAPI = () => {
@@ -63,10 +22,12 @@ const TestAPI = () => {
 
     return (
         <div>
-            <h1>Data from API</h1>
+            <p>--------------------------------------------------</p>
+            <p>Data from API: https://localhost:7054/GetAllCourses</p>
+            <>.Net Core 6.0 - F8 - OLS</>
             <ul>
                 {data.map(item => (
-                    <li key={item.id}>
+                    <li key={item.courseId}>
                         <strong>Course ID:</strong> {item.courseId}<br />
                         <strong>Name:</strong> {item.name}<br />
                         <strong>Image:</strong> {item.image}<br />
@@ -77,11 +38,13 @@ const TestAPI = () => {
                         <strong>Category ID:</strong> {item.categoryCategoryId}<br />
                         <strong>Fee Status:</strong> {item.feeStatus}<br />
                         <strong>Video Intro:</strong> {item.videoIntro}<br />
+                        <strong>Category:</strong> {item.categoryCategoryId}<br />
+                        <strong>User:</strong> {item.userUserId}<br />
                         <hr />
                     </li>
                 ))}
             </ul>
-        </div>
+        </div >
     );
 }
 
