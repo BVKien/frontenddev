@@ -3,6 +3,7 @@ import Header from "./Components/Header";
 import Content from "./Components/Content";
 import Footer from "./Components/Footer";
 import Sidebar from "./Components/Sidebar";
+import TestAPI from "./TestAPI";
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
       <Sidebar />
       <Content />
       <Footer />
+
+      <TestAPI />
     </div>
   );
 }
