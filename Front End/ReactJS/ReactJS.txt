@@ -50,7 +50,7 @@
 +npx Command 
 - npx create-react-app name : create new project
 - npx json-server -p 3500 -w data/db.json
-- http://localhost:3500/items : my json server address
+- http://localhost:3500/items : my json server address *modify port
 
 ========================================================
 
@@ -131,38 +131,15 @@ import message from "./message.js";
 + Ternary Operator: Toán tử bậc 3
 authenticated ? renderApp() : renderLogin();
 
++ Cross-Origin Resource Sharing - CROS: Thông qua, hay còn gọi là Chia sẻ tài nguyên đa nguồn
++ Lỗi bạn đang gặp liên quan đến vấn đề CORS (Cross-Origin Resource Sharing), 
+và nó xảy ra khi trình duyệt không cho phép yêu cầu từ một nguồn (origin) khác. 
+Để giải quyết vấn đề này, bạn cần cấu hình máy chủ API để cho phép yêu cầu từ nguồn khác.
+- đã xử lý trong code .net và reactjs 
+- nhớ kỹ thông tin về port và đường dẫn 
+-- mục cần sửa:
+- program.cs
+- controller -> return trả về và code trong hàm để khai báo đường dẫn 
+- reactjs -> fetch
+- lời khuyên chân thành: nắm vững javascript ok
 ========================================================
-
-========================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

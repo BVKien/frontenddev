@@ -4,6 +4,8 @@ import List from "./List";
 import Table from "./Table";
 
 function App() {
+  //  https://localhost:7054/GetAllCourses
+  //  https://jsonplaceholder.typicode.com/
   const API_URL = 'https://jsonplaceholder.typicode.com/'
   // request 
   const [reqType, setReqType] = useState('users')

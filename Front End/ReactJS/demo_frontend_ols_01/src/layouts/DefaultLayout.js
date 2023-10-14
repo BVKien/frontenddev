@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 
 const DefaultLayout = () => {
     return (
@@ -20,3 +20,4 @@ const DefaultLayout = () => {
 }
 
 export default DefaultLayout
+*/
