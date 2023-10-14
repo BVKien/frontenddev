@@ -1,7 +1,7 @@
 *note
 -Cloud SQL
 -Thaor - Saau
--PhuongAnh
+-PhAh
 "react-router-dom": "^6.16.0", router vesion 6
 
 *bug
@@ -42,6 +42,7 @@
 - npm i axios -S : install axios
 - npm uninstall @testing-library/jest-dom @testing-library/jest-dom...(name...)
 - npm i easy-peasy : install easy peasy
+- npm i classnames
 
 ========================================================
 
@@ -99,7 +100,40 @@
 + chapter 20: customer hooks
 + chapter 21: easy peasy redux
 + chapter 22: deploy app
+========================================================
 
+========================================================
+- map(): là để chạy được các thành phần trong array có thể tạo ra array mới
++ Module
+-- Export
+export const name = 'John'
+export const age = 40
+
+or 
+
+const name = 'John'
+const age = 40
+export {name, age}
+
+-- Default Export
+const message () => {
+    const name = 'Jihn',
+    const age = 20
+    return name + 'is' + age + 'years old'
+}
+
+export default message
+
+-- Import 
+import { name, age } from "./person.js";
+import message from "./message.js";
+
++ Ternary Operator: Toán tử bậc 3
+authenticated ? renderApp() : renderLogin();
+
+========================================================
+
+========================================================
 
 
 
