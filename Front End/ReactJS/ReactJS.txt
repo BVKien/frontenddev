@@ -142,4 +142,7 @@ và nó xảy ra khi trình duyệt không cho phép yêu cầu từ một ngu�
 - controller -> return trả về và code trong hàm để khai báo đường dẫn 
 - reactjs -> fetch
 - lời khuyên chân thành: nắm vững javascript ok
+
++ GPT Connect API - CROS: https://chat.openai.com/c/3145d3fd-a5c6-4abe-83ac-f8582c42d0dc
+
 ========================================================

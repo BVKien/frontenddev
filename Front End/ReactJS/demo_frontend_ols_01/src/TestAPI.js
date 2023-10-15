@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useState, useEffect } from 'react';
 
 const TestAPI = () => {
     const [data, setData] = useState([]);
@@ -25,6 +26,7 @@ const TestAPI = () => {
             <p>--------------------------------------------------</p>
             <p>Data from API: https://localhost:7054/GetAllCourses</p>
             <>.Net Core 6.0 - F8 - OLS</>
+            <h1>get all courses</h1>
             <ul>
                 {data.map(item => (
                     <li key={item.courseId}>
@@ -44,6 +46,7 @@ const TestAPI = () => {
                     </li>
                 ))}
             </ul>
+            <p>--------------------------------------------------</p>
         </div >
     );
 }
