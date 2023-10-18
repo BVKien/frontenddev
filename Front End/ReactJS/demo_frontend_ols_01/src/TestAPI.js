@@ -10,7 +10,8 @@ const TestAPI = () => {
 
     const fetchDataFromApi = async () => {
         try {
-            const response = await fetch('https://localhost:7054/GetAllCourses'); // học lại javascript
+            //const response = await fetch('https://localhost:7054/GetAllCourses'); // học lại javascript
+            const response = await fetch('https://localhost:7138/api/Course'); // học lại javascript
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -23,7 +24,7 @@ const TestAPI = () => {
 
     return (
         <div>
-            <p>--------------------------------------------------</p>
+            {/* <p>--------------------------------------------------</p>
             <p>Data from API: https://localhost:7054/GetAllCourses</p>
             <>.Net Core 6.0 - F8 - OLS</>
             <h1>get all courses</h1>
@@ -42,6 +43,21 @@ const TestAPI = () => {
                         <strong>Video Intro:</strong> {item.videoIntro}<br />
                         <strong>Category:</strong> {item.categoryCategoryId}<br />
                         <strong>User:</strong> {item.userUserId}<br />
+                        <hr />
+                    </li>
+                ))}
+            </ul>
+            <p>--------------------------------------------------</p> */}
+            <p>--------------------------------------------------</p>
+            <p>Data from API: https://localhost:7138/api/Course</p>
+            <>.Net Core 6.0 - ApiDB_03 - Test</>
+            <h1>get all courses</h1>
+            <ul>
+                {data.map(item => (
+                    <li key={item.id}>
+                        <strong>Course ID:</strong> {item.id}<br />
+                        <strong>Name:</strong> {item.name}<br />
+                        <strong>Category:</strong> {item.category}<br />
                         <hr />
                     </li>
                 ))}
