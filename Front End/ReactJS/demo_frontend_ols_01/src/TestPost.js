@@ -1,18 +1,3 @@
-/*
-import React from 'react'
-
-const TestPost = () => {
-    return (
-        <div>
-            <h1>Test Post</h1>
-
-        </div>
-    )
-}
-
-export default TestPost
-*/
-
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -47,7 +32,7 @@ const TestPost = () => {
 
     return (
         <div>
-            <h1>Add Course</h1>
+            <strong>--------Add Course</strong>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="idInput">ID: </label>
                 <input

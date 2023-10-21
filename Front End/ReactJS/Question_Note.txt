@@ -1,0 +1,114 @@
++ công dụng của useState là gì?
++ useEffect?
++ async, await
+
+/*
+import React from 'react';
+import { useState, useEffect } from 'react'; // ustate, useeffect
+
+const GetAllCourses = () => {
+    // khai bao constructor su dung useState([]) array
+    const [data, setData] = useState([])
+
+    // su dung useEffect de goi Api
+    useEffect(() => {
+        fetchDataFromApi() // ham nay phai tu khoi tao
+    }, [])
+
+    const fetchDataFromApi = async () => {
+        try {
+            //fetch api tu backend sang
+            const response = await fetch('https://localhost:7041/api/Course')
+            if (!response.ok) {
+                throw new Error('network is not ok')
+            }
+            const responseData = await response.json()
+            setData(responseData)
+        } catch (err) {
+            console.error('Error fetching data:', err)
+        }
+    }
+
+    return (
+        <div>
+            GetAllCourses
+            <ul>
+                {data.map(item => (
+                    <li key={item.courseId}>
+                        <p>Course Id: {item.courseId}</p>
+                        <p>courseName: {item.courseName}</p>
+                        <p>description: {item.description}</p>
+                        <p>courseInfo: {item.courseInfo}</p>
+                        <p>image: {item.image}</p>
+                        <p>videoIntro: {item.videoIntro}</p>
+                        <p>fee: {item.fee}</p>
+                        <p>status: {item.status}</p>
+                        <p>categoryCategoryId: {item.categoryCategoryId}</p>
+                        <p>userUserId: {item.userUserId}</p>
+                        <p>courseId: {item.courseId}</p>
+                        <hr />
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
+}
+
+export default GetAllCourses
+*/
+
+/*
+import React from 'react'
+import axios from 'axios'
+import { useState, useEffect } from 'react'
+
+const GetCourseById = () => {
+    const [courseId, setCourseId] = useState('')
+    const [course, setCourse] = useState(null)
+
+    // id ma nguoi dung nhap vao
+    // set courseid = gia tri event ma nguoi dung nhap
+    const handleInputChange = (event) => {
+        setCourseId(event.target.value)
+    }
+
+    const fetchCourseById = async () => {
+        try {
+            const response = await axios.get(`https://localhost:7041/api/Course/${courseId}`)
+            setCourse(response.data)
+        } catch (error) {
+            console.error('Error fetching ', error)
+        }
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault() // ngăn chặn việc tải lại trang khi nhấn enter 
+        fetchCourseById() // gọi hàm để thực hiện get course by id
+    }
+
+    return (
+        <div>
+            <p>GetCourseById</p>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor='courseIdInput'>Enter Course Id: </label>
+                <input
+                    type='number'
+                    id='courseIdInput'
+                    value={courseId}
+                    onChange={handleInputChange}
+                />
+                <button type='submit'>fetch course</button>
+            </form>
+            {course ? (
+                <div>
+                    <p>course Id: {course.courseId}</p>
+                </div>
+            ) : (
+                <p>Enter valid course Id and click 'fetch course' to see the detalis.</p>
+            )}
+        </div>
+    )
+}
+
+export default GetCourseById
+*/
