@@ -32,7 +32,7 @@ const TestPut = () => {
 
     return (
         <div>
-            <h1>Update Course</h1>
+            <strong>----------Update Course</strong>
             <form onSubmit={handleUpdate}>
                 <label htmlFor="idInput">ID: </label>
                 <input
