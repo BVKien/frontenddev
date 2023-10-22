@@ -33,3 +33,5 @@ db
 thuật toán
 tiếng anh
 ===========================
+
++ học lại cho chắc kiến thức
