@@ -2,6 +2,8 @@
 + useEffect?
 + async, await
 
+
+++ Lưu code back up ở đây
 /*
 import React from 'react';
 import { useState, useEffect } from 'react';
