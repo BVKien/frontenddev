@@ -44,9 +44,10 @@ const GetCourseById = () => {
                     <p>course Id: {course.courseId}</p>
                 </div>
             ) : (
-                <p>Enter valid course Id and click 'fetch course' to see the detalis.</p>
-            )}
-        </div>
+                <p> Enter valid course Id and click 'fetch course' to see the detalis.</p>
+            )
+            }
+        </div >
     )
 }
 
