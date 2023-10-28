@@ -145,4 +145,6 @@ và nó xảy ra khi trình duyệt không cho phép yêu cầu từ một ngu�
 
 + GPT Connect API - CORS: https://chat.openai.com/c/3145d3fd-a5c6-4abe-83ac-f8582c42d0dc
 
++ Vẫn còn có thứ từ nó mà mình chưa học được
+
 ========================================================

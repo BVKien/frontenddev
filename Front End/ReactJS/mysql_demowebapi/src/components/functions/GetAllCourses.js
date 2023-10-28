@@ -1,36 +1,41 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React from 'react'
+import { useState, useEffect } from 'react'
 
 const GetAllCourses = () => {
-    // khoi tao constuctor
-    // getter, setter - data, setDate = useState
-    const [data, setData] = useState([])
+    // khai bao constructor getter setter data bang useState
+    // getter, setter
+    const [data, setData] = useState([]) // ở đây course có nhiều object, nên để mảng
 
     // useEffect(() => {}, [])
     useEffect(() => {
         fetchDataFromApi()
     }, [])
 
+    // hàm fetch - tìm nạp data từ api backend đến front end
     const fetchDataFromApi = async () => {
         try {
-            // khoi tao 1 response 
+            // khởi tạo 1 constant: hằng số response: phản hồi để fetch api
             const response = await fetch('https://localhost:7041/api/Course')
-            // check response de bao loi
+            // check response để báo lỗi 
             if (!response.ok) {
                 throw new Error('network is not ok')
             }
-            // khoi tao 1 responseData muc dich la de chuyen tu data thanh json
+            // khởi tạo 1 responseData để lấy data json 
             const responseData = await response.json()
-            // seetData
+            // setData
             setData(responseData)
         } catch (error) {
-            console.error('Error: ', error)
+            throw new Error('Error')
         }
     }
 
     return (
         <div>
-            GetAllCourses
+            <ul>
+                <hr />
+                <li>GetAllCourses</li>
+            </ul>
+
             <ul>
                 {data.map(item => (
                     <li key={item.courseId}>
@@ -44,11 +49,10 @@ const GetAllCourses = () => {
                         <p>status: {item.status}</p>
                         <p>categoryCategoryId: {item.categoryCategoryId}</p>
                         <p>userUserId: {item.userUserId}</p>
-                        <p>courseId: {item.courseId}</p>
-                        <hr />
                     </li>
                 ))}
             </ul>
+
         </div>
     )
 }
