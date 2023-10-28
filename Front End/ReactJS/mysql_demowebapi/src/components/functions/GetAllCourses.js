@@ -39,7 +39,7 @@ const GetAllCourses = () => {
             <ul>
                 {data.map(item => (
                     <li key={item.courseId}>
-                        <p>Course Id: {item.courseId}</p>
+                        <strong>Course Id: {item.courseId}</strong>
                         <p>courseName: {item.courseName}</p>
                         <p>description: {item.description}</p>
                         <p>courseInfo: {item.courseInfo}</p>
