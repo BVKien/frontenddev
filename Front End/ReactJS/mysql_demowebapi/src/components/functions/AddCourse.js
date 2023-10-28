@@ -24,7 +24,9 @@ const AddCourse = () => {
         })
     }
 
-
+    const handleSubmit = async (event) => {
+        event.pre
+    }
 
     return (
         <div>AddCourse</div>
