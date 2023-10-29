@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import GetAllCourses from './components/functions/GetAllCourses';
 import GetCourseById from './components/functions/GetCourseById';
@@ -10,7 +11,11 @@ import DeleteCourseUsingAxios from './components/functions/DeleteCourseUsingAxio
 function App() {
   return (
     <Router>
-      <p>Tôi viết giao diện API của tôi</p>
+      <ul>
+        {/* css inline */}
+        {/* <p style={{ color: 'red' }}>Tôi viết giao diện API của tôi</p> */}
+        <p>Tôi viết giao diện API của tôi</p>
+      </ul>
 
       <ul>
         <li>
