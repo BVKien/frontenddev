@@ -17,3 +17,6 @@
 - handleInputChange
 - fetchCourseById
 - handleSubmit
+
+- son dang f8 dang muon css theo tung component -> import va bo import la ok
+- css module tao ra file css doc lap ko bii anh huong toi nhau du trung class selector ma ko bi anh huong

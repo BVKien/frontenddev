@@ -42,7 +42,8 @@
 - npm i axios -S : install axios
 - npm uninstall @testing-library/jest-dom @testing-library/jest-dom...(name...)
 - npm i easy-peasy : install easy peasy
-- npm i classnames
+- npm i classnames 
+- npm i sass 
 
 ========================================================
 
@@ -62,6 +63,11 @@
 ========================================================
 
 ========================================================
++ Hệ thống hóa công thức để học
+- Xem tutorial 
+- Thực hành
+- Đọc document chính thống
+
 + Concepts, Theory and Practice: Khái niệm, Lý thuyết và Thực hành
 - App.js: look like HTML but it's JSX
 
@@ -100,6 +106,19 @@
 + chapter 20: customer hooks
 + chapter 21: easy peasy redux
 + chapter 22: deploy app
+
+========================================================
+
+========================================================
+++ ReactJs F8 - Son Dang
+- chưa học về build
+- Development: npm start / yarn start -> CSS internal 
+- Production: npm run build / yarn build -> CSS external
+-  serve -s build
+- Css module - thuat toan b64 / styled component
+- dạng chuỗi: '' - ex: className='' 
+-dạng expression: {} - ẽ: className={}
+
 ========================================================
 
 ========================================================
