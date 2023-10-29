@@ -119,6 +119,11 @@
 - dạng chuỗi: '' - ex: className='' 
 -dạng expression: {} - ẽ: className={}
 
++ Module.css
+- className={styles.heading}
+- nó không kế thừa được thì phải làm cách nào?
+- 
+
 ========================================================
 
 ========================================================
