@@ -1,5 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import styles from './GetAllCourses.module.css'
+
+console.log(styles)
 
 const GetAllCourses = () => {
     // khai bao constructor getter setter data bang useState
@@ -33,7 +36,7 @@ const GetAllCourses = () => {
         <div>
             <ul>
                 <hr />
-                <li>GetAllCourses</li>
+                <li><a className={styles.heading}>GetAllCourses</a></li>
             </ul>
 
             <ul>
