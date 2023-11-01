@@ -44,6 +44,7 @@
 - npm i easy-peasy : install easy peasy
 - npm i classnames 
 - npm i sass 
+- npm i clsx : tải clsx phục vụ cho css, sass
 
 ========================================================
 
@@ -122,7 +123,21 @@
 + Module.css
 - className={styles.heading}
 - nó không kế thừa được thì phải làm cách nào?
-- 
+
++ tạo component theo Son Dang 
+- tạo folder component
+- Module.css
+- index.js
+
+- props className: nhận kiểu dữ liệu string
+- className
+- clsx : là 1 hàm
+
+*tips import thư viện ở trên './' ở dưới 
+
++ Button primary
+- từ App.js có <Button primary /> primary ở đây là prop
+- Về lại Button.js const Button = ({ primary }) primary ở đây là tên của children 
 
 ========================================================
 
