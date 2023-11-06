@@ -39,7 +39,47 @@
 - routes/index.js : phục vụ cho chức năng filter 
 import { Fragment } from 'react'; // chỉ để chứa và không sinh ra thẻ thật trong dom
 
++ 62
+- npm i classnames
+- ddnag xây giao diện header
+- styles cho css: wrapper -> container -> content
 
++ 63
+- tiếp tục xây ui header
+- ctrl shift l : chọn được tất cả các chỗ được chọn và có thể chỉnh sửa - tương tự ctrl D
+- copy fortawesome and paste vao package.json và sửa dụng lệnh -- npm i
+    "@fortawesome/fontawesome-svg-core": "^1.3.0",
+    "@fortawesome/free-brands-svg-icons": "^6.0.0",
+    "@fortawesome/free-regular-svg-icons": "^6.0.0",
+    "@fortawesome/free-solid-svg-icons": "^6.0.0",
+    "@fortawesome/react-fontawesome": "^0.1.17",
 
+- lấy icon va import
+- alt + click chuot de chon 
+- shift ctrl + mui ten phai ->
+- chọn tất cả nhấn Home sẽ về đầu, nhấn End sẽ về cuối
+- đặt biến chung sử dụng var()
 
+- focus : https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within
+- dấu nháy 
 
++ 64
+- thư viện tippyjs xử lý danh sách gợi ý từ thanh search - popper
+-- npm i @tippyjs/react
+- https://github.com/atomiks/tippyjs-react
+- Tippy props document
+<Tippy content="Tìm kiếm" placement="right">
+                        <button className={cx('search-btn')}>
+                            {/* Search */}
+                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                        </button>
+                    </Tippy>
+
++ 65
+-- style boolean cho button
+- primary
+- outline
+- scss: càng ở dưới càng mới, càng được ưu tiên hơn
+
++ 66
+- fontawesome để lấy icon 
