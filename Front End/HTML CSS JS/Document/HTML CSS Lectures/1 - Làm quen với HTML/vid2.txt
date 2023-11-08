@@ -1,0 +1,4 @@
++ Comment trong HTML
+<!-- Comment -->
+window: ctrl + /
+mac: command + /

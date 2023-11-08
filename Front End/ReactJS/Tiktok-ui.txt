@@ -83,3 +83,259 @@ import { Fragment } from 'react'; // chỉ để chứa và không sinh ra thẻ
 
 + 66
 - fontawesome để lấy icon 
+- https://atomiks.github.io/tippyjs/v5/all-props/
+
++ 67
+- làm menu list 2 cấp 
+
++ 68
+- https://atomiks.github.io/tippyjs/v5/all-props/
+- toán tử ba ngôi
+- condition ? expression_if_true : expression_if_false
+- dùng tippy cho tooltip
+- import tippy css
+- Tippy github: https://github.com/atomiks/tippyjs-react
+- import 'tippy.js/dist/tippy.css'; // optional
+- trigger theo click -> click mới hiện tooltip chứ ko phải hover 
+
++ 69
+- thay font family
+- thay header idcons
+- tạo component Image
+- cách down template về máy?
+- Conver svg icon và sử dụng
+- Tạo component img để khi không có ảnh thì có 1 ig default 
+- forwardRef cho Image
+----
+- Conver svg icon và sử dụng
+- Tạo component img để khi không có ảnh thì có 1 ig default 
+- forwardRef cho Image -> để ra đc img -> có thể sử dụng được Tippy từ Menu(img)
+- placeholder image online web để lấy hình ảnh tự custome ở đây lấy là (no image)
+- https://tinypng.com/ : gairm dung lượng ảnh khi tải về
+- png khác svg nên svg phải có đuôi( .default )
+
++ 70
+- làm logic
+- cho phần search
++ good tutorials
+https://www.youtube.com/watch?v=b9eMGE7QtTk
+
++ 71
+- fetch tới api
+
++ 72
+- khắc phục nhiều request api khi nhập thông tin search 
+- debounce: sẽ lấy hành động cuối dùng khi dừng lại
+
++ 73
+- axios
+npm i axios -S
+- tạo utils: công cụ -> thực hiện requets 
+- làm việc với api https - xml - axios - XMLHttpRequest
+
++ 74
+- giữ phím alt + mũi tên lên -> sẽ move 1 lelect
+- *profile
+- config routes
+- không được phép nhập space đầu tiên khi search 
+- bỏ focus khi nhấn search khi không có gì 
+- hideOnClick={hideOnClick} // ẩn khi click - ở đây là menu của avtar
+
++ 75
+- thanh cuộn menu level cao - scrollbar 
+- find in folder khi chuột phải vào project 
+- sửa title ReactApp -> OLS - public - index.html
+- fix tippy warning
+
+
++ 76
+- tối ưu code - đặt tên thư mục
+- apiServies -> services
+- chuyển Layouts -> src/layouts  
+- routes config -> routes
+- utils -> httpRequest
+- file môi trường env : .local, .development, .production -> sẽ có sự ưu tiên khác nhau 
+- không dùng tránh ảnh hưởng members khác -> gitignore
+- tạo file .env.development : biển môi trường này sẽ được webpack tải khi build - start server
+- thông tin khi biến môi trường development chạy ra 
+{NODE_ENV: 'development', PUBLIC_URL: '', WDS_SOCKET_HOST: undefined, WDS_SOCKET_PATH: undefined, WDS_SOCKET_PORT: undefined, …}
+FAST_REFRESH: true
+NODE_ENV: "development"
+PUBLIC_URL: ""
+REACT_APP_BASE_URL: "https://tiktok.fullstack.edu.vn/api"
+WDS_SOCKET_HOST: undefined
+WDS_SOCKET_PATH: undefined
+WDS_SOCKET_PORT: undefined
+[[Prototype]]: Object
+
+- .env.production : tạo ra chưa xài tới, chỉ là để hiểu 
+
++ 77
+- Áp dụng thư viện PropTypes: thư viện giúp kiểm tra các props validate kiểu dữ liệu của các props - ktra trong chuong trình chạy
+https://legacy.reactjs.org/docs/typechecking-with-proptypes.html
+
++ 78
+- ctrl + alt + mũi -> chọn nhiều 
+- propstypes 
+- đọc doc: https://legacy.reactjs.org/docs/typechecking-with-proptypes.html
+- list ra các proptypes hay dùng
+- ôn lại 
+
++ 79
+- khấc phục nhiều file .index
+- sửa tên 
+- tạo 1 file index.js cho việc export 
+
++ 80 
+- potimize - tối ưu các components 
+- clean code
+- useCallback cho việc tối ưu(optimize)
+
++ 81
+- sửa fixed search giữa header 
+- làm side bar
+- điều chỉnh components -> đặt thư mục sao cho hớp lý, ví dụ component chung -> src/components || conponents riêng thì đặt riêng
+- navigation: thành phần điều hướng 
+- ctrl + shift + L: chọn nhiều select trùng nhau 
+- fill="currentColor": sẽ lấy màu được css bên nhận import dùng icons
+- 26:53 : active navlink
+- https://www.youtube.com/watch?v=I6DWZWkAhhY&list=PL_-VfJajZj0UXjlKfBwFX73usByw3Ph9Q&index=81
+- navlink sẽ hỗ trợ nhận active, vđe k active được dù đã nhận bởi vì đang style css module -> navlink ko thể nhận claaname mã hóa -> tìm cách để navlink lấy được name mã hóa đóa -> có thể active 
+-> navlink, truyền className dưới dạng funtion rồi return classname mong muốn
+-> className={() => cx('menu-item')}
+-> từ đó có thể chủ động custome các trường hợp active 
+- icon: solid, regular
+- thành phần của isActive icon, bỏ comment nếu nuốn sử dụng 
+- thay thế icon cho cớ chết hoạt động ngon
+- hiện tại default
+end
+
+++
+- bỏ sidebar -> thành navbar -> sửa tên
+- sắp xếp css theo thứ tự dưới đây
+posistion - vi tri
+display - trinh bay
+box model - cac model boxes
+
+
++ code maaux Home - Coursera
+<div className={cx('content')}>
+                <div className="cds-ProductCard-base cds-ProductCard-list css-wzhpar">
+                    <div className="cds-CommonCard-clickArea">
+                        <div className="cds-ProductCard-listCard">
+                            <div className="cds-ProductCard-listContentContainer">
+                                <div className="cds-ProductCard-listPreviewImage">
+                                    {/* <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/ddp/branding/illinois/Blue+Waters+Cabinets+Angle+square.png?auto=format%2Ccompress%2C%20enhance&amp;dpr=1&amp;w=80&amp;h=80&amp;fit=crop&amp;q=50" srcset="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/ddp/branding/illinois/Blue+Waters+Cabinets+Angle+square.png?auto=format%2Ccompress%2C%20enhance&amp;dpr=2&amp;w=80&amp;h=80&amp;fit=crop&amp;q=50 2x, https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/ddp/branding/illinois/Blue+Waters+Cabinets+Angle+square.png?auto=format%2Ccompress%2C%20enhance&amp;dpr=3&amp;w=80&amp;h=80&amp;fit=crop&amp;q=50 3x" alt="" style="max-width: none; max-height: none; min-width: 100%; min-height: 100%;"> */}
+                                </div>
+                                <div className="cds-ProductCard-content">
+                                    <div className="cds-ProductCard-header">
+                                        <div
+                                            className="cds-ProductCard-partnerInfo"
+                                            id="cds-react-aria-66-product-card-partner-info"
+                                        >
+                                            <div className="cds-CommonCard-interactiveArea">
+                                                <div
+                                                    className="css-oejgx0 cds-ProductCard-partners"
+                                                    title="University of Illinois at Urbana-Champaign"
+                                                >
+                                                    <div className="cds-ProductCard-partnerLogos">
+                                                        <div className="cds-Avatar-base cds-Avatar-organization cds-Avatar-showBorder css-1lmtkv8">
+                                                            {/* <img src="http://coursera-university-assets.s3.amazonaws.com/d8/42cdc0ab2011e8b910bdf80bed9f6c/CenterILblock-ISQUAREOrangeBackgrnd.png" alt=""> */}
+                                                        </div>
+                                                    </div>
+                                                    <p className="cds-113 cds-ProductCard-partnerNames css-dmxkm1 cds-115">
+                                                        University of Illinois at Urbana-Champaign
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <a
+                                                data-click-key="dashboard.home.click.collection_product_card"
+                                                data-click-value='{"collectionId":"degree","collectionIndex":0,"collectionName":"Earn Your Degree","entityId":"DEGREE~degree~RwwqhYosRMei2WZeEqMYoA","entityIndex":0,"href":"https://www.coursera.org/degrees/masters-in-computer-data-science","id":"degree~RwwqhYosRMei2WZeEqMYoA","itemIndex":0,"label":"Earn Your Degree","name":"Master of Computer Science in Data Science","namespace":{"action":"click","app":"dashboard","component":"collection_product_card","page":"home"},"offeringType":"DEGREE","schema_type":"FRONTEND","sectionId":"degree","slug":"masters-in-computer-data-science"}'
+                                                data-track="true"
+                                                data-track-app="dashboard"
+                                                data-track-page="home"
+                                                data-track-action="click"
+                                                data-track-component="collection_product_card"
+                                                data-track-href="https://www.coursera.org/degrees/masters-in-computer-data-science"
+                                                href="https://www.coursera.org/degrees/masters-in-computer-data-science"
+                                                to="https://www.coursera.org/degrees/masters-in-computer-data-science"
+                                                className="cds-113 cds-146 cds-148 cds-CommonCard-titleLink css-si869u cds-136"
+                                                id="cds-react-aria-66-product-card-title"
+                                                aria-label="Master of Computer Science in Data Science degree by University of Illinois at Urbana-Champaign,"
+                                            >
+                                                <h3 className="cds-113 cds-CommonCard-title css-e7lgfl cds-115">
+                                                    Master of Computer Science in Data Science
+                                                </h3>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div className="cds-ProductCard-footer">
+                                        <div className="cds-CommonCard-category"></div>
+                                        <div className="cds-CommonCard-creditType">
+                                            <svg
+                                                aria-hidden="true"
+                                                fill="none"
+                                                focusable="false"
+                                                height="20"
+                                                viewBox="0 0 20 20"
+                                                width="20"
+                                                id="cds-react-aria-254"
+                                                className="css-1qgnve6"
+                                            >
+                                                <path
+                                                    fillRule="evenodd"
+                                                    clipRule="evenodd"
+                                                    d="M9.94 2.441l8.758 4.379-8.758 4.379L1.182 6.82 9.94 2.441zM3.418 6.82l6.522 3.261 6.522-3.261L9.94 3.559 3.418 6.82z"
+                                                    fill="currentColor"
+                                                ></path>
+                                                <path
+                                                    fillRule="evenodd"
+                                                    clipRule="evenodd"
+                                                    d="M5.62 11.48V8.73h1v2.75c0 .487.293.987.893 1.388.596.399 1.452.662 2.427.662.975 0 1.83-.263 2.427-.662.6-.4.893-.9.893-1.388V8.73h1v2.75c0 .923-.557 1.698-1.337 2.22-.784.523-1.838.83-2.983.83s-2.2-.307-2.983-.83c-.78-.522-1.337-1.297-1.337-2.22z"
+                                                    fill="currentColor"
+                                                ></path>
+                                                <path
+                                                    fillRule="evenodd"
+                                                    clipRule="evenodd"
+                                                    d="M9.493 6.597a.5.5 0 01.67-.224l6.79 3.39a.5.5 0 01.277.447v2.12a.5.5 0 11-1 0v-1.81L9.717 7.266a.5.5 0 01-.224-.67z"
+                                                    fill="currentColor"
+                                                ></path>
+                                                <path
+                                                    fillRule="evenodd"
+                                                    clipRule="evenodd"
+                                                    d="M16.008 11.868A1.78 1.78 0 0118.5 13.63v3.87h-3.55v-3.87a1.78 1.78 0 011.058-1.762zm.717.849a.78.78 0 00-.777.849l.002.022V16.5h1.55v-2.912l.002-.022a.78.78 0 00-.777-.849z"
+                                                    fill="currentColor"
+                                                ></path>
+                                            </svg>
+                                            <p className="cds-113 css-1xrmqao cds-115">Earn a degree</p>
+                                        </div>
+                                        <div className="cds-CommonCard-metadata">
+                                            <p className="cds-113 cds-Typography-base css-dmxkm1 cds-115">Degree</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

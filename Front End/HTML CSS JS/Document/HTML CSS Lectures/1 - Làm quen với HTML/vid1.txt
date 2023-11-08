@@ -1,0 +1,12 @@
++ Cấu trúc 1 file HTML
+<!DOCTYPE html>
+- tag - thẻ html 
+<html>
+<head>
+<title></title>
+<meta charset="utf-8"> // để có thể hiển thị tiếng việt
+</head>
+<body>
+Xin chào!
+</body>
+</html>

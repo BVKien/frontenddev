@@ -1,0 +1,49 @@
++ Các thẻ HTML thông dụng
+-- h: h1 - h6
+<h1>Thẻ h1<h1>
+nhỏ dần 
+<h6>Thẻ h6</h6>
+
+-- p: paragraph
+<p>Đây là thẻ p - viết 1 đoạn văn</p>
+
+-- img: image
+<img src="link ảnh" alt="tên ảnh - ko bắt buộc">
+
+-- a: anchor: mỏ neo -> link liên kết 
+<a href="link">Đây là link</a>
+
+-- ul,ol,li: unorder list, list items
+<ul>
+<li>Thẻ li</li>
+<li>Thẻ li</li>
+<li>Thẻ li</li>
+</ul>
+
+-- table
+<table>
+<thead>
+<th>Tên</th> table heading
+<th>Địa chỉ</th>
+<th>SĐT</th>
+</thead>
+
+<tbody>
+<tr></tr> table row
+<tr>
+<td>Kiên</td>
+<td>HD City</td>
+<td>0961498...</td>
+</tr>
+</tbody>
+</table>
+
+-- input
+<input name="" type="">
+- type: text, checkbox, radio
+
+-- button
+<button>Đây là 1 button</button>
+
+-- div: tạo ra khối để bao quanh 
+<div></div>

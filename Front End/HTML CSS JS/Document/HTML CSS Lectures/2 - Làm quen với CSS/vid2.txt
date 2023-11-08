@@ -1,0 +1,21 @@
++ ID và Class - CSS selectors
+- 2 khái niệm này đều nằm trong 1 khái niệm lớn gọi là CSS selectors
+- CSS selectors: những cách để có thể gọi đến các elements trong html để có thể CSS
+- là External
+
+-- ID: identify - định danh duy nhất - name không thể trùng nhau - ko hợp lệ
+- sử dụng attribute - selector id
+<h1 id="first-heading">Thẻ h1</h1>
+- bên phía main.css
+#first-heading {
+    color: red;
+}
+
+-- Class
+- sử dụng 1 lớp cho nhiều phần tử khác nhau
+<h1 class="first-heading">Thẻ h1</h1>
+<h2 class="first-heading">Thẻ h2</h2>
+- bên phía main.css
+.first-heading {
+    color: blue;
+}

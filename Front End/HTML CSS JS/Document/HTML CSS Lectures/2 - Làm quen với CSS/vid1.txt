@@ -1,0 +1,25 @@
++ Sử dụng CSS trong HTML
+- 3 cách 
+- internal
+- external 
+- inline
+
+-- Internal
+<head>
+<style>
+h1 {
+    color: red;
+}
+</style>
+</head>
+
+-- External 
+- tại 1 file main.CSS
+- tạo 1 thẻ link ddeebs ddunowgf dẫn file.css
+<head>
+<link rel="stylesheet" href="main.css">
+</head>
+
+-- Inline
+- sử dụng 1 attribute style trong thẻ
+<h1 style="color: red;">CSS in HTML</h1>
