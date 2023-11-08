@@ -1,0 +1,5 @@
++ Attribute trong HTML là gì?
+- Attribute: thuộc tính
+- ví dụ 
+- <h1 title="Đây là tiêu đề">Tiêu đề</h1>
+- style, onclick...
