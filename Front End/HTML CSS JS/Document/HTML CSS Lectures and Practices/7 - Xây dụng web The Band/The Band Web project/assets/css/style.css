@@ -1,0 +1,115 @@
+/* Reset CSS */
+/* Tất cả các thẻ */
+* {
+    /* Emmet */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Chỉ kế thừa những thẻ có chữ */
+html {
+    /* Set font chữ */
+    /* san serif chủng ko chân */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 
++ Nguyển tắc 
+- Từ ngoài vào trong
+- Từ trên xuống dưới
+- Từ tổng quan đến chi tiết
+*/
+
+/* 
++ Trả lời câu hỏi?
+- Vị trí
+- Kích thước (width, height)
+- Màu sắc
+- Kiểu dáng (kiểu chữ, hình tròn, vuông, ...)
+*/
+
+#main {
+
+}
+
+/* 
+- Soi của trang web mình muốn clone lại
+- Chiều rộng bằng kích thước trình duyệt của mình
+ */
+#header {
+    height: 46px;
+    background-color: black;
+}
+
+#nav, .subnav {
+    list-style-type: none;
+}
+
+#nav > li {
+    /* nagng 1 hàng - tính chất khối */
+    display: inline-block;
+}
+
+#nav li {
+    position: relative;
+}
+
+#nav > li > a {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#nav li a {
+    text-decoration: none;
+    /* Căn giữa - đã học */
+    /* Đặt chiều cao */
+    line-height: 46px;
+    /* Inspect - lấy khoảng cách */
+    padding: 0 24px;
+    /* tăng kích thước thẻ <a>
+    ăn theo line-height */
+    display: block;
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+/* hover để tránh xảy ra lỗi */
+/* Đặt vào li để khi vào sub ul của more thì màu hover vẫn sẽ giữ chứ ko bị mất đi di chuột ra subul */
+#nav > li:hover > a,
+#nav .subnav li:hover a {
+    color: #000;
+    background: #f0b3b3;
+}
+
+/* nav subnav - con của nav */
+#nav .subnav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#nav .subnav a {
+    color: #000;
+    padding: 0 12px;
+    line-height: 38px;
+}
+
+#slider {
+
+}
+
+#content {
+
+}
+
+#footer {
+
+}
+
