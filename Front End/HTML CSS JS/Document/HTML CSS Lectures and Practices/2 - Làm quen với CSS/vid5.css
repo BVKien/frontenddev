@@ -1,0 +1,16 @@
+/* root: global */
+:root {
+    /* Đặt tên biến */
+    --text-color: red;
+}
+
+h1 {
+    /* local: sử dụng 1 selector cụ thể */
+    --my-color: green;
+    color: var(--my-color);
+}
+
+h2 {
+    color: var(--text-color);
+}
+

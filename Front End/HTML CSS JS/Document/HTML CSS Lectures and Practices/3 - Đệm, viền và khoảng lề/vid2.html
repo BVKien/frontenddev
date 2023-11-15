@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Thuộc tính border (đường viền)</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="vid2.css">
+
+        <style>
+            .box {
+                width: 50px;
+                height: 50px;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .box1 {
+                background-color: #f60ade;
+            }
+
+            .box2 {
+                background-color: #f28d09;
+            }
+
+            .box3 {
+                background-color: #ef2121;
+                padding: 10px;
+                border-top-width: 10px;
+                border-right-width: 12px;
+                border-bottom-width: 8px;
+                border-left-width: 6px;
+                /* Mặc định solid = 2px 
+                Nếu muốn border riêng 1 hướng thì các hướng 
+                khác phải để = 0*/
+                border-style: solid;
+                border-color: #000;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="box box1">Box 1</div>
+        <div class="box box2">Box 2</div>
+        <div class="box box3">Box 3</div>
+    </body>
+</html>

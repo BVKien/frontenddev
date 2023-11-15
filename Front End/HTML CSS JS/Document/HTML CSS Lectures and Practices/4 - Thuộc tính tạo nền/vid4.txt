@@ -1,0 +1,42 @@
++ Thuộc tính background-position
+
+- background-position: tùy chỉnh vị trí ảnh nên của css
+background-position: top right bottom left center;
+- viết 1 giá trị thì giá trị thứ 2 nó sẽ tự hiểu là center
+background-position: top;
+
+- có thể tùy chỉnh số lượng để di chuyển vị trí
+-> nó sẽ cách mép trái nơi nó đứng 10px
+- viết 1 giá trị thì giá trị thứ 2 nó sẽ tự hiểu là center
+background-position: 10px;
+
+- ví trí xê dịch có thể điều chỉnh 
+        <style>
+            .header {
+                width: 100%;
+                height: 100vh;
+                background-image: url(https://avatars.githubusercontent.com/u/108357953?v=4);
+                background-repeat: no-repeat;
+                background-size: 200px;
+                background-position: top 20px right 20px;
+            }
+        </style>
+
+- và cả số âm
+        <style>
+            .header {
+                width: 100%;
+                height: 100vh;
+                background-image: url(https://avatars.githubusercontent.com/u/108357953?v=4);
+                background-repeat: no-repeat;
+                background-size: 200px;
+                background-position: top -20px right -20px;
+            }
+        </style>
+
+- hình dung tọa độ của nó là góc trên trái cùng màn hình
+- X Y
+- x ngang - hoành
+- y dọc - tung
+- ngược lại đơn giản là âm
+

@@ -1,0 +1,89 @@
++ Các cách căn giữa trong CSS
+
+- cách 1
+- căn giữa theo chiều ngang
+- text-align: center;
+            h1 {
+                text-align: center;
+            }
+
+- cách 2
+- căn giữa theo chiều dọc
+- line-height = với height của box kết hợp text-align center
+        <style>
+            .box {
+                width: 100%;
+                height: 100px;
+                background-color: violet;
+                text-align: center;
+            }
+
+            h1 {
+                color: #000;
+                line-height: 100px;
+            }
+        </style>
+
+- cách 3
+- display: flex
+<html>
+    <head>
+        <title>Các cách căn giữa trong CSS</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="vid1.css">
+
+        <style>
+            .box {
+                width: 100%;
+                height: 100px;
+                background-color: violet;
+                display: flex;
+            }
+
+            h1 {
+                margin: auto;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="box">
+            <h1>Center me</h1>
+        </div>
+    </body>
+</html>
+
+        <style>
+            .box {
+                width: 100%;
+                height: 100px;
+                background-color: violet;
+                display: flex;
+                align-items: center;
+                justify-content: space-around; //between
+            }
+
+            h1 {
+            }
+        </style>
+
+
+        <style>
+            .box {
+                width: 100%;
+                height: 100px;
+                background-color: violet;
+                position: relative;
+            }
+
+            h1 {
+                color: black;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                /* trục hoành*/
+                /* transform: translateY(-50%) translateX(-50%); */
+                transform: translate(-50%, -50%);
+            }
+        </style>

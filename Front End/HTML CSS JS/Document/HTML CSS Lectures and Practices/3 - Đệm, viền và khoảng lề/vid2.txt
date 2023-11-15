@@ -1,0 +1,12 @@
++ Thuộc tính border (đường viền)
+
+- Làm tăng tổng kích thước lên
+border-top-width: 10px;
+border-right-width: 12px;
+border-bottom-width: 8px;
+border-left-width: 6px;
+- Nếu muốn border riêng 1 hướng thì các hướng khác phải để = 0
+
+- Shorthand
+border: 10px;
+- Mặc định solid = 2px

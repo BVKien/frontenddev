@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Các cách căn giữa trong CSS</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="vid1.css">
+
+        <style>
+            .box {
+                background-color: violet;
+                height: 100px;
+                display: flex;
+            }
+
+            h3 {
+                margin: auto;
+                position: relative;
+            }
+
+            /* pseudo elements */
+            h3::after {
+                position: absolute;
+                left: -10px;
+                content: "";
+                border-left: 3px solid #000;
+                height: 30px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="box">
+            <h3>Center me</h1>
+        </div>
+    </body>
+</html>

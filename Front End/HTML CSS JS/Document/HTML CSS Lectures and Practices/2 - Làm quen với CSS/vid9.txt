@@ -1,0 +1,38 @@
++ Pseudo elements trong CSS - Phần tử giả
+
+::before
+::after
+- <!-- inspect ra sẽ thấy 
+::before luôn đứng ở đầu
+::after luôn đứng ở cuối -->
+
+::first-letter
+- Chữ cái đầu tiên
+h1::first-letter {
+    font-size: 100px;
+}
+
+::first-line
+- Dòng đầu tiên
+h2::first-line {
+    font-size: 100px;
+}
+
+::selection
+- Lựa chọn 
+- Bôi chuột vào đổi màu
+
+- Ví dụ: 1 mình <h3> sẽ được CSS
+h3 {
+    font-size: 40px;
+}
+h3::selection {
+    background-color: orangered;
+    color: #fff;
+}
+
+- Nếu bỏ -> tất cả sẽ chịu ảnh hưởng bởi ::selection CSS
+::selection {
+    background-color: orangered;
+    color: #fff;
+}

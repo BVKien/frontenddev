@@ -1,0 +1,20 @@
++ CSS position absolute - vị trí tuyệt đối
+
+-- Relative - tương đối
+-- Absolute - tuyệt đối
+- position: absolute;
+- nó sẽ đi tìm các thẻ cha cũng có thuộc tính position gần nhất và nhận nó, bất cứ thẻ nào
+và no sẽ hoạt động trong cha nó
+.box-child {
+    background-color: rgba(128, 0, 128, 0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+- 1 đối tượng phụ thuộc vào 1 đối tượng khác
+
+-- Fixed - phụ thuộc vào khung trình duyệt - cố định
+-- Sticky - bám dính, ko đc khuyến cáo sử dụng
+

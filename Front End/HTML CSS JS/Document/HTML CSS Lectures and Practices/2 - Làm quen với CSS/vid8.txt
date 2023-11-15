@@ -1,0 +1,13 @@
++ Pseudo classes trong CSS - Lớp CSS giả
+
+:root: gốc
+- Tham chiếu tới chính phần tử gốc là thẻ <html>
+
+:hover: di chuột
+- Di chuột đổi màu
+
+:active: hoạt động
+- Bấm chuột đổi màu
+
+:first-child: con đầu
+:last-child: con cuối

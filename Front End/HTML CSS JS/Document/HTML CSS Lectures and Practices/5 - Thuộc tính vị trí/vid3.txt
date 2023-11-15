@@ -1,0 +1,19 @@
++ CSS position fixed - vị trí cố định
+
+-- Relative - tương đối
+-- Absolute - tuyệt đối
+-- Fixed - phụ thuộc vào khung trình duyệt - cố định
+- 1 đối tượng phụ thuộc vào trình duyệt
+            .header {
+                width: 100%;
+                height: 40px;
+                background-color: #00000080;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+            }
+- dính sát 
+- phục vụ cho việc làm header hay những thanh thông báo cố định
+
+-- Sticky - bám dính, ko đc khuyến cáo sử dụng

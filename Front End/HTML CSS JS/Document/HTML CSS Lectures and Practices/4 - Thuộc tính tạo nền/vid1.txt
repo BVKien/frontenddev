@@ -1,0 +1,42 @@
++ Thuộc tính background-image
+
+- background-image có 1 thuộc tính repeat - lặp lại
+- nên nếu muốn bỏ repeat đi chỉ cần 
+background-repeat: no-repeat;
+background-repeat: repeat-x; - lặp lại chiều ngang
+background-repeat: repeat-y; - lặp lại chiều dọc
+
+- Hình ảnh nào trước thì viết ở trên
+- 2 url ảnh cách nhau bởi 1 dấu phẩy
+.header {
+    width: 100%;
+    height: 100vh;
+    background-image: 
+    url(https://www.stepes.com/wp-content/uploads/2016/08/image-translation.png),
+    url(https://avatars.githubusercontent.com/u/108357953?v=4);
+    background-size: 100px auto;
+    background-repeat: no-repeat;
+}
+
+- linear-gradient(): giúp tạo ra 1 dạng màu chuyển
+.header {
+    width: 100%;
+    height: 100vh;
+    /* 
+    - hướng xoay: 0-360 deg
+    - màu: điểm đầu
+    - màu: điểm cuối
+    */
+    background-image: linear-gradient(90deg, #333, #ccc);
+}
+
+.header {
+    width: 100%;
+    height: 100vh;
+    background-image: 
+    linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(0, 0, 255, 0.5)),
+    url(https://avatars.githubusercontent.com/u/108357953?v=4);
+    background-size: 100%;
+}
+
+- repeat
