@@ -1,0 +1,33 @@
++ Tối ưu perfomance hình ảnh với srcset - srcset img
+
+- sử dụng nếu trang web nhiều hình ảnh hoặc có responsive
+1. Định dạng ảnh phù hợp
+- Hình học, vector, svg
+- bitmap transperent: png, jpg
+- bitmap không transperent: jpeg, webp
+
+2. Nén ảnh(giảm dung lượng) - tinypng.com
+
+3. Sử dụng kích thước ảnh phù hợp
+- Original: 4000px x 4000px, Figma: 800px x 800px, 
+Resize: 1600px x 1600px
+-> Đáp ứng tootx cho màn hình PPI/DPI cao (retina)
+(Pixel per inch) (Dots per inch)
+
+- Loại màn Hình
+1. Màn hình thường (DPI thấp - 1:1): 800px x 800px
+2. Màn hình retina (DPI cao - 2:1)
+
+- Thiết bị
+1. Mobile
+2. Tablet
+3. Desktop
+
++ Bài toán
+1. Mobile: 50px x 50px
+2. Tablet: 100px x 100px
+3. Desktop: 200px x 200px
+
+1. Resolution switching: Different sizes
+// tải ảnh: unplash.com
+

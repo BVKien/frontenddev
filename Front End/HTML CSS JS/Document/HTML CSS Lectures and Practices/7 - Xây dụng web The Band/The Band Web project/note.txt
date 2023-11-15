@@ -1,0 +1,24 @@
++ Phân biệt & gọi tên các thành phần
+
+--- Những thành phần thường gặp khi làm wesite: ok
+- Header
+- Navigation(Điều hướng)
+- Breadcrum ( Khóa học > HTML, CSS ) - hướng cho biết đang ở đâu
+- Sidebar - có thể bên trái hoặc phải - Navigation phụ (Sub nav)
+- Slider
+- Banner - Ảnh quảng cáo
+- Content - nội dung chính của website
+- Footer
+
+--- Phân tích giao diện website: ok
+- Header
+- Navbar
+- Slider
+- Content
+    - About
+    - Tour
+    - Contact
+    - Image - Map
+- Footer
+
+--- Tạo project base: ok

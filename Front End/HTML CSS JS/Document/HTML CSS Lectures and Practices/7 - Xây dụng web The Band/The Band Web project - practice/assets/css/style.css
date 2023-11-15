@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set font chữ */
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main {
+    
+}
+
+#header{
+    /* Độ rộng width trình duyệt */
+    height: 46px;
+    background-color: #000;
+}
+
+#nav {
+
+}
+
+#nav li {
+    display: inline-block;
+}
+
+#nav li a {
+    /* Màu */
+    color: #fff;
+    /* Bỏ gạch chân */
+    text-decoration: none;
+    /* Căn giữa bằng line-height = chiều cao */
+    line-height: 46px;
+    /* Tạo khoảng cách như trang web = inspect = padding */
+    padding: 0 30px;
+
+    /* Thẻ <a> ko tăng kích thước full khi hover */
+    /* Phải sử dụng display: inline-block */
+    /* Hiểu đơn giản để có thể lấy khối của thuộc tính inline = height = 46px và ở đây là thẻ <a> */
+    display: inline-block;
+}
+
+/* hover thẻ li */
+/* hover li sẽ ăn hover khi bỏ hover li để hover thẻ subul li của MORE */
+#nav li:hover a {
+    /* Đặt màu chữ khi hover */
+    color: #000;
+    background-color: #fff;
+}
+
+#nav .subnav {
+    display: none;
+}
+
+#slider{
+
+}
+
+#content{
+
+}
+
+#footer{
+
+}
