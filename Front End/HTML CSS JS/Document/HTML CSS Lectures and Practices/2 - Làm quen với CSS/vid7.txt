@@ -1,0 +1,38 @@
++ Một số hàm trong CSS - CSS function
+
+-- var()
+-- linear-gradient(): được sử dụng để tạo ra một chuyển đổi màu sắc 
+giữa hai hoặc nhiều màu sắc theo hướng tuyến tính.
+- Ví dụ: 
+.element {
+  background: linear-gradient(to right, #ff0000, #00ff00);
+}
+
+-- rgba(): được sử dụng để xác định một màu sắc bằng cách sử dụng 
+các thành phần Đỏ, Lục, Lam và Alpha (độ trong suốt).
+- Ví dụ: 
+.element {
+  background-color: rgba(255, 0, 0, 0.5); /* màu đỏ một cách mờ nhạt */
+}
+
+-- rgb(): được sử dụng để xác định một màu sắc bằng cách sử dụng 
+các thành phần Đỏ, Lục và Lam, 
+nhưng không có thành phần Alpha (độ trong suốt).
+- Ví dụ:
+.element {
+  color: rgb(255, 0, 0); /* màu đỏ */
+}
+
+-- calc()
+- Tính toán
+- width: calc(120px + 50%);
+
+-- attr()
+- attribute
+-  được sử dụng để lấy giá trị của một thuộc tính 
+từ phần tử được chọn và sử dụng nó trong một thuộc tính CSS.
+- Ví dụ: 
+img::before {
+  content: attr(alt); /* chèn giá trị của thuộc tính 'alt' như nội dung */
+}
+

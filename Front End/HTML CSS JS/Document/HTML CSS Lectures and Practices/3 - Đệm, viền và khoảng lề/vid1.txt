@@ -1,0 +1,26 @@
++ Thuộc tính padding (đệm)
+
+- Padding: đệm
+- Đẩy dày background ra
+padding-top: 10px;
+padding-right: 10px;
+padding-bottom: 10px;
+padding-left: 10px;
+
+padding: 10px;
+
+- Nếu 2 tham số
+- 10px là trên dưới, 12px là trái phải
+padding: 10px 12px;
+
+- Nếu 3 tham số
+- 10px là trên, 12px là trái phải, 8px là dưới
+padding: 10px 12px 8px;
+
+- Theo chiều kim đồng hồ
+- Nếu 4 tham số
+- 10px là trên, 12px là phải, 8px là dưới, 6px là trái
+padding: 10px 12px 8px;
+
+- Shorthand: cú pháp ngắn
+- Làm tăng tổng kích thước lên

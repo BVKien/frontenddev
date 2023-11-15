@@ -1,0 +1,24 @@
++ Thuộc tính box-sizing
+
+- Tự tính đúng giá trị box
+- Ví dụ như này đang 100 * 100 + 20 * 20 -> sẽ lớn hơn
+- Nếu căn chỉnh 100px xuống còn 60px cũng ok nhưng đau đầu vì 
+còn nhiều thứ khác
+
+- Chính vì vậy -- box-sizing: border-box --  sẽ tự tính đúng giá trị box
+giúp kích thước tự biến thiên và vẫn giữ nguyên 
+kích thước đúng ban đầu
+<style>
+    html, body {
+        margin: 0;
+    }
+
+    .box {
+        width: 100px;
+        height: 100px;
+        color: #fff;
+        background-color: violet;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+</style>

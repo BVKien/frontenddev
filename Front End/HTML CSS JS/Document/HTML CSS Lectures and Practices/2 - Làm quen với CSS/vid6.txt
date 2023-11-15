@@ -1,0 +1,105 @@
++ Các đơn vị trong CSS - CSS units 
+
++ Công cụ convert px -> rem
++ https://nekocalc.com/px-to-rem-converter
+
+1.Absolute units?: tuyệt đối
+-- px
+- điểm ảnh, độ phân giải màn hình
+- kích thước cố định không bị tác động bởi mọi thứ xung quanh
+
+- pt
+- cm
+- mm
+- inch
+- pc
+
+2.Relative units?: tương đối
+-- %
+- phụ thuộc vào thẻ chứa nó
+- trong trường hợp này lẻ thẻ <body>
+- thẻ <body> hiện tại đang kế thừ chiều ngang của trình duyệt
+-> 50% = 1/2 kích thước thẻ <body>
+
+-- rem
+- rem phụ thuộc vào thẻ <html>
+- Ví dụ
+- Khi chưa có rem
+ <style>
+    .box {
+        width: 50%;
+        height: 100px;
+        background-color: red;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+</style>
+- Sau khi có rem
+ <style>
+    html {
+        font-size: 20px;
+    }
+
+    .box {
+        width: 50%;
+        height: 100px;
+        background-color: red;
+    }
+
+    h1 {
+        font-size: 1rem; // 1rem = 20px
+    }
+</style>
+
+-- em
+- em phụ thuộc vào thẻ gần nhất chứa nó
+- ví dụ
+- Thẻ <h1> nó sẽ đi tìm thẻ gần nhất chứa nó
+- Đầu tiên gần nhất là thẻ <div> ko đc CSS font-size nên bỏ qua,
+tiếp đến tìm tiếp thẻ <body> cũng ko có nên bỏ qua nốt,
+cuối cùng thẻ <html> có font-size -> nó lấy thẻ <html>
+
+- giả sử có <body style="font-size: 50px;"> -> nó sẽ lấy 1em = 50px;
+<html>
+    <head>
+        <title>Các đơn vị trong CSS</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="vid6.css">
+
+        <style>
+            html {
+                font-size: 40px;
+            }
+
+            .box {
+                width: 50%;
+                height: 100px;
+                background-color: red;
+            }
+
+            h1 {
+                font-size: 1em;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div>
+            <h1>CSS units</h1>
+        </div>
+    </body>
+</html>
+
+-- vw
+- viewport width
+- khung nhìn, độ ngang trình duyêt
+
+-- vh
+- viewport height
+- khung nhìn, độ dọc trình duyêt
+
+/* 1vw = 1% kích thước của trình duyệt hay còn gọi là màn hình, 
+ko ảnh hưởng bởi width là độ rộng của thẻ body */

@@ -1,0 +1,42 @@
++ Thuộc tính background-origin
+
+- mở inspect lên sẽ thấy
+
+- padding-box: kích thước được đổ vào từ padding
+-             .header {
+                width: 30%;
+                height: 50vh;
+                background-image: url(https://avatars.githubusercontent.com/u/108357953?v=4);
+                background-repeat: no-repeat;
+                background-size: 100%;
+                border: 20px dashed #000;
+                padding: 20px;
+                box-sizing: border-box;
+                background-origin: padding-box;
+            }
+
+- border-box: kích thước được đổ vào từ border
+-             .header {
+                width: 30%;
+                height: 50vh;
+                background-image: url(https://avatars.githubusercontent.com/u/108357953?v=4);
+                background-repeat: no-repeat;
+                background-size: 100%;
+                border: 20px dashed #000;
+                padding: 20px;
+                box-sizing: border-box;
+                background-origin: border-box;
+            }
+
+- content-box: kích thước được đổ vào từ content
+-             .header {
+                width: 30%;
+                height: 50vh;
+                background-image: url(https://avatars.githubusercontent.com/u/108357953?v=4);
+                background-repeat: no-repeat;
+                background-size: 100%;
+                border: 20px dashed #000;
+                padding: 20px;
+                box-sizing: border-box;
+                background-origin: content-box;
+            }

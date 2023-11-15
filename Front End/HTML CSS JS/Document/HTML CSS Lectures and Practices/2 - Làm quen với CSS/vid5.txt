@@ -1,0 +1,10 @@
++ Sử dụng biến trong CSS - CSS variable
+
+- var(): function để sử dụng 
+- Đặt tên: --text-color
+- root: đặt global
+- h1 {
+    /* local: sử dụng 1 selector cụ thể */
+    --my-color: red;
+    color: var(--my-color);
+}

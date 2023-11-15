@@ -1,0 +1,22 @@
++ CSS position sticky
+
+-- Relative - tương đối
+-- Absolute - tuyệt đối
+-- Fixed - phụ thuộc vào khung trình duyệt - cố định
+
+-- Sticky - bám dính, ko đc khuyến cáo sử dụng
+- ứng dụng
+- hay để làm những menu header hay navbar bám dính
+.box {
+    height: 2000px;
+}
+
+.header {
+    width: 100%;
+    height: 40px;
+    background-color: #000;
+    margin-top: 30px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}

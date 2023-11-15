@@ -1,0 +1,84 @@
++ CSS selectors cơ bản #1
+- W3chools: https://www.w3schools.com/cssref/css_selectors.php
+
+- đặt class cho thẻ
+- class là dấu chấm 
+-- .class
+<h2 class="title">Đây là title</h2>
+- css
+.title {
+    color: red;
+}
+
+-- .class1.class2
+- chọn ra tất cả các thẻ có cả class1 và class 2 đặt trong attribute cua class đó 
+<h2 class="title heading">Đây là title</h2>
+<h2 class="heading title">Đây là title</h2>
+.title.heading {
+    color: red;
+}
+
+-- .class1 .class2
+- được hiểu class2 phải là con của class1
+<div class="box">
+    <h2 class="title">Đây là title</h2>
+</div>
+.box .title {
+    color: red; // -> title thành red
+}
+
+-- *
+- ký tự đại diện tất cả các thẻ trong trang
+* {
+    color: red;
+}
+
+-- element
+- thẻ <h2>, <p>
+h2 {
+    color: red;
+}
+
+p {
+    color: green;
+}
+
+-- element.class
+- chọn tất cả các element có class
+div.box : chọn tất cả các thẻ <div> có class="box"
+<h2 class="title">Đây là title</h2>
+<h3 class="title">Đây là title</h3>
+h2.title {
+    color: red;
+}
+
+-- element, element
+- chọn tất cả các thẻ element và element
+div, h2
+chọn tất cả các thẻ div và h2
+<h2 class="title1">Đây là title</h2>
+<h3 class="title2">Đây là title</h3>
+<h4 class="title3">Đây là title</h4>
+.title1 {
+    font-style: italic;
+}
+
+.title2 {
+    font-size: 100px;
+}
+
+.title3 {
+    text-devoration: line-through;
+}
+
+.title1, .title2, .title3 {
+    color: red;
+}
+
+-- element element
+- thẻ sau là con của thẻ trước -> phải là còn của trái
+
+-- element > element
+- con trực tiếp
+
+*Css selectors nâng cao

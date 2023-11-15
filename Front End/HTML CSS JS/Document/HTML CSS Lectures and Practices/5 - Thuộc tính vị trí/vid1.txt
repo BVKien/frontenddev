@@ -1,0 +1,14 @@
++ CSS position relative - Vị trí CSS tương đối
+
+-- Relative 
+- tương đối
+- không bị phụ thuộc vào thằng nào khác cả
+nó sẽ lấy chính cái của nó đang đứng để nó làm gốc tọa độ
+-> phụ thuộc vào chính nó
+- có thể đè vào thằng khác
+chính vì thế mới có thể làm những chức năng hiển thị đè lên lay out như là 
+comment blog của f8
+
+-- Absolute - tuyệt đối
+-- Fixed - phụ thuộc vào khung trình duyệt - cố định
+-- Sticky - bám dính, ko đc khuyến cáo sử dụng

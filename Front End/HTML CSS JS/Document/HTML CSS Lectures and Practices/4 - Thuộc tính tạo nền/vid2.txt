@@ -1,0 +1,9 @@
++ Thuộc tính background-size với cover, contain
+
+- contain
+- cố gắng lấy chiều ngang hoặc dọc nhất có thể, lấy full ảnh ko bị che khuất
+dù cho trình duyệt ko fill
+
+- cover
+- cố gắng lấy chiều ngang hoặc dọc nhất có thể
+chấp nhận việc bức ảnh bị che khuất

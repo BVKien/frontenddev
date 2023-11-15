@@ -1,0 +1,18 @@
++ Độ ưu tiên trong CSS
+inspect: quan sát
+- Priority
+1. Internal, External: như nhau dựa trên cách sử dụng, được gọi sau thì sẽ là mới hơn
+2. Inline - 1000
+3. #id - 100
+4. .class - 10
+5. tag - 1 : tagname là gọi thẳng tên của thẻ
+6. Equal specificity: độ đặc hiệu bằng nhau
+ - Đơn giản là gọi 2 selectors giống nhau, thì mới hơn sẽ được ưu tiên hơn
+7. Universal selector and inherited?: bộ chọn phổ quát và được kế thừa
+ - thẻ all
+ * {}
+8. Important - 1 milion
+ - Đặc biệt ưu tiên
+ - li {
+    color: red !important;
+ }

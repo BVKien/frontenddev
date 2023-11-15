@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Một số hàm trong CSS</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="vid7.css">
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            .box {
+                width: 50%;
+                height: 120px;
+                /* giá trị dao động (0 <= rgb, rgba <= 255) */
+                background: rgba(0, 0, 0, 0.5);
+            }
+
+            /* Viết chữ trong box */
+            .box::after {
+                content: attr(data-title);
+            }
+
+            a::after {
+                content: " (" attr(href) ")";
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="box" data-title="Đây là màu hồng"></div>
+
+        <a href="https://fullstack.edu.vn/">F8 học lập trình Full Stack</a>
+
+        <div>
+            <h1>Một số hàm trong CSS</h1>
+        </div>
+    </body>
+</html>

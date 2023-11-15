@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pseudo elements trong CSS</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="vid9.css">
+
+        <style>
+            .box {
+                width: 30%;
+                height: 100px;
+                background-color: violet;
+            }
+
+            .box::before {
+                content: "box before";
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-color: #fff;
+            }
+
+            .box::after {
+                content: "box after";
+                color: #fff;
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-color: #000;
+            }
+
+            h1::first-letter {
+                font-size: 100px;
+            }
+
+            h2::first-line {
+                color: red;
+            }
+
+            h3 {
+                font-size: 40px;
+            }
+            ::selection {
+                background-color: orangered;
+                color: #fff;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="box">
+            <!-- inspect ra sẽ thấy ::before luôn đứng ở đầu
+            ::after luôn đứng ở cuối -->
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <h1>Pseudo elements trong CSS <br/> Line 2</h1>
+
+        <h2>Dòng1 <br/> Dòng 2</h2>
+
+        <h3>Selection - lựa chọn</h3>
+    </body>
+</html>
+
