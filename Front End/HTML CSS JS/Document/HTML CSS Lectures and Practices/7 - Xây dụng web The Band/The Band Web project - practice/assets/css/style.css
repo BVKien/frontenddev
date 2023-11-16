@@ -16,20 +16,48 @@ html {
 #header{
     /* Độ rộng width trình duyệt */
     height: 46px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     background-color: #000;
 }
 
 #nav {
-
-}
-
-#nav li {
     display: inline-block;
 }
 
-#nav li a {
-    /* Màu */
+#nav, .subnav {
+    /* Bỏ kiểu style đi -> thẻ <li> sẽ k có dấu chấm ở đầu */
+    list-style-type: none;
+}
+
+/* đã thêm thẻ con trực tiếp */
+#nav > li {
+    display: inline-block;
+}
+
+#nav li {
+    position: relative;
+}
+
+/*
++ Lấy vào thẻ con trực tiếp 
++ Có nghĩa
+- Thẻ <a> phải là con trực tiếp của thẻ <li>
+- Và thẻ <li> phải là con trực tiếp của id #nav
+-> Tác động tất cả lên thẻ <a> cấp 1, cấp 2 k bị ảnh hưởng
+*/
+#nav > li > a {
+    /* Cho màu trắng lên đây để ko bị ảnh hưởng đến thẻ <a> cấp 2 */
     color: #fff;
+    /* Chỉnh sửa thành chữ hoa chữ thường */
+    text-transform: uppercase;
+}
+
+#nav li a {
+    /* x Đã bỏ màu trắng */
+
     /* Bỏ gạch chân */
     text-decoration: none;
     /* Căn giữa bằng line-height = chiều cao */
@@ -40,23 +68,72 @@ html {
     /* Thẻ <a> ko tăng kích thước full khi hover */
     /* Phải sử dụng display: inline-block */
     /* Hiểu đơn giản để có thể lấy khối của thuộc tính inline = height = 46px và ở đây là thẻ <a> */
-    display: inline-block;
+    /* Đã sửa inline-block thành block */
+    display: block;
 }
 
-/* hover thẻ li */
-/* hover li sẽ ăn hover khi bỏ hover li để hover thẻ subul li của MORE */
-#nav li:hover a {
+#nav li:hover .subnav {
+    display: block;
+}
+
+/* 
+- hover thẻ li
+- hover li sẽ ăn hover khi bỏ hover li để hover thẻ subul li của MORE
+- Đặt con trực tiếp ( > ) thì hover sẽ chỉ ảnh hưởng đến thẻ con cấp 1 của chính nó thôi  
+*/
+
+/* 
+- Thêm mới #nav .subnav li:hover a
+*/
+#nav > li:hover > a,
+#nav .subnav li:hover a {
     /* Đặt màu chữ khi hover */
     color: #000;
-    background-color: #fff;
+    background-color: #888686;
 }
 
 #nav .subnav {
     display: none;
+    position: absolute;
+    /* 100% có nghĩa lấy chính chiều cao của thẻ cha chứa nó */
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#nav .subnav a {
+    /* Màu chữ thẻ <a> */
+    color: #000;
+    /* Cho nhỏ padding */
+    padding: 0 12px;
+    /* line height */
+    line-height: 38px
+}
+
+#nav .nav-arrow-down {
+    font-size: 12px;
+}
+
+#header .search-btn {
+    float: right;
+    padding: 0 22px;
+}
+
+#header .search-btn:hover {
+    cursor: pointer;
+    background-color: #f44336;
+}
+
+#header .search-icon {
+    color: #fff;
+    font-size: 22px;
+    line-height: 46px;
 }
 
 #slider{
-
+    margin-top: 46px;
 }
 
 #content{
