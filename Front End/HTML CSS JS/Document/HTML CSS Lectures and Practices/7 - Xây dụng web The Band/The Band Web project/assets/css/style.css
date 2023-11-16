@@ -29,6 +29,14 @@ html {
 - Kiểu dáng (kiểu chữ, hình tròn, vuông, ...)
 */
 
+.clear {
+    clear: both;
+}
+
+.text-white {
+    color: #fff !important;
+}
+
 #main {
 
 }
@@ -39,7 +47,16 @@ html {
  */
 #header {
     height: 46px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     background-color: black;
+    z-index: 1;
+}
+
+#nav {
+    display: inline-block;
 }
 
 #nav, .subnav {
@@ -77,7 +94,7 @@ html {
 }
 
 /* hover để tránh xảy ra lỗi */
-/* Đặt vào li để khi vào sub ul của more thì màu hover vẫn sẽ giữ chứ ko bị mất đi di chuột ra subul */
+/* Đặt vào li để khi vào sub ul của more thì màu hover vẫn sẽ giữ chứ ko bị mất đi di chuột ra sub ul */
 #nav > li:hover > a,
 #nav .subnav li:hover a {
     color: #000;
@@ -101,15 +118,157 @@ html {
     line-height: 38px;
 }
 
-#slider {
-
+#nav .nav-arrow-down {
+    font-size: 12px;
 }
+
+#header .search-btn {
+    float: right;
+    padding: 0 21px;
+}
+
+#header .search-btn:hover {
+    cursor: pointer;
+    background-color: #f44336;
+}
+
+#header .search-icon {
+    color: #fff;
+    font-size: 22px;
+    line-height: 46px;
+}
+
+#slider {
+    position: relative;
+    margin-top: 46px;
+
+    /*
+    - Giá trị 50%
+    - là 50% chiều ngang(width) của chính nó 
+    */
+    padding-top: 50%;
+
+    /* /assets/img/slider/slider1.jpg */
+    background: url('https://www.w3schools.com/w3images/chicago.jpg') top center / cover no-repeat;
+}
+
+#slider .text-content {
+    position: absolute;
+    color: #fff;
+    bottom: 48px;
+
+    /* cách 1 */
+    /* left: 50%;
+    transform: translateX(-50%); */
+
+    /* cách 2 */
+    width: 100%;
+    text-align: center;
+}
+
+#slider .text-heading {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+#slider .text-description {
+    font-size: 15px;
+    margin-top: 25px;
+}
+
 
 #content {
 
 }
 
-#footer {
-
+/* About section */
+#content .content-section {
+    width: 800px;
+    padding: 64px 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+#content .section-heading {
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    /* đẩy chữ xa nhau */
+    letter-spacing: 4px;
+}
+
+#content .section-sub-heading {
+    font-size: 15px;
+    margin-top: 25px;
+    text-align: center;
+    font-style: italic;
+    /* làm mờ - trong suốt */
+    opacity: 0.6;
+}
+
+#content .about-text {
+    font-size: 15px;
+    margin-top: 25px;
+    text-align: justify;
+
+    /* chỉnh độ cao của dòng */
+    line-height: 1.4;
+}
+
+#content .member-list {
+    margin-top: 48px;
+}
+
+#content .member-item {
+    float: left;
+    /* width: 33.333333%; */
+    width: calc(100% / 3);
+    text-align: center;
+}
+
+#content .member-name {
+    font-size: 15px;
+}
+
+#content .member-img {
+    width: 155px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+/* Tour section */
+#content .tour-section {
+    background-color: #000;
+}
+
+#content .tour-section .tickets-list {
+    margin-top: 45px;
+    background-color: #fff;
+    list-style-type: none;
+}
+
+#content .tour-section .tickets-list li {
+    font-size: 15px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #ddd;
+    color: #757575;
+}
+
+.tickets-list .sold-out {
+    background-color: #ec1a0b;
+    color: #fff;
+    padding: 3px 4px;
+    margin-left: 16px;
+}
+
+.tickets-list .quantity {
+    float: right;
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    margin-top: -3px;
+}
