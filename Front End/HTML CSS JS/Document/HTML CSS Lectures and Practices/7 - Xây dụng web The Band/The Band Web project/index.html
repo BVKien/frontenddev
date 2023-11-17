@@ -78,11 +78,47 @@
                         <h2 class="section-heading text-white">TOUR DATES</h2>
                         <p class="section-sub-heading text-white">Remember to book your tickets!</p>
 
+                        <!-- Tickets -->
                         <ul class="tickets-list">
                             <li>September <span class="sold-out">Sold out</span></li>
                             <li>October <span class="sold-out">Sold out</span></li>
                             <li>November <span class="quantity">3</span></li>
                         </ul>
+
+                        <!-- Places -->
+                        <div class="place-list">
+                            <div class="place-item">
+                                <img src="https://www.w3schools.com/w3images/newyork.jpg" alt="New York" class="place-img">
+                                <div class="place-body">
+                                    <h3 class="place-heading">New York</h3>
+                                    <p class="place-time">Fri 27 Nov 2016</p>
+                                    <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.
+                                    </p>
+                                    <button href="#" class="place-buy-btn js-buy-ticket">Buy Tickets</button>
+                                </div>
+                            </div>
+
+                            <div class="place-item">
+                                <img src="https://www.w3schools.com/w3images/paris.jpg" alt="New York" class="place-img">
+                                <div class="place-body">
+                                    <h3 class="place-heading">Paris</h3>
+                                    <p class="place-time">Sat 28 Nov 2016</p>
+                                    <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                                    <button href="#" class="place-buy-btn js-buy-ticket">Buy Tickets</button>
+                                </div>
+                            </div>
+
+                            <div class="place-item">
+                                <img src="https://www.w3schools.com/w3images/sanfran.jpg" alt="New York" class="place-img">
+                                <div class="place-body">
+                                    <h3 class="place-heading">San Francisco</h3>
+                                    <p class="place-time">Sun 29 Nov 2016</p>
+                                    <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                                    <button href="#" class="place-buy-btn js-buy-ticket">Buy Tickets</button>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -92,6 +128,89 @@
                     <p class="section-sub-heading">Fan? Drop a note!</p>
                 </div>
             </div>
-        </div>        
+        </div>
+        
+        <!-- Modal -->
+        <div class="modal js-modal">
+            <div class="modal-container js-modal-container">
+                <!-- Modal close  -->
+                <div class="modal-close js-modal-close">
+                    <i class="ti-close"></i>
+                </div>
+
+                <!-- Modal header -->
+                <header class="modal-header">
+                    <i class="modal-heading-icon ti-bag"></i>
+                    Tickets
+                </header>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <label for="modal-quantity" class="modal-label">
+                        <i class="ti-shopping-cart"></i>
+                        Tickets, $15 per person
+                    </label>
+                    <input id="modal-quantity" type="text" class="modal-input" placeholder="How many?">
+
+                    <label for="modal-email" class="modal-label">
+                        <i class="ti-user"></i>
+                        Send To
+                    </label>
+                    <input id="modal-email" type="text" class="modal-input" placeholder="Enter email">
+
+                    <button id="buy-tickets">
+                        Pay
+                        <i class="ti-check"></i>
+                    </button>
+                </div>
+
+                <!-- Modal footer -->
+                <footer class="modal-footer">
+                    <p class="modal-help">
+                        Need <a href="#">help?</a>
+                    </p>
+                </footer>
+            </div>
+        </div>
+        
+        <!-- Buy tickets modal Javascript logic -->
+        <script>
+            // querySelectorAll -> get all
+            // querySelector -> get one
+            const buyBtns = document.querySelectorAll('.js-buy-ticket')
+            const modalClose = document.querySelector('.js-modal-close')
+            const modalContainer = document.querySelector('.js-modal-container')
+            const modal = document.querySelector('.js-modal')
+
+            // show buy tickets - add class open into modal
+            function showBuyTickets() {
+                // alert("Click")
+                modal.classList.add('open')
+            }
+
+            // remove buy tickets - remove class open into modal
+            function hideBuyTickets() {
+                // alert("Click")
+                modal.classList.remove('open')
+            }
+
+            // Lặp qua từng thẻ button và nghe hành vi click
+            for (const buyBtn of buyBtns) {
+                // Lắng nghe hành vi click vào Button của người dùng
+                buyBtn.addEventListener('click', showBuyTickets)
+            }
+
+            // Nghe hành vi click vào button close(icon close X)
+            modalClose.addEventListener('click', hideBuyTickets)
+        
+            // Xử lý logic khi nhấn ra bên ngoài khung buy tickets -> hide
+            modal.addEventListener('click', hideBuyTickets)
+
+            // Ngừng sự kiện nổi bọt
+            modalContainer.addEventListener('click', function (event) {
+                event.stopPropagation()
+            })
+        </script>
+
     </body>
 </html>

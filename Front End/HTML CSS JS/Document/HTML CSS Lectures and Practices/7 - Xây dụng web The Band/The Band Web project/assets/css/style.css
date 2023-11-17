@@ -272,3 +272,173 @@ html {
     line-height: 24px;
     margin-top: -3px;
 }
+
+/* Places */
+.place-list {
+    margin: 32px -8px 48px;
+    /* padding-bottom: 48px; */
+} 
+
+.place-item {
+    float: left;
+    width: calc(100% / 3);
+    padding: 0 8px;
+} 
+
+.place-img {
+    /* cho 100% thì kích thước img = ảnh chứa nó, ko bị vượt quá */
+    width: 100%;
+    display: block;
+} 
+
+.place-img:hover {
+    opacity: 0.6;
+}
+
+.place-body {
+    padding: 16px;
+    font-size: 15px;
+    background-color: #fff;
+} 
+
+.place-heading {
+    font-size: 15px;
+    font-weight: 550;
+} 
+
+.place-time {
+    margin-top: 15px;
+    color: #757575;
+} 
+
+.place-desc {
+    margin-top: 15px;
+    line-height: 1.4;
+} 
+
+.place-buy-btn {
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    padding: 11px 16px;
+    display: inline-block;
+    margin-top: 15px;
+    border: 1px solid #ccc;
+} 
+
+.place-buy-btn:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.open {
+    display: flex;
+}
+
+.modal-container {
+    background: #fff;
+    width: 900px;
+    max-width: calc(100% - 40px);
+    min-height: 200px;
+    position: relative;
+    /* keyframes */
+    animation: modalFadeIn ease 0.5s;
+}
+
+.modal-header {
+    background: #009688;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+}
+
+.modal-heading-icon {
+    margin-right: 16px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #000;
+    background: #ccc;
+}
+
+.modal-body {
+    padding: 16px;
+}
+
+.modal-label {
+    /* Tính chất block là mỗi thằng nằm 1 hàng riêng biệt */
+    display: block;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.modal-input {
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 28px;
+}
+
+#buy-tickets {
+    background: #009688;
+    color: #fff;
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 14px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#buy-tickets:hover {
+    color: #000;
+    background: #ccc;
+}
+
+.modal-footer {
+    padding: 16px;
+    text-align: right;
+}
+
+.modal-footer .modal-help a {
+    color: #009688;
+    text-decoration: none;
+}
+
+/* Tạo ra những chuyển động mượt mà */
+/* Cho khung buy tickets có animation trượt xuống từ trên xuống dưới  */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

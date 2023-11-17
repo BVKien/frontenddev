@@ -22,3 +22,7 @@
 - Footer
 
 --- Tạo project base: ok
+
+- Tải ảnh lưu về img
+
+- text-align vs float - left right  ?
