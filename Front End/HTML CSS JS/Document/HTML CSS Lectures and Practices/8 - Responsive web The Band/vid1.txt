@@ -1,0 +1,8 @@
++ Media queries?
+
+- @media(){}
+- Xây dụng điều kiện xác định là máy gì        
+- Đơn giản là đưa ui chạy có điều kiện giao diện về kích thước là bao nhiêu điều kiện ấy sẽ chạy
+- hỗ trợ 2 thuộc tính thường sử dụng nhất 
+max-width
+min-width

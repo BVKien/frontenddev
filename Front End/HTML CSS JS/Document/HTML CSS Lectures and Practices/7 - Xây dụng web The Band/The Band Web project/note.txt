@@ -26,3 +26,34 @@
 - Tải ảnh lưu về img
 
 - text-align vs float - left right  ?
+
+- link favicon html -> ảnh tiêu đề giới thiệu trang web
+
++ 9 - Responsive web The Band
+- Thích ứng với nhiều kích thước màn hình
+--- Media queries?
+- Vùng viết truy vấn 
+-- Các vùng 
+- PC
+- TABLET
+- MOBILE
+
+- Viết theo tring tự từ PC -> Tablet -> Mobile
+- Sử dụng devtools đổi chế độ màn hình, và viết theo size giao diện đó
+- Responsive viết dưới CSS -> viết sau -> ăn -> ưu tiên hơn
+
+- logic ẩn hiện menu navbar 
+- đơn giản là có height 
+- và     /* overflow khi đổi tượng con của nó vượt quá nó -> hidden ẩn */
+    overflow: hidden;
+- var headerHeight = header.clientHeight - lấy height trong CSS
+- // hiện menu
+header.style.height = 'auto'
+- // set height = null -> ẩn menu
+header.style.height = null
+
++ Điều kiện để check event click More 
+- siblings -> thẻ cha?
+- thẻ con cửa nó(ace liền kề) có class subnav hay không?
+
+- button type=submit -> tự động có textalign center 

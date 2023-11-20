@@ -9,6 +9,7 @@
 
 /* Chỉ kế thừa những thẻ có chữ */
 html {
+    scroll-behavior: smooth;
     /* Set font chữ */
     /* san serif chủng ko chân */
     font-family: Arial, Helvetica, sans-serif;
@@ -29,6 +30,7 @@ html {
 - Kiểu dáng (kiểu chữ, hình tròn, vuông, ...)
 */
 
+/* Common */
 .clear {
     clear: both;
 }
@@ -37,15 +39,87 @@ html {
     color: #fff !important;
 }
 
-#main {
+.text-center {
+    text-align: center !important;
+}
+
+/* Class chung kéo sang phải */
+.pull-right {
+    float: right !important;
+}
+
+.btn {
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    padding: 11px 16px;
+    display: inline-block;
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+} 
+
+.btn:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+/* Pseudo elements */
+/* PHần tử giả - thay thế cho thẻ <div> .clear */
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
 
 }
+
+.col {
+    float: left;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.col-full {
+    width: 100%;
+}
+
+.col-half {
+    width: calc(100% / 2);
+}
+
+.col-third {
+    width: calc(100% / 3);
+}
+
+/* Những cái margin thế này nên đặt những con số chia hết cho 4 */
+.mt-8 {
+    margin-top: 8px !important;
+}
+
+.mt-16 {
+    margin-top: 16px !important;
+}
+
+.mt-32 {
+    margin-top: 32px !important;
+}
+
+/* Main */
+/* #main {
+
+} */
 
 /* 
 - Soi của trang web mình muốn clone lại
 - Chiều rộng bằng kích thước trình duyệt của mình
  */
 #header {
+    /* height phủ con của header */
     height: 46px;
     position: fixed;
     top: 0;
@@ -53,6 +127,10 @@ html {
     right: 0;
     background-color: black;
     z-index: 1;
+
+    /* Bỏ */
+    /* overflow khi đổi tượng con của nó vượt quá nó -> hidden ẩn */
+    /* overflow: hidden; */
 }
 
 #nav {
@@ -64,7 +142,10 @@ html {
 }
 
 #nav > li {
-    /* nagng 1 hàng - tính chất khối */
+    /* 
+    - ngang 1 hàng - tính chất khối 
+    - bỏ inline-block sẽ trở về dọc theo tính chất của <li>
+    */
     display: inline-block;
 }
 
@@ -122,6 +203,13 @@ html {
     font-size: 12px;
 }
 
+#header .mobile-menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#header .mobile-menu-btn,
 #header .search-btn {
     float: right;
     padding: 0 21px;
@@ -132,6 +220,17 @@ html {
     background-color: #f44336;
 }
 
+#header .mobile-menu-btn:hover {
+    background-color: #ccc;
+}
+
+/* Chỉ định rõ ràng */
+/* Khi hover -> icon đổi màu */
+#header .mobile-menu-btn:hover .menu-icon {
+    color: #000;
+}
+
+#header .menu-icon,
 #header .search-icon {
     color: #fff;
     font-size: 22px;
@@ -177,14 +276,15 @@ html {
 }
 
 
-#content {
+/* #content {
 
-}
+} */
 
 /* About section */
 #content .content-section {
     width: 800px;
-    padding: 64px 0;
+    max-width: 100%;
+    padding: 64px 0 112px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -216,14 +316,7 @@ html {
 }
 
 #content .member-list {
-    margin-top: 48px;
-}
-
-#content .member-item {
-    float: left;
-    /* width: 33.333333%; */
-    width: calc(100% / 3);
-    text-align: center;
+    margin-top: 32px;
 }
 
 #content .member-name {
@@ -275,15 +368,8 @@ html {
 
 /* Places */
 .place-list {
-    margin: 32px -8px 48px;
-    /* padding-bottom: 48px; */
-} 
-
-.place-item {
-    float: left;
-    width: calc(100% / 3);
-    padding: 0 8px;
-} 
+    margin-top: 16px;
+}
 
 .place-img {
     /* cho 100% thì kích thước img = ảnh chứa nó, ko bị vượt quá */
@@ -315,21 +401,6 @@ html {
     margin-top: 15px;
     line-height: 1.4;
 } 
-
-.place-buy-btn {
-    color: #fff;
-    background-color: #000;
-    text-decoration: none;
-    padding: 11px 16px;
-    display: inline-block;
-    margin-top: 15px;
-    border: 1px solid #ccc;
-} 
-
-.place-buy-btn:hover {
-    color: #000;
-    background-color: #ccc;
-}
 
 .modal {
     position: fixed;
@@ -441,4 +512,72 @@ html {
         opacity: 1;
         transform: translateY(0px);
     }
+}
+
+/* Contact form */
+.contact-content {
+    margin-top: 48px;
+}
+
+.contact-info {
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.contact-info i[class*="ti-"] {
+    width: 30px;
+    display: inline-block;
+}
+
+.contact-info a {
+    color: #2607d7;
+    opacity: 0.8;
+}
+
+.contact-info a:hover {
+    color: #f44336;
+}
+
+.contact-form {
+    font-size: 15px;
+}
+
+.contact-form .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    /* outline: none; */
+}
+
+/* Map */
+.map-section img {
+    width: 100%;
+}
+
+/* Footer */
+#footer {
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#footer .scocial-list {
+    font-size: 24px;
+}
+
+#footer .scocial-list a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+}
+#footer .copy-right a:hover,
+#footer .scocial-list a:hover {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+#footer .copy-right {
+    margin-top: 15px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+#footer .copy-right a {
+    color: rgba(0, 0, 0, 0.8);
 }
