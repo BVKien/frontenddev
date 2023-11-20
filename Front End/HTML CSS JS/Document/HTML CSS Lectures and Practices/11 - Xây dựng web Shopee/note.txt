@@ -1,0 +1,39 @@
++ Xây dựng web Shopee
+
++++ Dựng base source
++ index.html
+! + Enter -> sinh ra 1 form
+
++ css
+- base.css: code những thành phần chung
+- main.css: code những thành phần riêng
+
++ img 
+- Chứa ảnh
+
++ fonts
+- Fonts chữ, icons, ...
+
++++ Reset CSS
+- normalizer css cdn: thư viên giúp reset css 
+- Trả html về mặc định
+- Documentation: https://cdnjs.com/libraries/normalize
+- Copy file min.css: https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css
+- link hoặc tải về 
+
++++ Dựng base CSS
+- Lấy font chữ - làm rồi quên - sẽ pải xem lại
+- Trong base.css
+- san-serif: chủng chữ không chân
+- Dựng base.css để chuẩn bị cho Responsive
+
++++ Dựng khung web
+-Documentation about BEM many Blocks?: https://scalablecss.com/bem-nesting-grandchild-elements/
+- Naming convention: https://getbem.com/naming/
+
+- Tính chất
+- block và inline-block?
+- Mặc định thẻ <ul> có giá trị padding-left: 40px;
+- Cho class grid bọc navbar -> 2 bên phần navbar lại căn lui ra giữa 
+- Bởi vì nó nhận theo kích thước màn hình 1200px
+
