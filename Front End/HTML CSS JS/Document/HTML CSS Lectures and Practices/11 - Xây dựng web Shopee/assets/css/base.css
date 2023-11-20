@@ -1,0 +1,38 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+}
+
+* {
+    /* inherit: kế thừa từ thẻ chứa nó có thuộc tính là box-sizing */
+    box-sizing: inherit;
+}
+
+html {
+    /* font-size 100% = 16px */
+    /* HACK = 10px */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+/* Chuẩn bị cho Responsive */
+.grid {
+    width: 1200px;
+    max-width: 100%;
+
+    /* Tự động căn giữa của khối này khi nằm trong khối khác */
+    margin: 0 auto;
+}
+
+/* Trong trường hợp không muốn sử dụng width = 1200px */
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+}
