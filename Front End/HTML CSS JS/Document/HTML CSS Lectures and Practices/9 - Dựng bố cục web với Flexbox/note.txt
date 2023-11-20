@@ -1,0 +1,102 @@
++ Giới thiệu Flexbox
+
++ Documentation: 
+- https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
+- https://codepen.io/enxaneta/full/adLPwv/
+
+-- Thành phần 
+- Flex container: thẻ chứa
+- Flex item * 3: 3 thẻ con trực tiếp của flex container
+
+- Trục
+-- main axis - nằm ngang 
+- main start 
+- main end 
+- main axis sẽ quyết định hướng mà flex item được nằm
+
+-- cross axis - vuông góc với main axis
+- cross start 
+- cross end 
+
+- Kích thước 
+- main size: nằm song song với main axis
+- cross size: nằm song song với cross axis
+
++ Các thuộc tính điều khiển flexbox 
+-- giúp điều khiển, thay đổi phương hướng của main axis, cross axis
+-- Có thể dùng các thuộc tính CSS để thay đổi phương hướng cũng như điểm đầu điểm cuối
+
+-- Các thuộc tính
++ display: flex | inline-flex
+- display sẽ quyết định có sử dụng layout flexbox hay không 
+- tạo ra flex container và flex item -> sử dụng display: flex;
+
++ flex-direction: row | column
+- giúp thay đổi được các hướng của main axis
+- mặc định có giá trị là row
+- nếu column -> dọc
+
++ flex-wrap: nowrap | wrap | wrap-reverse
+- giá trị mặc định là nowrap
+- wrap có nghĩa là xuống dòng
+- wrap tùy chọn giá trị để cho các flex item có thể xuống dòng dù 1 dòng full là 3 flex item 
+- wrap-reverse thay vì xuống dòng thì nhảy lên trên 
+- đảo chiều cross start và cross end
+
++ flex-flow 
+-  cú pháp shorthand của flex-wrap và flex-direction
+
++ flex-basis: <length>
+- tùy trường hợp trục chính main axis ở phương hướng nào
+- -> set main size là chiều ngang hoặc chiều dọc
+- có thể giúp set được kích thước của main size
+
++ justify-content: flex-start | flex-end | center | space-between | space-around
+- cha 
+- giúp căn được các flex item theo phương hướng của main axis
+- có nghĩa khi main axis nằm ngang
+- thì có thể căn sang trái, phải hoặc giữa
+- còn nằm dọc thì trên dưới giữa
+
++ justify-self: flex-start | flex-end | center
+- con
+- dùng để set cho tất cả flex item 
+- tự căn cho nó theo khái niệm tương tự justify-content
+- nếu đã có justify-content căn rồi -> không cần căn self -> đã được thừa hưởng
+- nếu set cho ch thì không cần set cho con
+
++ align-content: flex-start | flex-end | center
+- cha 
+- giống justify-content 
+- khác là cùng phương hướng với trục cross axis
+
++ align-self: flex-start | flex-end | center
+- con
+- giống justify-content 
+- khác là cùng phương hướng với trục cross axis
+
++ flex-grow: <number>
+- thay đổi được kích thước của main size
+- tức là kích thước của flex item 
+- theo hướng của main axis
+- có nghĩa là tùy thuộc main axis nằm dọc hay nằm ngang
+
++ flex-shrink: <number>
+- ngược lại flex-grow
+- thu nhỏ lại
+
++ flex: <number>
+- cú pháp shorthand của fl basis, grow, shrink
+- dùng 1 thể hiện được 3
+
++ order: <number>
+- quyết định thứ tụ flex item hiển thị trước và sau -> thay đổi vị trí mong muốn
+
+
+-------------------------
+- Note
+- kiến thức khi học 
+
+- xác định flex container và flex item
+- flex item nó là con trực tiếp của flex container
+
