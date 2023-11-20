@@ -57,3 +57,14 @@ header.style.height = null
 - thẻ con cửa nó(ace liền kề) có class subnav hay không?
 
 - button type=submit -> tự động có textalign center 
+
+-  Chạy website trên điện thoại 
+- ngrok
+- chưa 
+
+- Chưa fix cho mobile
+- Sửa title tĩnh thành link tương đối -> ../../ -> .. sẽ lấy link tương đối, đường dẫn cũng cấp độ và nhận nó 
+- Convert px to em cho media quries
+- Sử dụng em để không bị lỗi trên nhiều trình duyệt
+
+
