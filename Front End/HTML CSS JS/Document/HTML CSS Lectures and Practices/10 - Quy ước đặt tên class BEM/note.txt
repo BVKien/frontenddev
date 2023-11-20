@@ -1,0 +1,254 @@
++ BEM là gì?
+
++ BEM
+- Là tiêu chuẩn đặt tên class khi viết CSS 
+
++ Ý nghĩa
+- Viết tắt của: Block Element Modifier
+- Block: khối - thẻ cha
+- Element: thành phần trong khối - phần tử nằm trong Block  
+- Modifier: bổ sung ý nghĩa cho Block hoặc Element - viết thêm class mới để sử dụng bổ xung - có tác dụng thêm sự thay đổi 
+
++ Tại sao phải dùng BEM
+- Mỗi người đặt 1 kiểu 
+- Members đặt class trùng nhau, CSS đè lên nhau
+
++ Cú pháp
+- .block - nhận biết Block 
+- .block__element - nhận biết Element
+
+- .block--modifier - nhận biết Modifier cho Block 
+- .block__element--modifier - nhận biết Modifier cho Element
+
++ Tính ứng dụng
+- Tính rõ ràng
+- Tái sử dụng dễ dàng
+- Giúp cả team làm việc với nhau dễ dàng
+- Tính module, không lo CSS của class này ảnh hưởng lên CSS của class khác
+
++ Nhược điểm 
+- Tên class dài
+- Một số người cho là xấu
+
++ Khi nào dùng BEM phù hợp?
+- Dự án nhiều Members
+- Dự án lớn, số lượng pages nhiều hoặc số lượng các thành phần trên giao diện nhiều 
+
+--------------------------------------------
++ Ví dụ 
+        <!-- Không có BEM -->
+        <div class="card">
+            <h3 class="heading">Saved!</h3>
+            <p class="desc">looks like you got a great idea!</p>
+            <div class="btn">OK, cool</div>
+        </div>
+
+        <!-- BEM -->
+        <div class="card card--success">
+            <h3 class="card__heading">Saved!</h3>
+            <p class="card__desc">look likes you got a great idea!</p>
+            <div class="card__btn">OK, cool</div>
+        </div>
+--------------------------------------------
++ Thực hành 
++ Vid 1
+-- Làm button 
+- Enabled: Pointer, hover effect
+- Disable: Arrow, no effect
+
++ Vid 2
+-- Làm toast message
+- Chưa sử dụng được fontawesome
+- Thuộc tính transform: translate X Y -> giúp dịch chuyển vị trí 
+-> hỗ trợ thực hiện animation trượt lên xuống ra vào
+-> là keyframes
+- cách sử dụng keyframes
+
++ tạo 1 keyframes + thêm tí opacity vào cho đẹp
+@keyframes camelName {
+    from {
+        opacity: 0;
+        transform: translateX(-100%)
+    } to {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
++ sau đó đưa vào class
+.class {
+    // gọi animation: tên keyframes + hiệu ứng + thời gian + delay + forwards: sẽ dừng ở điểm cuối của animation
+    animation: camelName ease .3s (3s) + (forwards);
+}
+
+- Đoạn java script hiểu đơn giản là viết code html css trong hàm và lấy logic theo hàm bằng javascript
+
++ Code html cuar toast cho các buttons
+            <!-- Begin: Success -->
+            <div class="toast toast--success">
+                <div class="toast__icon">
+                    <i class="ti-check-box"></i>
+                </div>
+                <div class="toast__body">
+                    <h3 class="toast__title">Success</h3>
+                    <p class="toast__msg">a short piece of information that you give to a person when you cannot speak to them directly</p>
+                </div>
+                <div class="toast__close">
+                    <i class="ti-lock"></i>
+                </div>
+            </div>
+            <!-- End: Success -->
+
+            <!-- Begin: Info -->
+            <div class="toast toast--info">
+                <div class="toast__icon">
+                    <i class="ti-info"></i>
+                </div>
+                <div class="toast__body">
+                    <h3 class="toast__title">Info</h3>
+                    <p class="toast__msg">a short piece of information that you give to a person when you cannot speak to them directly</p>
+                </div>
+                <div class="toast__close">
+                    <i class="ti-lock"></i>
+                </div>
+            </div>
+            <!-- End: Info -->
+
+            <!-- Begin: Warning -->
+            <div class="toast toast--warning">
+                <div class="toast__icon">
+                    <i class="ti-flag-alt"></i>
+                </div>
+                <div class="toast__body">
+                    <h3 class="toast__title">Warning</h3>
+                    <p class="toast__msg">a short piece of information that you give to a person when you cannot speak to them directly</p>
+                </div>
+                <div class="toast__close">
+                    <i class="ti-lock"></i>
+                </div>
+            </div>
+            <!-- End: Warning -->
+
+            <!-- Begin: Error -->
+            <div class="toast toast--error">
+                <div class="toast__icon">
+                    <i class="ti-alert"></i>
+                </div>
+                <div class="toast__body">
+                    <h3 class="toast__title">Error</h3>
+                    <p class="toast__msg">a short piece of information that you give to a person when you cannot speak to them directly</p>
+                </div>
+                <div class="toast__close">
+                    <i class="ti-lock"></i>
+                </div>
+            </div>
+            <!-- End: Error --> 
+
++ Code JS 
++ Đặt ở cuối HTML
+        <!-- Begin: Toast Script -->
+        <script>
+            function toast({
+                title = '', 
+                message = '', 
+                type = 'info', 
+                duration = 3000
+            }){
+                const main = document.getElementById('toast')
+                if (main){
+                    const toast = document.createElement('div')
+
+                    // Auto remove toast
+                    const autoRemoveId = setTimeout(function() {
+                        main.removeChild(toast)
+                    }, duration + 1000)
+
+                    // Remove toast when click
+                    toast.onclick = function(e) {
+                        // check log
+                        // console.log(e.target)
+                        if (e.target.closest('.toast__close')) {
+                            // Nếu bấm trúng nút close thì gọi remove toast
+                            console.log(e.target)
+                            main.removeChild(toast)
+                            clearTimeout(autoRemoveId)
+                        }
+                    }
+
+                    const icons = {
+                        success: 'ti-check-box',
+                        info: 'ti-info', 
+                        warning: 'ti-flag-alt',
+                        error: 'ti-alert', 
+                    }
+                    const icon = icons[type]
+
+                    const delay = (duration / 1000).toFixed(2)
+
+                    toast.classList.add('toast', `toast--${type}`)
+                    toast.style.animation = `slideInLeft ease .8s, fadeOut linear 6s ${delay} forwards`;
+
+                    toast.innerHTML = `
+                        <div class="toast__icon">
+                            <i class="${icon}"></i>
+                        </div>
+                        <div class="toast__body">
+                            <h3 class="toast__title">${title}</h3>
+                            <p class="toast__msg">${message}</p>
+                        </div>
+                        <div class="toast__close">
+                            <i class="ti-close"></i>
+                        </div>
+                    `;
+
+                    main.appendChild(toast)
+                }
+            }
+
+            function showSuccessToast() {
+                    toast({
+                    title: 'Success',
+                    message: 'this is success message',
+                    type: 'success',
+                    duration: 3000
+                })
+            }
+
+            function showInfoToast() {
+                toast({
+                    title: 'Information',
+                    message: 'this is info message',
+                    type: 'info',
+                    duration: 3000
+                })
+            }
+
+            function showWarningToast() {
+                toast({
+                    title: 'Warning',
+                    message: 'this is warning message',
+                    type: 'warning',
+                    duration: 3000
+                })
+            }
+
+            function showErrorToast() {
+                toast({
+                    title: 'Error',
+                    message: 'this is error message',
+                    type: 'error',
+                    duration: 3000
+                })
+            }
+
+        </script>
+        <!-- End: Toast Script -->
+
+- Làm 1 thành phần trên website
+
++ Trường hợp Block lồng Block
+- Block con là thành phần dùng chung 
+- Block con chứa nhiều elements 
+
+-> Cứ tách ra thành nhiều block mà đặt tên
+block-block__element kiểu vậy

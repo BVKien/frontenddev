@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>Đặt tên class chuẩn BEM</title>
+        <link rel="stylesheet" href="./assets/css/main.css">
+        <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
+    </head>
+
+    <body>
+        <!-- Button -->
+        <!-- <div>
+            Normal Button
+            <button class="btn btn--success btn--disabled">Go to next approval</button>
+            <button class="btn btn--warning">Ok</button>
+            <button class="btn btn--danger">Try again</button>
+            <br /><br /><br />
+
+            Disabled Buttons
+            <button class="btn btn--success btn--disabled">Go to next approval</button>
+            <button class="btn btn--warning btn--disabled">Ok</button>
+            <button class="btn btn--danger btn--disabled">Try again</button>
+            <br /><br /><br />
+
+            Sizes Buttons
+            <button class="btn btn--size-s btn--success">Go to next approval</button>
+            <button class="btn btn--size-m btn--warning">Ok</button>
+            <button class="btn btn--size-l btn--danger">Try again</button>
+            <br /><br /><br />
+        </div> -->
+
+        <!-- Toast Message - BEM -->
+        <div id="toast">
+
+        </div>
+
+        <!-- Begin: Button -->
+        <div>
+            <button onclick="showSuccessToast();" class="btn btn--success">Show success toast</button>
+            <button onclick="showInfoToast();" class="btn btn--info">Show info toast</button>
+            <button onclick="showWarningToast();" class="btn btn--warning">Show warning toast</button>
+            <button onclick="showErrorToast();" class="btn btn--error">Show error toast</button>
+        </div>
+        <!-- End: Button -->
+
+        <!-- Script -->
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>
