@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Media queries?</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="vid1.css">
+
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .pc, 
+            .tablet,
+            .mobile {
+                font-size: 68px;
+                display: none;
+            }
+
+                /* 
+                + CSS
+                + max-width
+                - CSS <= 800 sẽ chạy
+
+                + min-width
+                - CSS >= 800 sẽ chạy
+                 */
+
+                /* 
+                + Kích thước
+                - PC >= 1024px
+                - Tablet >= 740px & < 1024px
+                - Mobile  < 740px
+                */
+            /* @media (max-width: 800px) {
+                .pc, 
+                .tablet,
+                .mobile {
+                    color: red;
+                }
+            } */
+
+            /* Break point */
+
+            /* PC */
+            @media (min-width: 1024px) {
+                .pc {
+                    display: block;
+                }
+            }
+
+            /* Tablet */
+            @media (min-width: 740px) and (max-width: 1023px) {
+                .tablet {
+                    display: block;
+                }
+            }
+
+            /* Mobile */
+            @media (max-width: 739px) {
+                .mobile {
+                    display: block;
+                }
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <h2 class="pc">PC</h2>
+        <h2 class="tablet">TABLET</h2>
+        <h2 class="mobile">MOBILE</h2>
+    </body>
+</html>
