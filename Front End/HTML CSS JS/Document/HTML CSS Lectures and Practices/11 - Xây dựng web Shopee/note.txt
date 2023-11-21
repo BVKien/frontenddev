@@ -73,3 +73,28 @@
 +++ Header notification CSS - Phần 4
 - will-change: ; nói cho trình duyệt biết thuộc tính gì sẽ thay đổi -> tối ưu chuyển động
 
++++ Base modal
+- modal có nhiều tầng đè lên nhau 
+- Quyết định = z-index 
+- Tưc là có z-index cao hơn thì đè lên
+-> Viết trước hay sau vẫn đè lên
+
++++ Dựng khung form đăng ký
+div.a {
+  text-transform: uppercase;
+}
+
+div.b {
+  text-transform: lowercase;
+}
+
+div.c {
+  text-transform: capitalize;
+}
+
++++ CSS form đăng ký
+- font-size: 1.4rem; -> rem để phục vụ cho responsive
+
++++ CSS form đăng ký - Phần 2
+- filter: brightness(80%);
+- giảm độ sáng
