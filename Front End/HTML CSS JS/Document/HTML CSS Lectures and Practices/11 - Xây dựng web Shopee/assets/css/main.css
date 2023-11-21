@@ -26,6 +26,10 @@
     min-height: 26px;
 }
 
+.navbar__item--notify-appear:hover .navbar__notify {
+    display: block;
+}
+
 .navbar__item,
 .navbar__item-link {
     display: inline-block;
@@ -104,14 +108,16 @@
 }
 
 /* Viết Pseudo element khi cầu nối giữa navbar item và QR Code quá xa */
-.navbar__qr::before {
+.navbar__qr::before,
+.navbar__notify::before {
     position: absolute;
     display: block;
     left: 0;
-    top: -20%;
-    width: 150%;
-    height: 50%;
+    top: -15%;
+    width: 105%;
+    height: 20%;
     content: "";
+    cursor: pointer;
     /* background-color: #eb1111; */
 }
 
@@ -136,4 +142,114 @@
 
 .navbar__qr-app-download {
     height: 16px;
+}
+
+/* Notify */
+/* Header - Notify */
+/* --notify-appear */
+.navbar__notify {
+    position: absolute;
+    top: 150%;
+    right: 0;
+    width: 400px;
+    border: 1px solid #D3D3D3;
+    background-color: var(--white-color);
+    cursor: default;
+    transform-origin: calc(100% - 20px) top;
+    animation: growth ease-in 0.2s;
+    will-change: opacity, transform;
+    display: none;
+}
+
+.navbar__notify-header {
+    height: 40px;
+    background-color: var(--white-color);
+}
+
+/* Làm nút hình tam giác */
+.navbar__notify-header::before {
+    content: "";
+    border-width: 20px 25px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    right: 10px;
+    top: -35px;
+    cursor: pointer;
+}
+
+.navbar__notify-header p {
+    color: #757272;
+    margin: 0 0 0 12px;
+    /* cho line height của dòng bằng với chiều cao thằng chứa nó */
+    /* -> nó sẽ căn giữa */
+    line-height: 40px;
+    user-select: none;
+}
+
+/* Notify - Body info  */
+.navbar__notify-list {
+    padding-left: 0;
+}
+
+.navbar__notify-item {
+    display: flex;
+}
+
+.navbar__notify-item:hover {
+    background-color: #e3dede4b;
+}
+
+.navbar__notify-item--not-viewed {
+    background-color: rgb(238, 77, 45, 0.1);
+}
+
+.navbar__notify-link {
+    display: flex;
+    width: 100%;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.navbar__notify-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.navbar__notify-info {
+    margin-left: 12px;
+}
+
+.navbar__notify-name {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 550;
+    color: var(--black-color);
+}
+
+.navbar__notify-decs {
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    margin-top: 6px;
+    color: #686666;
+}
+
+.navbar__notify-footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 40px;
+}
+
+.navbar__notify-footer:hover {
+    background-color: #e3dede4b;
+}
+
+.navbar__notify-footer-btn {
+    color: var(--black-color);
+    text-decoration: none;
+    line-height: 40px;
+    width: 100%;
 }

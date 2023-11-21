@@ -55,3 +55,21 @@
 - /* Hover qppear QR Code */
 - animation: fadeIn ease-in 0.3s;
 - @keyframes ở base.css /* Animation */
+
++++ Header notification CSS - Phần 1
+- <span> không có tính chất block -> ko xuống hàng
+
++++ Header notification CSS - Phần 2
+- user-select: none;
+-  Cái này để không cho select và copy
+- cursor: text; cho phép đoạn nào hiển thị cursor có thể copy
+-webkit-user-select: ...;: cho loại trình duyệt nào? - prefix 
+- moz... firefox
+- ms... microsoft ie
+- transform-origin: top right;.... có thể sử dụng số hoặc % - có thể chỉ định được tâm của việc scale - nở ra khi sử dụng animation
+
++++ Header notification CSS - Phần 3
+
++++ Header notification CSS - Phần 4
+- will-change: ; nói cho trình duyệt biết thuộc tính gì sẽ thay đổi -> tối ưu chuyển động
+
