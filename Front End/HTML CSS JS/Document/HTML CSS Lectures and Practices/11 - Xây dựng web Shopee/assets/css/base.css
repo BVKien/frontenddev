@@ -36,3 +36,13 @@ html {
     display: flex;
     flex-wrap: wrap;
 }
+
+/* Animation */
+/* Hiện dần lên */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}

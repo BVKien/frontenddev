@@ -4,14 +4,15 @@
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <title>F8 - Shopee</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.4.2-web/css/all.min.css">
         <link rel="stylesheet" href="./assets/css/base.css">
         <link rel="stylesheet" href="./assets/css/main.css">
     </head>
 
     <body>
-        <!-- Main -->
+        <!-- Begin: Main -->
         <div class="main">
-            <!-- Header -->
+            <!-- Begin: Header -->
             <header class="header">
 
                 <div class="grid">
@@ -20,16 +21,53 @@
                     <!-- .block__elem--mod -->
                     <nav class="navbar">
                         <ul class="navbar__list">
-                            <li class="navbar__item navbar__item--separate">Vào cửa hàng trên ứng dụng F8-Shopee</li>
-                            <li class="navbar__item">Kết nối</li>
+                            <li class="navbar__item navbar__item--separate navbar__item--qr-appear">
+                                Vào cửa hàng trên ứng dụng F8-Shopee
+                                <!-- QR Code -->
+                                <div class="navbar__qr">
+                                    <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/d91264e165ed6facc6178994d5afae79.png" alt="QR Code" class="navbar__qr-img">
+
+                                    <!-- Apps -->
+                                    <div class="navbar__qr-apps">
+
+                                        <a href="" class="navbar__qr-link">
+                                            <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/39f189e19764dab688d3850742f13718.png" alt="App1" class="navbar__qr-app-download">
+                                        </a>
+                                        <a href="" class="navbar__qr-link">
+                                            <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/f4f5426ce757aea491dce94201560583.png" alt="App2" class="navbar__qr-app-download">
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="navbar__item">
+                                <!-- 
+                                    icon-link ở đây là Element
+                                    vì không có nguyên tắc chặt chẽ cho việc đặt tên Element
+                                    -> 1 nguyên tác duy nhất 
+                                    Block__Element--Modifier
+                                -->
+                                <span class="navbar__item-title--no-pointer">Kết nối</span>
+                                <a href="#" class="navbar__icon-link">
+                                    <i class="navbar__icon fa-brands fa-facebook"></i>
+                                </a>
+                                <a href="#" class="navbar__icon-link">
+                                    <i class="navbar__icon fa-brands fa-instagram"></i>
+                                </a>
+                            </li>
                         </ul>
 
                         <ul class="navbar__list">
                             <li class="navbar__item">
-                                <a href="#" class="navbar__item-link">Thông báo</a>
+                                <a href="#" class="navbar__item-link">
+                                    <i class="navbar__icon fa-regular fa-bell"></i>
+                                    Thông báo
+                                </a>
                             </li>
                             <li class="navbar__item">
-                                <a href="#" class="navbar__item-link">Trợ giúp</a>
+                                <a href="#" class="navbar__item-link">
+                                    <i class="navbar__icon fa-regular fa-circle-question"></i>
+                                    Hỗ trợ
+                                </a>
                             </li>
                             <li class="navbar__item navbar__item--strong navbar__item--separate">Đăng ký</li>
                             <li class="navbar__item navbar__item--strong">Đăng nhập</li>
@@ -38,6 +76,7 @@
                 </div>
 
             </header>
+            <!-- End: Header -->
 
             <div class="container">
 
@@ -47,5 +86,6 @@
 
             </footer>
         </div>
+        <!-- End: Main -->
     </body>
 </html>

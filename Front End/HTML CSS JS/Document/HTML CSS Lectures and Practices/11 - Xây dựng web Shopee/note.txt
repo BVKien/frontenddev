@@ -37,3 +37,21 @@
 - Cho class grid bọc navbar -> 2 bên phần navbar lại căn lui ra giữa 
 - Bởi vì nó nhận theo kích thước màn hình 1200px
 
++++ Nhúng Font-Icons
+- Chọn file.min vì nhẹ hơn vì đã loại bỏ các ký tự thừa 
+<!-- 
+    icon-link ở đây là Element
+    vì không có nguyên tắc chặt chẽ cho việc đặt tên Element
+    -> 1 nguyên tác duy nhất 
+    Block__Element--Modifier
+-->
+
++++ Icons CSS
+- Thẻ span sinh ra với mục đích chứa 1 thẻ khác để CSS 
+
++++ Header QR code CSS
++ Quan trọng: 
+- /* Viết Pseudo element khi cầu nối giữa navbar item và QR Code quá xa */
+- /* Hover qppear QR Code */
+- animation: fadeIn ease-in 0.3s;
+- @keyframes ở base.css /* Animation */
