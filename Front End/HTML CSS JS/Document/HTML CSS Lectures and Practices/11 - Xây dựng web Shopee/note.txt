@@ -110,4 +110,20 @@ div.c {
 - display block cho thẻ <a> -> tự động kế thừa chiều ngang
 
 +++ Header giỏ hàng trống CSS
+- caret-color: var(--primary-color); đổi màu cho dáu nháy khi nhập
+- fix cầu nối PSEUDO: chua
+- fix border radius cho Notify: chua
+- làm nút tam giác cho cart ok 
+- hover cart list ok 
+- chưa hover cho nút và cart list cùng hiện được
+- transform-origin: calc(100% - 20px) top;
+- header__cart--no-cart-list-appear: cho cái này vào header__cart thì báo cart trống sẽ hiển thị 
+- tư duy bây giờ là làm thêm 1 cái khác tương tự 
+- làm thêm header__cart--cart-list-appear
+- nếu có cái này thì cart list sẽ hiển thị
+- hiện thị hay không phụ thuộc vào thuật toán của js
+- if cart != null ->  .header__cart .header__cart--no-cart-list-appear
+- else .header__cart .header__cart--cart-list-appear
 
++++ Header cart badge
+- Tiêu đề giỏ hàng

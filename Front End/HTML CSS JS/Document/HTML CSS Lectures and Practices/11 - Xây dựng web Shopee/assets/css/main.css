@@ -112,7 +112,8 @@
 /* Viết Pseudo element khi cầu nối giữa navbar item và QR Code quá xa */
 .navbar__qr::before,
 .navbar__notify::before,
-.header__search-option-item::before {
+.header__search-option-item::before,
+.header__cart-list::before {
     position: absolute;
     display: block;
     left: 0;
@@ -152,7 +153,7 @@
 /* --notify-appear */
 .navbar__notify {
     position: absolute;
-    top: 150%;
+    top: 120%;
     right: 0;
     width: 400px;
     border: 1px solid #D3D3D3;
@@ -169,15 +170,15 @@
     background-color: var(--white-color);
 }
 
-/* Làm nút hình tam giác */
+/* Làm nút hình tam giác cho Notify */
 .navbar__notify-header::before {
     content: "";
     border-width: 20px 25px;
     border-style: solid;
     border-color: transparent transparent var(--white-color) transparent;
     position: absolute;
-    right: 10px;
-    top: -35px;
+    right: 20px;
+    top: -30px;
     cursor: pointer;
 }
 
@@ -423,17 +424,81 @@
     align-items: center;
 }
 
+/* Header cart */
 .header__cart {
-    width: 150px;
+    margin: 0px 77px;
     text-align: center;
     margin-top: 8px;
+    position: relative;
 }
 
-.header__cart-icon {
+.header__cart-icon { 
     font-size: 2.4rem;
     color: var(--white-color);
 }
 
+.header__cart-notice {
+    position: absolute;
+    top: -45%;
+    left: 60%;
+    padding: 1px 5px;
+    font-size: 1.6rem;
+    border-radius: 16px;
+    border: 2px solid #f12009;
+    color: var(--primary-color);
+    background-color: var(--white-color);
+    cursor: pointer;
+}
+
+.header__cart--no-cart-list-appear:hover .header__cart-list {
+    display: block;
+}
+
+.header__cart-list {
+    position: absolute;
+    top: calc(100% + 25%);
+    right: -50%;
+    width: 444px;
+    background-color: var(--white-color);
+    display: none;
+    /* Phục vụ cho mũi tên tam giác */
+    transform-origin: calc(100% - 20px) top;
+    animation: growth linear 0.2s;
+    /* Bỏ comment để visibled */
+    display: block;
+}
+
+/* Làm nút hình tam giác cho Cart list */ 
+.header__cart-list-header::before {
+    content: "";
+    border-width: 20px 25px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    right: 0;
+    top: -9%;
+    cursor: pointer;
+}
+
+.header__cart-list--no-cart {
+    border-radius: 2px;
+    box-shadow: 0 0 5px #ccc;
+}
+
+.header__cart-no-cart-img {
+    width: 100%;
+    padding: 20%;
+}
+
+.header__cart-no-cart-msg {
+    position: absolute;
+    top: 80%;
+    left: 37%;
+    font-size: 1.4rem;
+    user-select: none;
+}
+
+/* Header search */
 .header__search-input-wrap {
     /* Để có thể chiếm hết kích thước còn lại 
     main axis
@@ -451,6 +516,7 @@
     color: var(--text-color);
     padding: 0 16px;
     border-radius: 2px;
+    caret-color: var(--primary-color);
 }
 
 /* CSS Selector */
