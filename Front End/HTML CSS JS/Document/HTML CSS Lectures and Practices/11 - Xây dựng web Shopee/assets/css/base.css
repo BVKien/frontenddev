@@ -73,6 +73,7 @@ html {
     right: 0;
     display: flex;
     animation: fadeIn linear 0.2s;
+    /* Show bằng cách comment display: none; lại */
     display: none;
 }
 

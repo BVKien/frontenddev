@@ -108,6 +108,7 @@
     display: block;
 }
 
+/* PSEUDO */
 /* Viết Pseudo element khi cầu nối giữa navbar item và QR Code quá xa */
 .navbar__qr::before,
 .navbar__notify::before,
@@ -433,15 +434,29 @@
     color: var(--white-color);
 }
 
-.header__search-input {
+.header__search-input-wrap {
+    /* Để có thể chiếm hết kích thước còn lại 
+    main axis
+    */
     flex: 1;
-    height: 100%;
+    position: relative;
+}
+
+.header__search-input {
+    /* Để ăn width theo input-wrap */
+    width: 100%;
     border: none;
     outline: none;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: var(--text-color);
     padding: 0 16px;
     border-radius: 2px;
+}
+
+/* CSS Selector */
+/* FOCUS */
+.header__search-input:focus ~ .header__search-history {
+    display: block;
 }
 
 .header__search-select {
@@ -508,13 +523,13 @@
 }
 
 .header__search-option-item:first-child {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
 }
 
 .header__search-option-item:last-child {
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 
 .header__search-option-item:hover {
@@ -537,4 +552,48 @@
 
 .header__search-option-item--active {
     display: inline-block;
+}
+
+/* Search history */
+.header__search-history {
+    position: absolute;
+    top: calc(100% + 80%);
+    left: 0;
+    width: calc(100% - 6%);
+    background-color: var(--white-color);
+    box-shadow: 0 0 5px #ccc;
+    border-radius: 2px;
+    /* Visibled bằng cách bỏ comment */
+    display: none;
+}
+
+.header__search-history-heading {
+    margin: 8px 12px;
+    font-size: 1.4rem;
+    color: #ccc;
+    user-select: none;
+}
+
+.header__search-history-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.header__search-history-item {
+    height: 38px;
+    padding: 0 12px;
+}
+
+.header__search-history-item:hover {
+    /* fafafa */
+    background-color: #fdebe4;
+}
+
+.header__search-history-item-link {
+    text-decoration: none;
+    display: block;
+    line-height: 38px;
+    font-size: 1.2rem;
+    color: var(--text-color);
 }
