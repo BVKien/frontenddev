@@ -105,3 +105,9 @@ div.c {
 
 +++ Header tìm kiếm CSS
 
++++ Lịch sử tìm kiếm CSS
+- focus
+- display block cho thẻ <a> -> tự động kế thừa chiều ngang
+
++++ Header giỏ hàng trống CSS
+
