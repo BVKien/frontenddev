@@ -14,7 +14,7 @@
         <div class="main">
             <!-- Begin: Header -->
             <header class="header">
-
+                <!-- Begin: Grid - from base.css -->
                 <div class="grid">
                     <!-- Begin: Navbar -->
                     <!-- Block_Element -->
@@ -150,6 +150,7 @@
                     <!-- Begin: Header with search -->
                     <!-- Block header-with-search -->
                     <div class="header-with-search">
+                        <!-- Begin: Header logo -->
                         <div class="header__logo">
                             <svg viewBox="0 0 192 65" class="header__logo-img">
                                 <g fill-rule="evenodd">
@@ -159,13 +160,16 @@
                                 </g>
                             </svg>                            
                         </div>
+                        <!-- End: Header logo -->
 
+                        <!-- Begin: Header search -->
                         <div class="header__search">
                             <div class="header__search-input-wrap">
-                                <!-- Input Search -->
+                                <!-- Begin: Input search -->
                                 <input type="text" class="header__search-input" placeholder="Tìm kiếm sản phẩm">
+                                <!-- End: Input search -->
                                 
-                                <!-- Search history -->
+                                <!-- Begin: Search history -->
                                 <div class="header__search-history">
                                     <p class="header__search-history-heading">
                                         Lịch sử tìm kiếm
@@ -188,12 +192,18 @@
                                         </li>
                                     </ul>
                                 </div>
+                                <!-- End: Search history -->
                             </div>
+
+                            <!-- Begin: Header select options - Trong shop | Ngoai shop | etcetera... -->
                             <div class="header__search-select">
                                 <span class="header__search-select-title">
+                                    <!-- Begin: Title -->
                                     Trong shop
                                     <i class="header__search-select-icon fa-solid fa-angle-down"></i>
+                                    <!-- End: Title -->
                                     
+                                    <!-- Begin: Option list -->
                                     <ul class="header__search-option">
                                         <li class="header__search-option-item">
                                             <span class="header__search-option-item-title">
@@ -209,33 +219,39 @@
                                             <i class="header__search-option-item-icon fa-solid fa-check"></i>
                                         </li>
                                     </ul>
+                                    <!-- End: Option list -->
                                 </span>
+                                <!-- End: Header select options - Trong shop | Ngoai shop | etcetera... -->
+
+                                <!-- Begin: Search button -->
                                 <button class="header__search-btn">
+                                    <!-- Search icon -->
                                     <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
                                 </button>
+                                <!-- End: Search button -->
                             </div>
                         </div>
+                        <!-- End: Header search -->
 
+                        <!-- Begin: Header cart -->
                         <div class="header__cart">
                             <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
                         </div>
+                        <!-- End: Header cart -->
+
                     </div>
                     <!-- End: Header with search -->
                 </div>
-
+                <!-- End: Grid - from base.css -->
             </header>
             <!-- End: Header -->
 
             <!-- Begin: Container -->
-            <div class="container">
-
-            </div>
+            <div class="container"></div>
             <!-- End: Container -->
 
             <!-- Begin: Footer -->
-            <footer class="footer">
-
-            </footer>
+            <footer class="footer"></footer>
             <!-- End: Footer -->
 
             <!-- Begin: Modal layout -->
@@ -245,8 +261,8 @@
                 <div class="modal__body">
                     <!-- Begin: Register form -->
                     <!-- auth-form là Block -->
-                    <!-- <div class="auth-form">
-                        Begin: Auth form Container
+                    <div class="auth-form">
+                        <!-- Begin: Auth form Container -->
                         <div class="auth-form__container">
                             <div class="auth-form__header">
                                 <h3 class="auth-form__heading">Đăng ký</h3>
@@ -284,9 +300,9 @@
                                 <button class="btn btn--primary">ĐĂNG KÝ</button>
                             </div>
                         </div>
-                        End: Auth form Container
+                        <!-- End: Auth form Container -->
 
-                        Begin: Social form
+                        <!-- Begin: Social form -->
                         <div class="auth-form__socials">
                             <a href="#" class="auth-form__socials--facebook btn btn--size-s btn--width-icon">
                                 <i class="auth-form__socials-icon fa-brands fa-square-facebook"></i>
@@ -302,9 +318,8 @@
                                 </span>
                             </a>
                         </div>
-                        End: Social form
-
-                    </div> -->
+                        <!-- End: Social form -->
+                    </div>
                     <!-- End: Register form -->
 
                     <!-- Begin: Login form -->
@@ -357,7 +372,6 @@
                             </a>
                         </div>
                         <!-- End: Social form -->
-
                     </div>
                     <!-- End: Login form -->
                 </div>
