@@ -1,7 +1,7 @@
 /* Header */
 .header {
     /* Không cần set chiều ngang vì tất cả đều có display block và kế thừa nhau */
-    height: 120px;
+    height: var(--header-height);
     background-image: linear-gradient(#ee4d2d,#ff7337);
 }
 
@@ -16,6 +16,7 @@
     /* Mặc định thẻ <ul> có giá trị padding-left: 40px;
     -> phải bỏ */
     padding-left: 0;
+    margin: 4px 0 0 0;
 }
 
 .navbar__item {
@@ -99,7 +100,7 @@
     padding: 0 5px;
     box-shadow: 1px 1px 1px #ccc;
     display: none;
-    animation: fadeIn ease-in 0.3s;
+    animation: fadeIn ease-in 0.2s;
 }
 
 /* Hover qppear QR Code */
@@ -109,12 +110,13 @@
 
 /* Viết Pseudo element khi cầu nối giữa navbar item và QR Code quá xa */
 .navbar__qr::before,
-.navbar__notify::before {
+.navbar__notify::before,
+.header__search-option-item::before {
     position: absolute;
     display: block;
     left: 0;
     top: -15%;
-    width: 105%;
+    width: 100%;
     height: 20%;
     content: "";
     cursor: pointer;
@@ -156,7 +158,7 @@
     background-color: var(--white-color);
     cursor: default;
     transform-origin: calc(100% - 20px) top;
-    animation: growth ease-in 0.2s;
+    animation: growth linear 0.2s;
     will-change: opacity, transform;
     display: none;
 }
@@ -391,4 +393,148 @@
 
 .auth-form__help-forgot {
     color: var(--primary-color);
+}
+
+/* Header with search */
+.header-with-search {
+    height: var(--header-with-search-height);
+    display: flex;
+    /* Trục cross axis */
+    align-items: center;
+    margin: 0 6px;
+}
+
+.header__logo {
+    width: 200px;
+}
+
+.header__logo-img {
+    width: 150px;
+}
+
+.header__search {
+    /* flex = 1 để chiếm hết chiều ngang */
+    flex: 1;
+    height: 40px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+}
+
+.header__cart {
+    width: 150px;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.header__cart-icon {
+    font-size: 2.4rem;
+    color: var(--white-color);
+}
+
+.header__search-input {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    padding: 0 16px;
+    border-radius: 2px;
+}
+
+.header__search-select {
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0 0 0 16px;
+}
+
+.header__search-select-title {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    position: relative;
+    cursor: pointer;
+}
+
+.header__search-select-title:hover 
+.header__search-option-item {
+    display: block;
+}
+
+.header__search-select-icon {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin: 0 16px 0 8px;
+    position: relative;
+    top: 2px;
+}
+
+.header__search-btn {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    margin-top: 0.05rem;
+    margin-right: 3px;
+    border-radius: 2px;
+    border: none;
+    width: 60px;
+    height: 34px;
+}
+
+.header__search-btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.header__search-btn-icon {
+    font-size: 1.6rem;
+}
+
+.header__search-option {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 170%;
+    list-style-type: none;
+}
+
+.header__search-option-item {
+    background-color: var(--white-color);
+    padding: 8px 8px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    min-height: 30px;
+    line-height: 30px;
+    display: none;
+    animation: fadeIn linear 0.2s;
+}
+
+.header__search-option-item:first-child {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.header__search-option-item:last-child {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.header__search-option-item:hover {
+    cursor: pointer;
+    background-color: #fdebe4;
+}
+
+.header__search-option-item-title {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-left: 20%;
+}
+
+.header__search-option-item-icon {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-left: 8px;
+    display: none;
+}
+
+.header__search-option-item--active {
+    display: inline-block;
 }

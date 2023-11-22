@@ -98,3 +98,10 @@ div.c {
 +++ CSS form đăng ký - Phần 2
 - filter: brightness(80%);
 - giảm độ sáng
+
++++ CSS form đăng nhập
+
++++ Dựng khung phần tìm kiếm
+
++++ Header tìm kiếm CSS
+
