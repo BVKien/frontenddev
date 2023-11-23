@@ -130,3 +130,60 @@ div.c {
 
 +++ Header cart - List products
 - Từ khóa CEO
+
++++ Header user info
+- Thông báo khi hiện ra không đè lên những phần từ khác 
+- Xử lý nó, tương tự với user-menu
+- Hướng giải quyết - các lớp layer -> xử lý = z-indexs
+- Trường hợp thẻ <a> mặc định không thể paddding, margin ...., có nghĩa thẻ <a> mặc định không có display -> xử lý display: inline-block, block....
+- hover vào bị biếm mất border radius -> xử lý với li đầu và cưới bằng firrts child last child
+
++++ Header fix UI bugs
+- navbar fontsize + ussername 1.4rem -> 1.3rem
+- navbar icons không cân 
+.navbar__icon-link:nth-child(2) {
+    margin-left: 3px;
+}
+
++++ Danh mục: Dựng khung
+- 12 columns grid - responsive 
+- Tại sao bootstrap lại hoạt động như vậy?
+
++++ Danh mục: Base responsive
+- luôn phải bắt đầu bằng grid
+- columns nằm trong rows -> phải tạo ra row trước sau đó tạo ra columns bên trong
+- khoảng cách column gird chia trên máy pc thường là 24px
+
++++ Danh mục CSS
+- Đặt tên rõ ràng tránh bị trùng khi phát triển ngày càng lớn 
+/* Thẻ <a> padding phải có display: block | inline block */
+/* 
++ transition định nghĩa chuyển động 
+Có nghĩa khi được khai báo sẽ chuyển động như thế nào
+- set vị trí trước -> position: relative cho chính nó -> right: 0;
+- sau khi hover -> transition sẽ được đọc lại -> working
+*/
+
++++ Dựng khung: Sắp xếp sản phẩm - Filter products
+- sửa base.css btn flex -> display: inline-flex;
+- Mặc định thẻ h3 có margin -> bỏ
+- btn bên base.css không được để hover: chưa sửa - lý do ko nên, vì nhiều btn cần hover nhưng nhiều btn ko cần -> tránh xung đột
+- select-input viết sang base.css để có thể tái sử dụng
+- <span> viết liền không enter xuống dòng -> ko bị space - cách
+-    /* overflow hidden - không bị ảnh hướng boiwse các nút con - cũng như background */
+    overflow: hidden;
+
+- .home-filter__page-btn {
+    flex: 1;
+    display: flex;
+    background-color: var(--white-color);
+}
+
+.home-filter__page-icon  {
+    margin: auto;
+}
+
+
+- combo  display: flex; và margin: auto; -> căn giữa 
+- fix đè sau 
+

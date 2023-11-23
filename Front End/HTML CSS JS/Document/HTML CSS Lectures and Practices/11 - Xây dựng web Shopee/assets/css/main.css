@@ -17,6 +17,7 @@
     -> phải bỏ */
     padding-left: 0;
     margin: 4px 0 0 0;
+    display: flex;
 }
 
 .navbar__item {
@@ -35,7 +36,7 @@
 .navbar__item-link {
     display: inline-block;
     /* 15px */
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--white-color);
     text-decoration: none;
 }
@@ -44,7 +45,7 @@
 .navbar__item,
 .navbar__item-link,
 .navbar__icon-link {
-    display: inline-flex;
+    display: flex;
     align-items: center;
 }
 
@@ -75,6 +76,11 @@
 .navbar__icon-link {
     color: var(--white-color);
     text-decoration: none;
+}
+
+/* Chưa hiểu tại sao là child (2) */
+.navbar__icon-link:nth-child(2) {
+    margin-left: 3px;
 }
 
 .navbar__icon {
@@ -109,6 +115,8 @@
 }
 
 /* PSEUDO */
+/* BEFORE */
+/* Làm cầu nối */
 /* Viết Pseudo element khi cầu nối giữa navbar item và QR Code quá xa */
 .navbar__qr::before,
 .navbar__notify::before,
@@ -153,10 +161,12 @@
 /* --notify-appear */
 .navbar__notify {
     position: absolute;
+    z-index: 1;
     top: 120%;
     right: 0;
     width: 400px;
     border: 1px solid #D3D3D3;
+    border-radius: 2px;
     background-color: var(--white-color);
     cursor: default;
     transform-origin: calc(100% - 20px) top;
@@ -167,6 +177,7 @@
 
 .navbar__notify-header {
     height: 40px;
+    border-radius: 2px;
     background-color: var(--white-color);
 }
 
@@ -185,6 +196,7 @@
 .navbar__notify-header p {
     color: #757272;
     margin: 0 0 0 12px;
+    border-radius: 2px;
     /* cho line height của dòng bằng với chiều cao thằng chứa nó */
     /* -> nó sẽ căn giữa */
     line-height: 40px;
@@ -256,6 +268,94 @@
     text-decoration: none;
     line-height: 40px;
     width: 100%;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.header__navbar-user {
+    display: flex;
+    justify-items: center;
+    position: relative;
+}
+
+.header__navbar-user:hover .header__navbar-user-menu {
+    display: block;
+}
+
+.header__navbar-user-avatar {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--white-color);
+}
+
+.header__navbar-user-name {
+    margin-left: 4px;
+    font-size: 1.3rem;
+    color: var(--white-color);
+}
+
+/* Tính góc cho animation growth
+    animation */
+.header__navbar-user-menu {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    right: 0;
+    width: 160px;
+    padding: 0;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    list-style-type: none;
+    box-shadow: 0 0 5px #ccc;
+    /* animation */
+    transform-origin: calc(100% - 50%) top;
+    animation: growth linear 0.2s;
+    display: none;
+}
+
+/* 
+Làm mũi tên tam giác cho user-menu
+sử dụng after
+*/
+/* AFTER */
+.header__navbar-user-menu::after {
+    content: "";
+    position: absolute;
+    right: 40%;
+    top: -7%;
+    border-width: 8px 15px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    cursor: pointer;
+}
+
+.header__navbar-user-menu-item-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    padding: 15px 26px;
+    display: block;
+}
+
+.header__navbar-user-menu-item-link:hover {
+    background-color: #fafafa;
+    color: #18eca9;
+}
+
+/* Xử lý mất border */
+.header__navbar-user-menu-item-link:first-child {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.header__navbar-user-menu-item-link:last-child {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.header__navbar-user-menu-item--separate {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Authen modal */
@@ -410,6 +510,11 @@
     width: 200px;
 }
 
+.header__logo-link {
+    color: transparent;
+    text-decoration: none;
+}
+
 .header__logo-img {
     width: 150px;
 }
@@ -460,7 +565,7 @@
 
 .header__cart-list {
     position: absolute;
-    top: calc(100% + 25%);
+    top: calc(100% + 30%);
     right: -50%;
     width: 400px;
     background-color: var(--white-color);
@@ -678,7 +783,7 @@ sử dụng after
 .header__search-option {
     position: absolute;
     right: 0;
-    top: 100%;
+    top: 110%;
     width: 170%;
     list-style-type: none;
 }
@@ -767,4 +872,166 @@ sử dụng after
     line-height: 38px;
     font-size: 1.2rem;
     color: var(--text-color);
+}
+
+/* App container */
+.app__container {
+    background-color: #f5f5f5;
+}
+
+/* Để padding cho content show product ko dính sát lên Header */
+.app__container-content {
+    padding-top: 36px;
+}
+
+.category {
+    border-radius: 2px;
+    background-color: var(--white-color);
+}
+
+/* Mặc định thẻ h3 có margin -> bỏ */
+.category__header {
+    color: var(--text-color);
+    font-size: 1.6rem;
+    padding: 16px 16px;
+    margin-top: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.category__header-icon {
+    font-size: 1.6rem;
+    margin-right: 4px;
+}
+
+.category-list {
+    padding: 0 0 16px 0;
+    list-style-type: none;
+    margin-left: 10%;
+}
+
+.category-item--active .category-item__link {
+    color: var(--primary-color);
+}
+
+.category-item--active .category-item__link::before {
+    position: absolute;
+    /* 50% của <a> */
+    top: 50%;
+    left: 0;
+    content: "";
+    border: 6px solid;
+    /* 50% của chính cái trục cross của chính nó -> 50% của top: 50%;
+    - không nên fix cứng, nên tính toán tránh sự thay đổi
+    */
+    transform: translateY(-50%) translateX(50%);
+    border-color: transparent transparent transparent var(--primary-color);
+}
+
+/* Thẻ <a> padding phải có display: block | inline block */
+/* 
++ transition định nghĩa chuyển động 
+Có nghĩa khi được khai báo sẽ chuyển động như thế nào
+- set vị trí trước -> position: relative cho chính nó -> right: 0;
+- sau khi hover -> transition sẽ được đọc lại -> working
+*/
+.category-item__link {
+    font-size: 1.4rem;
+    display: block;
+    padding: 8px 16px;
+    color: var(--text-color);
+    text-decoration: none;
+
+    /* 
+    + transition định nghĩa chuyển động 
+    Có nghĩa khi được khai báo sẽ chuyển động như thế nào
+    - set vị trí trước -> right: 0;
+    - sau khi hover -> transition sẽ được đọc lại -> working
+    */
+    position: relative;
+    right: 0;
+    transition: right linear 0.1s;
+}
+
+/* transition */
+.category-item__link:hover {
+    right: -4%;
+    color: var(--primary-color);
+}
+
+/* Home */
+/* Filter product */
+.home-filter {
+    display: flex;
+    align-items: center;
+    padding: 12px 22px;
+    border-radius: 2px;
+    background-color: #eaeaea;
+    box-shadow: 0 0 5px #f8f8f8;
+}
+
+.home-filter__title {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-right: 16px;
+}
+
+.home-filter__btn {
+    min-width: 90px;
+    margin-right: 12px;
+}
+
+.home-filter__page {
+    margin-left: auto;
+}
+
+.home-filter__page-number {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-right: 22px;
+}
+
+.home-filter__page-current {
+    color: var(--primary-color);
+}
+
+.home-filter__page-controls {
+    border-radius: 2px;
+    /* overflow hidden - không bị ảnh hướng boiwse các nút con - cũng như background */
+    overflow: hidden;
+    display: flex;
+    /* w h + .home-filter__page-btn flex: 1; -> nó sẽ tự chia đôi */
+    width: 72px;
+    height: 36px;
+}
+
+.home-filter__page-btn {
+    flex: 1;
+    display: flex;
+    background-color: var(--white-color);
+    text-decoration: none;
+    box-shadow: 0 0 5px #ccc;
+}
+
+.home-filter__page-btn:hover {
+    background-color: #f5efed;
+}
+
+/* Disabled icon pagging */
+.home-filter__page-btn--disabled {
+    cursor: default;
+    background-color: #f9f9f9;
+}
+
+.home-filter__page-btn--disabled .home-filter__page-icon {
+    color: #989393;
+}
+
+.home-filter__page-btn:first-child {
+    border-right: 1px solid #eee;
+}
+
+.home-filter__page-icon  {
+    margin: auto;
+    font-size: 1.3rem;
+    color: var(--black-color);
 }
