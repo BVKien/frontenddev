@@ -41,6 +41,27 @@ html {
 .grid__row {
     display: flex;
     flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+/* Test responsive */
+.grid_col-2 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: calc((100% / 12) * 2);
+}
+
+.grid_col-8 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: calc((100% / 12) * 8);
+}
+
+.grid_col-10 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: calc((100% / 12) * 10);
 }
 
 /* Animation */
@@ -112,7 +133,7 @@ Body -> hiển thị content
     border-radius: 2px;
     padding: 0 12px;
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     line-height: 1.6rem;
@@ -142,4 +163,60 @@ Body -> hiển thị content
 .btn.btn--disabled {
     cursor: default;
     opacity: 0.5;
+}
+
+/* Selection */
+.select-input {
+    position: relative;
+    min-width: 200px;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.select-input:hover .select-input__list {
+    display: block;
+}
+
+.select-input__title {
+    font-size: 1.4rem;
+}
+
+.select-input__icon {
+    font-size: 1.4rem;
+    color: #9c9c9c;
+    position: relative;
+    top: 0;
+    right: 0;
+}
+
+.select-input__list {
+    position: absolute;
+    top: 75%;
+    left: 0;
+    right: 0;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    padding-left: 0;
+    list-style-type: none;
+    /* Bỏ display: none; để Visibled mặc định */
+    display: none;
+}
+
+.select-input__item-link {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 12px;
+}
+
+.select-input__item-link:hover {
+    color: var(--primary-color);
 }
