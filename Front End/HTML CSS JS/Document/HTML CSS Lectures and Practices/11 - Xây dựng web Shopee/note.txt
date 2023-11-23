@@ -127,3 +127,6 @@ div.c {
 
 +++ Header cart badge
 - Tiêu đề giỏ hàng
+
++++ Header cart - List products
+- Từ khóa CEO

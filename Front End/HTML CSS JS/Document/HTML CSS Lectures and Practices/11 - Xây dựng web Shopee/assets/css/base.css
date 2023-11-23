@@ -101,7 +101,7 @@ Body -> hiển thị content
 
 /* Button */
 .btn {
-    min-width: 142px;
+    min-width: 124px;
     min-height: 34px;    
     font-size: 1.5rem;
     background-color: var(--white-color);
