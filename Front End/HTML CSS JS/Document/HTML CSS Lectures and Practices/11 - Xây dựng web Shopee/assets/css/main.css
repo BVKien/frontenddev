@@ -1320,3 +1320,99 @@ transform-origin: right; -> xử lý -> đưa sang bên phải
     margin-top: 48px;
     margin-bottom: 32px;
 }
+
+/* Footer */
+.footer {
+    padding: 38px 0 0 0;
+    background-color: var(--white-color);
+    border-top: 1px solid var(--primary-color);
+}
+
+.footer__header {
+    margin: 0;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+
+/* 
+- thẻ <ul> vốn dĩ có padding-left mặc định theo trình duyệt 
+- nên kiểm tra kỹ 
+*/
+.footer-list {
+    padding: 0;
+    list-style-type: none;
+}
+
+.footer-item__link {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--text-color);
+    width: 100%;
+    padding: 8px 0;
+}
+
+.footer-item__link:hover {
+    color: var(--primary-color);
+}
+
+.footer-item__icon {
+    font-size: 1.6rem;
+    margin: -1px 8px 0 0;
+}
+
+/* footer download */
+.footer__download {
+    display: flex;
+}
+
+/* 
+- chưa hiểu lắm
+- do đang bị dọc theo trục cross axis
+- > phải dùng object-fit: contain; */
+.footer__qr-img {
+    --width: 80px;
+    --height: 80px;
+    width: var(--width);
+    height: var(--height);
+    /* object-fit: contain; */
+    border: 1px solid var(--border-color);
+}
+
+.footer__download-apps {
+    flex: 1;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* fix thẻ <a> theo trình duyệt */
+.footer__download-app-link {
+    color: transparent;
+    text-decoration: none;
+}
+
+.footer__download-app-img {
+    --height: 20px;
+    height: var(--height);
+    line-height: var(--height);
+}
+
+/* Footer bottom */
+/* Copyright */
+.footer__bottom {
+    padding: 8px 0;
+    margin-top: 24px;
+    background-color: var(--white-color);
+}
+
+.footer__text {
+    /* bỏ marrgin mặc định của thẻ <p> */
+    margin: 0;
+    font-size: 1.4rem;
+    text-align: center;
+    color: #999;
+}
