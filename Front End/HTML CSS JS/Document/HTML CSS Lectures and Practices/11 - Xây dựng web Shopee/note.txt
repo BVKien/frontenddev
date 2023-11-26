@@ -187,3 +187,53 @@ Có nghĩa khi được khai báo sẽ chuyển động như thế nào
 - combo  display: flex; và margin: auto; -> căn giữa 
 - fix đè sau 
 
++++ Dựng khung sản phẩm
+- Làm ảnh product bằng thẻ <div> 
+- trường hợp đặc biệt
+
++++ Sản phẩm CSS
+- thẻ h mặc định trình duyệt luôn có margin 
+- line-height là chiều cao của dòng chữ
+
++++ Sản phẩm CSS - Phần 2
+/*     
+zoom: 1;
+transform: scale(0.5); 
+*/
+- Phóng to thu nhỏ phần tử hiện tại
+zoom: 1;
+transform: scale(0.5); -> khi thu nhỏ sẽ thu nhỏ vào trung tâm -> lệch vào trong
+transform-origin: right; -> xử lý -> đưa sang bên phải
+
++++ Sản phẩm CSS - Phần 3
+
++++ Sản phẩm: CSS nhãn yêu thích
+- thuộc tính curent color - ăn theo màu hiện tại của thằng cha nó 
+- filter: brightness(60%); - giảm độ sáng cho màu
+ 
++++ Sản phẩm: CSS nhãn giảm giá
+- làm mũi tên 
+span {
+    margin: auto;
+    border-width: 0 50px 50px;
+    border-style: solid;
+    border-color: red green orange violet;
+
+    /*
+    border: 50px solid ;
+    */
+}
+
++++ Hoàn thiện phần sản phẩm
+
++++ Fix UI bugs - Phần 2
+- fix z-index
+- cart quantity
++ set height 
+- không set cố định
+- set theo tỉ lệ màn hình
+- đơn vị css vh - view port height
+
+- cart product name limiting - giới hạn tên product trong cart
+- background-position: top center; - trong trường hợp này nó sẽ căn top giữa -> dù ảnh có ko đủ độ vuộng để full căn giữa để bordeer radius 2 góc trên thì vẫn có thể giải quyết
+

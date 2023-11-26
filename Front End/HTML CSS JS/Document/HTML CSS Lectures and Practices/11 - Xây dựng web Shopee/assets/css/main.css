@@ -104,7 +104,8 @@
     width: 182px;
     height: 220px;
     padding: 0 5px;
-    box-shadow: 1px 1px 1px #ccc;
+    box-shadow: 0 1px 1px #898989;
+    z-index: 1;
     display: none;
     animation: fadeIn ease-in 0.2s;
 }
@@ -161,7 +162,6 @@
 /* --notify-appear */
 .navbar__notify {
     position: absolute;
-    z-index: 1;
     top: 120%;
     right: 0;
     width: 400px;
@@ -172,6 +172,7 @@
     transform-origin: calc(100% - 20px) top;
     animation: growth linear 0.2s;
     will-change: opacity, transform;
+    z-index: 2;
     display: none;
 }
 
@@ -300,7 +301,7 @@
 .header__navbar-user-menu {
     position: absolute;
     z-index: 1;
-    top: 100%;
+    top: calc(100% + 5px);
     right: 0;
     width: 160px;
     padding: 0;
@@ -575,6 +576,7 @@ sử dụng after
     /* animation */
     transform-origin: calc(100% - 20px) top;
     animation: growth linear 0.2s;
+    z-index: 1;
     /* comment display: none để hiển thị - visibled */
     display: none;
 }
@@ -627,9 +629,22 @@ sử dụng after
     user-select: none;
 }
 
+/* 
+- overflow: scroll;
+- thanh cuộn
+*/
 .header__cart-list-items {
     padding-left: 0;
     list-style-type: none;
+    /* 
+    + set height 
+    - không set cố định
+    - set theo tỉ lệ màn hình - theo đơn vị chiều cao của trình duyệt
+    - đơn vị css vh - view port height
+    */
+    height: 50vh;
+    /* nếu vượt quá thẻ cha -> cho nó thanh cuộn */
+    overflow-y: scroll;
 }
 
 .header__cart-item {
@@ -663,6 +678,17 @@ sử dụng after
 .header__cart-item-title {
     font-size: 1.4rem;
     color: var(--black-color);
+    line-height: 2rem;
+    max-height: 2rem;
+    overflow: hidden;
+    /* flex 1 cố gắng chiếm tất cả khoảng không có thể -> trở về trạng  thái ban đầu */
+    flex: 1;
+    padding-right: 4px;
+    text-align: left;
+    /* tạo dấu ... */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
 
 .header__cart-item-price {
@@ -726,7 +752,7 @@ sử dụng after
     color: var(--text-color);
     padding: 0 16px;
     border-radius: 2px;
-    caret-color: var(--primary-color);
+    caret-color: var(--text-color);
 }
 
 /* CSS Selector */
@@ -786,6 +812,7 @@ sử dụng after
     top: 110%;
     width: 170%;
     list-style-type: none;
+    z-index: 1;
 }
 
 .header__search-option-item {
@@ -839,6 +866,7 @@ sử dụng after
     background-color: var(--white-color);
     box-shadow: 0 0 5px #ccc;
     border-radius: 2px;
+    z-index: 1;
     /* Visibled bằng cách bỏ comment */
     display: none;
 }
@@ -893,9 +921,10 @@ sử dụng after
 .category__header {
     color: var(--text-color);
     font-size: 1.6rem;
-    padding: 16px 16px;
+    padding: 16px 16px 0;
     margin-top: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.05); */
+    text-transform: uppercase;
 }
 
 .category__header-icon {
@@ -904,9 +933,29 @@ sử dụng after
 }
 
 .category-list {
-    padding: 0 0 16px 0;
+    padding: 0;
     list-style-type: none;
-    margin-left: 10%;
+}
+
+.category-item {
+    position: relative;
+}
+
+.category-item:last-child {
+    padding-bottom: 4px;
+}
+
+.category-item::before {
+    content: "";
+    border-top: 1px solid #eee;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 16px;
+}
+
+.category-item:first-child::before {
+    display: none;
 }
 
 .category-item--active .category-item__link {
@@ -937,7 +986,7 @@ Có nghĩa khi được khai báo sẽ chuyển động như thế nào
 .category-item__link {
     font-size: 1.4rem;
     display: block;
-    padding: 8px 16px;
+    padding: 12px 20px;
     color: var(--text-color);
     text-decoration: none;
 
@@ -1019,7 +1068,7 @@ Có nghĩa khi được khai báo sẽ chuyển động như thế nào
 /* Disabled icon pagging */
 .home-filter__page-btn--disabled {
     cursor: default;
-    background-color: #f9f9f9;
+    background-color: #f9f9f9 !important;
 }
 
 .home-filter__page-btn--disabled .home-filter__page-icon {
@@ -1034,4 +1083,235 @@ Có nghĩa khi được khai báo sẽ chuyển động như thế nào
     margin: auto;
     font-size: 1.3rem;
     color: var(--black-color);
+}
+
+.home-products {
+    margin-bottom: 50px;
+}
+
+/* Home - Product items */
+.product-item {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    margin-top: 10px;
+    background-color: var(--white-color);
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    /* 
+    - transition - thuộc tính khai báo chuyển động khi có animation sẽ tạo cho cái gì
+    - -> có thể dùng thuộc tính translate trong transform để chuyển động
+    */
+    transition: transform linear 0.1s;
+    /* Để khai báo cho trình duyệt hiểu để tối ưu những animation */
+    will-change: transform;
+}
+
+.product-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* 
+img - padding tỉ lệ tương đối với chính thằng chứa nó - .product-item */
+.product-item__img {
+    /* 100% được hiểu là chiều ngang của thẻ chứa nó */
+    padding-top: 100%;
+    background-repeat: no-repeat;
+    background-color: var(--white-color);
+    background-size: contain;
+    /* cover */
+    background-position: top center;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+/* 
++ Tạo dấu ... cho name khi quá giớ hạn dòng 
+- tư duy - set height cho nó
+- ẩn chữ thừa bằng overflow: hidden
+- có nghĩa chỉ chạy với trìn duyệt hỗ trợ webkitbox
+- nếu ko hỗ trợ thì chạy display: block;
+- -webkit-box-orient: vertical; là điều hướng nào - ở đây là chiều dọc
+- -webkit-line-clamp: 2; - giới hạn - tự đọc
+*/
+.product-item__name {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 1.8rem;
+    height: calc(1.8rem * 2);
+    margin: 10px 10px 6px;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    /* Cách này để nếu như trình duyệt không hỗ trợ thì tự động chay... trên 1 dòng */
+    /* text-overflow: ellipsis;
+    white-space: nowrap; */
+}
+
+
+.product-item__price {
+    display: flex;
+    align-items: baseline;
+    /* Để xuống dòng khi giá quá dài */
+    flex-wrap: wrap;
+}
+
+.product-item__price-old {
+    font-size: 1.3rem;
+    color: #999;
+    margin-left: 10px;
+    text-decoration: line-through rgba(0, 0, 0, 0.7);
+}
+
+.product-item__price-current {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-left: 10px;
+}
+
+.product-item__action {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 10px 0;
+}
+
+.product-item__like {
+    font-size: 1.3rem;
+
+}
+
+/* i.product-item__like-status-liked
+- làm như vậy nếu css bị mất độ ưu tiên 
+- nên tránh important
+*/
+.product-item__like-status-liked {
+    color: #ee4d2d;
+    display: none;
+}
+
+/* Khi like staus-liked */
+.product-item__like--status-liked .product-item__like-status-liked {
+    display: inline-block;
+}
+
+.product-item__like--status-liked .product-item__like-status-unliked {
+    display: none;
+}
+
+/*     
+zoom: 1;
+transform: scale(0.5); -> khi thu nhỏ sẽ thu nhỏ vào trung tâm -> lệch vào trong
+transform-origin: right; -> xử lý -> đưa sang bên phải
+*/
+.product-item__rating {
+    font-size: 0.6rem;
+    color: #aaa;
+    /* auto có nghĩa là cứ đẩy cho đến khi chạm vào item tiếp theo thì thôi */
+    margin: 1px 0 0 auto;
+}
+
+.product-item__star--staus-rated {
+    color: var(--gold-color);
+}
+
+.product-item__sold {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-left: 6px;
+}
+
+.product-item__origin {
+    display: flex;
+    margin: 6px 10px 0;
+    color: #888;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.product-item__brand {
+    /* auto tự động đẩy */
+    margin-right: auto;
+}
+
+/* Sử dụng current color */
+/* currentColor - khi sử dụng sẽ ăn theo màu của  thằng cha nó */
+.product-item__favourite {
+    position: absolute;
+    top: 10px;
+    left: -4px;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    padding-right: 4px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    /* current color */
+    color: var(--primary-color);
+    background: currentColor;
+}
+
+/* Sử dụng current color */
+/* Làm nút gập am gác nhỏ cho thẻ yêu thích - tam giác vạt */
+.product-item__favourite::after {
+    content: "";
+    position: absolute;
+    border-left: 4px solid transparent;
+    border-top: 4px solid currentColor;
+    filter: brightness(70%);
+    left: 0;
+    bottom: -4px;
+}
+
+.product-item__favourite-icon {
+    font-size: 1rem;
+    margin: 0 2px 0 4px;
+    color: var(--white-color);
+}
+
+.product-item__favourite-title {
+    color: var(--white-color);
+}
+
+.product-item__sale-off {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 36px;
+    background-color: rgba(255, 233, 122, 1);
+    text-align: center;
+    line-height: 2rem;
+    border-top-right-radius: 2px;
+}
+
+.product-item__sale-off::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0px;
+    border-width: 0 20px 6px;
+    border-style: solid;
+    color: rgba(255, 233, 122, 1);
+    border-color: transparent currentColor transparent currentColor;
+    background-color: transparent;
+}
+
+.product-item__sale-off-percent {
+    color: #f12009;
+    font-size: 1.2rem;
+    position: relative;
+    top: 2px;
+    align-items: center;
+}
+
+.product-item__sale-off-title {
+    color: var(--white-color);
+    font-size: 1.3rem;
+    position: relative;
+    top: -4px;
+    align-items: center;
 }
