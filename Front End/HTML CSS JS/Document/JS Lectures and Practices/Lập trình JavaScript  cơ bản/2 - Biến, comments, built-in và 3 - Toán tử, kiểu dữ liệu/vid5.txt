@@ -1,0 +1,9 @@
++ Làm quen với toán tử
+
++ Giới thiệu về toán tử trong JavaScript
+- Toán tử số học - Arithmetic 
+- Toán tử gán - Assigment
+- Toán tử so sánh - Compartion 
+- Toán tử logic - Logical 
+
+- cơ bản, chưa có gì để note

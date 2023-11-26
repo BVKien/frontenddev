@@ -1,0 +1,23 @@
++ Lời khuyên trước khóa học
+
+1. Đối tượng
+- Chưa từng học
+
+2. Lộ trình
+- Giới thiệu + lời nhắc
+- Chuẩn bị công cụ
+- Làm quen ngôn ngữ, thư viện, FW,...
+- Khái niệm cơ bản
+- Đi sâu vào những khái niệm quan trọng
+- Thực hành làm 1 project 
+
+3. Lời nhắc 
+- Các thuật ngữ Tiếng Anh
+- Trình bày khi viết code - trình bày, viết code, các dấu 
+- Thực hành sau mỗi bài học 
+- Cố gắng hiểu
+- Vạch mục tiêu, theo đuổi đến chết 
+
++ Công cụ và môi trường
+- GG Chorme 
+- VS Code có Go Live

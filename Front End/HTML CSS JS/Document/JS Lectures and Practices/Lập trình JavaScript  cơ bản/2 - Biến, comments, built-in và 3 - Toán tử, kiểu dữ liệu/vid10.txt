@@ -1,0 +1,10 @@
++ Toán tử so sánh
+
+- ==: bằng - bằng tương đối - bằng ở đây không quan tâm đến kiểu dữ liệu number hay string - cứ đúng là true
+- !=: khác bằng
+- >: lớn hơn 
+- <: bé hơn
+- >=: lớn hơn hoặc bằng
+- <=: bé hơn hoặc bằng
+
+- thường đi vớI câu điều kiện if

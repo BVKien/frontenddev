@@ -1,0 +1,5 @@
++ Toán tử logical và câu lệnh điều kiện If
+
+- hiểu rõ hơn về Truthly và Falsy
+- https://fullstack.edu.vn/learning/javascript-co-ban?id=33b26c59-13bd-4474-92ed-f1f672eb200c
+- xem lại 

@@ -1,0 +1,23 @@
+/**
++ if else 
+ */
+
+/**
++ Các giá trị dưới đây khi convert sang boolean là false - còn lại tất cả là true
+- 0
+- false
+- '' - ""
+- undefined
+- NaN: Not a Number
+- null
+ */
+
+var fullName = "";
+
+if (fullName) {
+  console.log("true");
+} else {
+  console.log("false");
+}
+
+console.log(13 % 2);
