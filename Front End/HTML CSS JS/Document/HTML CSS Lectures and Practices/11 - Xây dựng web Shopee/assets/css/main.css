@@ -1315,3 +1315,8 @@ transform-origin: right; -> xử lý -> đưa sang bên phải
     top: -4px;
     align-items: center;
 }
+
+.home-products__pagination {
+    margin-top: 48px;
+    margin-bottom: 32px;
+}
