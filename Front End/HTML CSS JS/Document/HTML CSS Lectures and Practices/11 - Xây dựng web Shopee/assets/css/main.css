@@ -1325,7 +1325,7 @@ transform-origin: right; -> xử lý -> đưa sang bên phải
 .footer {
     padding: 38px 0 0 0;
     background-color: var(--white-color);
-    border-top: 1px solid var(--primary-color);
+    border-top: 4px solid var(--primary-color);
 }
 
 .footer__header {
@@ -1411,8 +1411,25 @@ transform-origin: right; -> xử lý -> đưa sang bên phải
 
 .footer__text {
     /* bỏ marrgin mặc định của thẻ <p> */
-    margin: 0;
-    font-size: 1.4rem;
+    margin: 8px 0;
+    font-size: 1.2rem;
     text-align: center;
-    color: #999;
+    color: var(--text-color);
+}
+
+.footer__text:last-child {
+    margin-bottom: 30px;
+}
+
+/* Code thêm copy right */
+.copyright__header {
+    text-align: center;
+}
+
+.copyright__header-title {
+    /* bỏ marrgin mặc định của thẻ <p> */
+    margin: 0 0 30px 0;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--text-color);
 }
