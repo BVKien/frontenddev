@@ -1,0 +1,9 @@
++ Sử dụng JavsCript với HTML
+
+- gọi js outer -> gọi js từ file vid1.js 
+- ./: thể hiện việc trỏ đến file ngang cấp 
+- javaScript outer
+    <!-- Script -->
+    <script src="./vid2.js">
+
+    </script>

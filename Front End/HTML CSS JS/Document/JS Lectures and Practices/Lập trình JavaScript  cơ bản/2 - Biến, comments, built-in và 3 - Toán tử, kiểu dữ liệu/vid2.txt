@@ -1,0 +1,22 @@
++ Khái niệm biến và cách sử dụng - Variable
+
+- khai báo tạo biến bằng từ khóa var 
+- đặt theo dạng - code convention camelCase
+- ví dụ
+- var fullName = 'Bui Van Kien'
+// sau khi ctrl s file .js đã được trình bày đẹp
+// do ảnh hưởng của extention prettier đã được cài đặt từ trước
+// hoặc có thể vì mình nhwos rằng mình đã cài đặt trong vs code
+// chế độ từ forrmat code sau khi nhấn ctrl + s
+
++ khác nhau nếu không và có dùng dấu chấm phẩy sau khi kết thúc câu lệnh
+-- không dùng dấu
+- việc code vẫn bthg ok khi cách dòng đều nhau
+- không có vấn đề nếu tiêu chí gọn gàng và rõ ràng
+- sẽ lỗi nếu như gặp trường hợp code vô tình bị như sau 
+var fullName = "Bui Van Kien";
+var age = 20 alert(fullName);
+alert(age);
+
+-- có dùng dấu
+- ok hết
