@@ -243,3 +243,11 @@ span {
 - home-products__pagination
 - flat icon 
 - 1 trang có rất nhiều icon đẹp và có free -> nhúng là sử dụng ok
+
++++ Dựng khung Footer
+- khung footer cũng theo dạng grid responsive 
+- chia dạng layout 12 cột 
+- -> gird -> row -> col 
+- ©: ký hiệu copyright
+- object-fit: contain;
+- nhìn tổng quan
