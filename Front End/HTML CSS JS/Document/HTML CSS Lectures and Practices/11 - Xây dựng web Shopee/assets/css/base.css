@@ -2,7 +2,7 @@
     --primary-color: #ff7337;
     --white-color: #fff;
     --black-color: #000;
-    --text-color: #333;
+    --text-color: #4a4a4a;
     --border-color: #dbdbdb;
     --gold-color: #ffd700;
 
@@ -59,6 +59,15 @@ html {
     padding-right: 5px;
     width: 20%;
 }
+
+/* cod thêm trước khi học Responsive */
+/* col 4-12 */
+.grid__col-3-12 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: calc(100% / 3);
+}
+/* end */
 
 .grid__col-8 {
     padding-left: 5px;
