@@ -237,3 +237,9 @@ span {
 - cart product name limiting - giới hạn tên product trong cart
 - background-position: top center; - trong trường hợp này nó sẽ căn top giữa -> dù ảnh có ko đủ độ vuộng để full căn giữa để bordeer radius 2 góc trên thì vẫn có thể giải quyết
 
++++ Pagination UI
+- viết tại base.css vì tái sử dụng
+- cần phải cách 1 khoảng margin top với product -> tạo 1 class mới để sử dụng
+- home-products__pagination
+- flat icon 
+- 1 trang có rất nhiều icon đẹp và có free -> nhúng là sử dụng ok
