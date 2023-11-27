@@ -1,0 +1,31 @@
++ Object prototype - nguyên liệu tạo nên 1 đối tượng
+
+- Prototype là gì?
+- Sử dụng khi nào?
+
+function User(firtsName, lastName, avatar) {
+  this.firtsName = firtsName;
+  this.lastName = lastName;
+  this.avatar = avatar;
+  this.getName = function () {
+    return `${this.firtsName} ${this.lastName}`;
+  };
+}
+
+- Prototype có thể add được vào constructor sau khi constructor đã được tạo
+- proptotype giúp thêm được thuộc tính mới bên ngoài hàm tạo
+- nó sẽ thêm vào đối tượng được tạo ra -> thêm vào user1 user2
+
+- thêm bằng thuộc tính
+User.prototype.className = "F8";
+
+- thêm bằng phương thức
+User.prototype.getClassName = function () {
+  return this.className;
+};
+
+var user1 = new User("Kien", "Van", "avatar.png");
+var user2 = new User("Hieu", "Van", "avatar.png");
+
+console.log(user1.className);
+console.log(user2.getClassName());

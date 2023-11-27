@@ -1,0 +1,47 @@
+/**
++ Object trong Js
+*/
+
+// function --> phường thức / method
+// others --> thuộc tính / properties
+
+// tạo mới 1 key bằng variable
+var emailKey = "homeEmail";
+
+//  key có thể là chuỗi - 'full-name'
+var myInfor = {
+  // khai báo định nghĩa cho
+  // key: value
+  name: "Kien Van",
+  age: 18,
+  address: "HD VN",
+  [emailKey]: "home@gtmail.com",
+
+  // lưu trữ value là 1 function
+  getName: function () {
+    // tương đương với myInfor.name
+    return this.name;
+  },
+};
+console.log(myInfor);
+console.log(myInfor.getName());
+
+// thêm key mới từ bên ngoài
+myInfor.email = "k2@gamil.com";
+
+// với những tên vi phạm quy tắc đặt tên
+//myInfor["my-email"] = "k2@gamil.com";
+
+// lấy value ra bên ngoài
+// một key không có sẽ trả về undefined
+// c1
+console.log(myInfor.name);
+// c2
+console.log(myInfor["name"]);
+
+var myKey = "address";
+console.log(myInfor[myKey]); // không truyền dạng chuỗi -> vì nó sẽ hiểu là tìm myKey có trong Object
+
+// xóa đi 1 key
+delete myInfor.age;
+console.log(myInfor);

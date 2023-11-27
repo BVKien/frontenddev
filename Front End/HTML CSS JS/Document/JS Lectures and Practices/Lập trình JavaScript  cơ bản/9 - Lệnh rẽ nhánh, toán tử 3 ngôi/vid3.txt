@@ -1,0 +1,1 @@
++ Toán tử 3 ngôi (Ternary operator)

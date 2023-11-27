@@ -1,0 +1,78 @@
++ Làm việc với mảng 
+
+- chủ động keyword: Javascript array methods
+
+- to string - biến array thành chuỗi
+- join - thêm ký tư phân cách chuỗi mong muốn 
+- pop - xóa cuối mảng - lấy giá trị đó - giá trị là vô hạn bao
+- push - thêm cuối mảng - lấy giá trị đó - giá trị là vô hạn bao
+- shift - thêm cuối mảng - lấy giá trị đó - giá trị là vô hạn bao
+- unshift - thêm đầu mảng - lấy giá trị đó - giá trị là vô hạn bao
+- splicing - xóa, chèn, thêm - .splice(index, delete count, insert element) - vô hạn số lượng xóa và phần tử chèn 
+- concat - nối array
+- slicing - cắt lát mảng - lấy xuôi và ngược, tương tự như string 
+
+var languages = ["html", "css", "js"];
+
++ to string
+- chuyển dữ liệu array sang string
+console.log(languages.toString());
+
++ join
+- .join(): sẽ giống kết quả với toString
+- .join(''): nếu truyền vòa 1 chuỗi rỗng nó sẽ hiểu đó là dấu ngăn cách của các phần tử của mảng là 1 ký tự trống
+- .join(' - '): bây giờ truyền gì vào nó cũng sẽ ngăn cahs tương đương
+console.log(languages.join(""));
+
++ pop
+- pop sẽ xóa đi phần tử cuối mảng và trả về chính phần tử đã xóa
+- nếu mảng đã trống -> pop -> undefined
+console.log(languages.pop());
+console.log(languages.pop());
+console.log(languages.pop());
+console.log(languages.pop());
+
++ push
+- thêm phần tử vào cuối mảng -> trả về độ dài mới
+- có thể thêm nhiều phần tử bằng cách thêm dấu phẩy
+console.log(languages.push("C#", "Java", "Ruby", "Python"));
+console.log(languages);
+
++ shift
+- ngược lại với pop
+- shift sẽ xóa đi phần tử đầu mảng và trả về chính phần tử đã xóa
+- nếu mảng đã trống -> shift -> undefined
+console.log(languages.shift());
+
++ unshift
+- ngược lại push -> đầu mảng
+console.log(languages.unshift("Golang", "C++"));
+console.log(languages);
+
++ splicing
+- xóa, cắt, chèn phần tử mới vào mảng
+- xóa - languages.splice(index(start), (delete count 0 đến vô hạn))
+- languages.splice(1, 1): ở đây có nghĩa xóa đi 1 phần tử từ phần tử tại index 1 -> xóa C++
+languages.splice(1, 1);
+console.log(languages);
+
+- chèn
+- có thể truyền tham số thứ 3 để chèn element vào 1 vị trí nào đó
+- giải thích: tham số 1 và cị trí được chọn, tham số 2 là số phần tử muốn xóa, tham số 3 là element đượC chèn vào vị trí
+- và có thể thêm vô số phần tử muốn chèn
+languages.splice(1, 0, "ReactJs", "Dart");
+console.log(languages);
+
++ concat
+var lang1 = ["C#", "Java"];
+var lang2 = ["Ruby", "Dart", "JavaScript"];
+
+- mảng bên trái được gọi là mảng gốc
+- mảng đc concat được hợp nhất với mảng gốc
+console.log(lang1.concat(lang2));
+
++ slicing
+- để cắt elements của mảng - vài hoặc toàn bộ
+- .slice(index, end): có nghĩa chọn index chỉ định, và end là chỉ mục kết thúc
+- .slice(index): muốn cắt hết mảng -> chỉ cần chọn index và bỏ end
+console.log(lang2.slice(0));

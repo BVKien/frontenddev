@@ -1,0 +1,34 @@
++ Các loại hàm
+
+- Declaration function - Hàm khai báo - định nghĩa
+- Expression function
+- Arrow funtion
+
+- Khái niệm hosting? - có thể gọi function trước khi định nghĩa
+- cho Declaration function
+showDeclarationFunction();
+
+- Declaration function
+- định nghĩa bằng từ khóa function đầu tiên, sau đó bắt buộc phải đặt tên
+function showDeclarationFunction() {
+  console.log("Declaration function");
+}
+
+- Expression function
+- gán(=) cho 1 biến(var)
+- có thể đặt tên cho nó hoặc không
+- mục đích duy nhất của việc đặt tên -> để hiểu nó là gì
+
+- dạng không đặt tên
+var showExpressionFunction = function () {};
+
+- dạng đặt tên
+var showExpressionFunction = function testName() {};
+
+- dưới dạng callback()
+setTimeout(function testName() {});
+
+- bên trong 1 object
+var myObject = {
+  myFunction: function testName() {},
+};

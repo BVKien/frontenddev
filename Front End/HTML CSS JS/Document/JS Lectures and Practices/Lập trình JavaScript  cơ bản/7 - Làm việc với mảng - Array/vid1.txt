@@ -1,0 +1,44 @@
++ Mảng (array)
+
++ Tạo mảng
+- Cách tạo 
+- Sử dụng cách nào? tại sao? - c1 
+- Kiểm tra data type
+
++ Truy xuất mảng
+- Độ dài mảng
+- Lấy phần tử theo index
+
++ array - chỉ mục được đánh tự động - bắt đầu từ số
+- dữ liệu gì cũng có thể đưa vào được
+- c1
+var languages = ["js", "html", "css", null, undefined, function () {}, 123];
+console.log(languages);
+
+- c2 - không khuyên cáo sử dụng
+- new Array không cần sử dụng dấu ngoặc vuông
+var languages = new Array(
+  "js",
+  "html",
+  "css",
+  null,
+  undefined,
+  function () {},
+  123
+);
+
++ Kiểm tra data type - typeof
+console.log(typeof languages);
+- cùng trả về object vậy làm sao để phân biệt được object và Array?
+console.log(typeof []);
+console.log(typeof {});
+
+- phân biệt - sử dụng Array.isArray
+console.log(Array.isArray(languages));
+
++ Truy xuất mảng
+- độ dài mảng
+console.log(languages.length);
+
+- lấy phần tử theo index - chỉ mục - key
+console.log(languages[0]);
