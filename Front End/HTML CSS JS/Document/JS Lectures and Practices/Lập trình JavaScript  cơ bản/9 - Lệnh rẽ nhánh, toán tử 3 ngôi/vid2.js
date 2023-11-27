@@ -1,0 +1,16 @@
+// câu lệnh rẽ nhánh - switch
+
+var date = 3;
+
+// biết trước giá trị -> sử dụng switch case >= 3
+switch (date) {
+  case 2:
+  case 3: // ===
+    console.log("monday, tuesday");
+    break;
+  case 4:
+    console.log("wednesday");
+    break;
+}
+
+// if else sử dụng khi case <= 3 -> so sánh đúng sai
