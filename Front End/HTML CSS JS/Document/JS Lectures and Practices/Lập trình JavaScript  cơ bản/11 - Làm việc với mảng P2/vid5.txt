@@ -1,0 +1,69 @@
++ Phương thức reduce có logic như thế nào?
+
+- làm cách nào để chạy js trên terminal ?
+
+const numbers = [1, 2, 3, 4, 5];
+
+- reduce(đối số)
+- đối số: callback, initalValue(optional)
+const result = numbers.reduce((total, number) => {
+  return total + number;
+}, 10);
+
+console.log(result);
+
+- reduce(callBack, initalValue, index, originArray)
+- trường hợp 1: chỉ truyền callBack và không truyền initialValue
+- lần đầu tiên biến callBack được gọi, giá trị tích trữ của nó chính là giá trị mà chúng ta khởi tạo
+
+- trong trường hợp này, total đầu tiên nhận đc khi khởi tạo là 10
+- const result = numbers.reduce((total, number) => {
+-   return total + number;
+- }, 10);
+
+- tự tạo ra reduce2
+- định nghĩa cho function reduce2
+Array.prototype.reduce2 = function (callBack, initialValue) {
+  - có nghĩa trong trường hợp này không truyền initial value
+  - bởi vì truyền nó sẽ bằng 2
+  let i = 0;
+  if (arguments.length < 2) {
+    - và curent value lúc đó sẽ là phần tử thứ 2 của mảng
+    - -> phải bắt đầu từ vị trí i = 1
+    i = 1;
+    - khi không truyền -> biến tích trữ sẽ là phần tử đầu tiên của mảng
+    initialValue = this[0];
+  }
+
+  for (; i < this.length; i++) {
+    - biến tích trữ, current value, index, array gốc
+    initialValue = callBack(initialValue, this[i], i, this);
+  }
+  return initialValue;
+};
+
+const result2 = numbers.reduce2((total, number) => {
+  return total + number;
+}, 0);
+
+const result3 = numbers.reduce2((total, number) => {
+  return total + number;
+});
+
+console.log(result2);
+console.log(result3);
+
+function arrToObj(arr) {
+  return arr.reduce(function (accumulator, currentValue) {
+    accumulator[currentValue[0]] = currentValue[1];
+    return accumulator;
+  }, {});
+}
+
+- Expected results:
+var arr = [
+  ["name", "Sơn Đặng"],
+  ["age", 18],
+];
+console.log(arrToObj(arr)); - { name: 'Sơn Đặng', age: 18 }
+

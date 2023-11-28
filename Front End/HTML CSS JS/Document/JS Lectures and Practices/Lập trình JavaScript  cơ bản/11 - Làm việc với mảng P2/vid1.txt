@@ -1,0 +1,61 @@
++ Làm việc với mảng - Phần 2
+
++ Array methods - phương thức 
+
+- forEach()
+- every()
+- some()
+- find()
+- filter()
+- map()
+- reduce()
+
+- tất cả những phuuonwg thức này đều có tham số truyền vào là một hàm
+
+-- về cơ bản, những method này đều như vong lặp for
+-- xét trên góc độ 
+- dễ hiểu: for nhiều ng biết (thực chất những method này dễ hiểu hơn rất nhiều)
+- ngắn gọn: methods hơn 
+- hiệu năng: for nhanh hơn, nhưng không đáng kể, phải có các task vụ thật lớn và đtặ thời gian so sánh mới thấy được,
+nhưng trong công việc sẽ luôn dùng methods vì nó rõ ràng hơn
+
+-> dùng methods
+
++ forEach()
+- duyệt qua từng phần tử của mảng
+- truyền 1 hàm vào qua tham số được gọi là callback()
+- function (course, index): phần tử của mảng, vị trí của mảng
+courses.forEach(function (course, index) {
+  console.log(index, course);
+});
+
++ every()
+- hữu ích để kiểm tra tất cả các phần tử của mnagr thỏa mãn điều kiện gì
+- check xem tất cả khóa học có free hay không
+var isFree = courses.every(function (course, index) {
+  return course.coin === 0;
+});
+console.log(isFree);
+
++ some()
+- ngược lại với every
+- chỉ cần 1 free -> true
+var isFree = courses.some(function (course, index) {
+  return course.coin === 0;
+});
+console.log(isFree);
+
++ find()
+- để tìm kiếm - nếu không có result -> return undefined
+- luôn chỉ trả về 1 đối tượng đầu tiên
+var findCourse = courses.find(function (course, index) {
+  return course.name === "C#";
+});
+console.log(findCourse);
+
++ filter()
+- trả về tất cả phần tử thỏa mãn -> 1 list
+var filterCourse = courses.filter(function (course, index) {
+  return course.name === "C#";
+});
+console.log(filterCourse);

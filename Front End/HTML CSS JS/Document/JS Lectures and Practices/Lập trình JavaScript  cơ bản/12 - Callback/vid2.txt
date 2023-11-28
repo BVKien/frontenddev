@@ -1,0 +1,9 @@
++ Callback - Phần 2
+
++ là hàm
++ truyền qua đối số
++ được gọi lại (trong hàm nhận đối số)
+
+- bài tập làm sau: forEach, reduce, find, filter, map
+
+- viết lại map2 để hiểu cách map nhận callback và làm gì bên trong
