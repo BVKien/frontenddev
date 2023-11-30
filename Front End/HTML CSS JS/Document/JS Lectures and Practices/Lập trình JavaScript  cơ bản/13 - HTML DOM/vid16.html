@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreventDefault and StopPropagation
+    </title>
+
+    <style>
+        ul {
+            display: none;
+        }
+
+        input:focus ~ ul {
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <!-- 
+        Ví dụ 1
+        Bài toán
+        Nếu là react thì được chuyển trang 
+    -->
+    <a name="react" href="https://react.dev/">react</a>
+    <br>
+    <a name="gg map" href="https://www.google.com/maps/@9.779349,105.6189045,11z?hl=vi-VN">
+        gg map
+    </a>
+
+    <!-- 
+        Ví dụ 2
+        - nhấn <li> không bị ảnh hưởng bởi 
+        mặc định hoạt động của thẻ <input>
+    -->
+    <br>
+    <input placeholder="Tim kiem">
+    <ul>
+        <li>JavaScript</li>
+        <li>ReactJs</li>
+        <li>C#</li>
+    </ul>
+
+    <!-- 
+        Ví dụ 3
+        - click div -> in ra div
+        - click button -> in ra click me
+    -->
+    <div>
+        div 
+
+        <button>click me</button>
+    </div>
+
+    <!-- Script -->
+    <script src="./vid16.js"></script>
+</body>
+</html>

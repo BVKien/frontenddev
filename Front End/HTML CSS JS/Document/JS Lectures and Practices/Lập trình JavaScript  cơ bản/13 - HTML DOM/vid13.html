@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassList Property</title>
+
+    <style>
+        .red {
+            color: red;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .violet {
+            color: violet;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="box box-2">
+        <h1>heading</h1>
+    </div>
+
+
+    <div>Box</div>
+    <div>Box</div>
+    <div>Box</div>
+    <div>Box</div>
+    <div>Box</div>
+    <div>Box</div>
+    <div>Box</div>
+    <div>Box</div>
+    <div>Box</div>
+    <div>Box</div>
+
+    <script>
+        // bai tap
+        var boxElements = document.querySelectorAll("div");
+
+        console.log(boxElements.length);
+
+        for (var i = 0; i < boxElements.length; i++) {
+        console.log(boxElements[i]);
+        boxElements[i].classList.add("box");
+        }
+    </script>
+
+    <!-- Script -->
+    <script src="./vid13.js"></script>
+</body>
+</html>

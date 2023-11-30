@@ -1,0 +1,20 @@
+/**
++ HTML DOM - quy chuẩn W3C đưa ra - phải tuân theo 
+
+- element
+- attribute 
+- text 
+*/
+
+// Document object
+// đứng ở đầu tiên trong DOM tree
+// bên trong có tất cả các thành phần nhỏ elemnt, attribute, text
+// -> chính là đại diện cả website
+// để có thể truy cập được các elemnt, attribute, text
+// -> phải di qua Document object
+
+console.log(document);
+
+// được ghi vào phần body <script>
+// ghi sau cùng
+document.write("hi js");

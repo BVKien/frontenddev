@@ -1,0 +1,71 @@
+/*
++ PreventDefault and StopPropagation
+
++ DOM events
+
++ preventDefault 
+- sử dụng để loại bỏ hành vi mặc định của trình duyệt 
+trên 1 thẻ <html>
+
++ stopPropagation
+- loại bỏ sự kiện nổi bỏ,
+event thẻ con nổi bọt lên thẻ cha (vid 13 14 15)
+
+*/
+
+// giữ log bằng cách
+// settinngs icon -> preserve log
+// Navigated: đã chuyển trang, điều hướng
+
+/*
+// ví dụ 1
+// c1
+// var aElement = document.querySelectorAll("a");
+
+// c2 - HTML collections - anchors <a> có name
+//var aElement = document.anchors;
+var aElement = document.links;
+
+for (var i = 0; i < aElement.length; i++) {
+  aElement[i].onclick = function (e) {
+    console.log(e.target.href);
+
+    // Nếu là react thì được chuyển trang
+    if (!e.target.href.startsWith("https://react.dev/")) {
+      e.preventDefault();
+    }
+  };
+}
+*/
+
+// giữ log bằng cách
+// settinngs icon -> preserve log
+// Navigated: đã chuyển trang, điều hướng
+
+/*
+// ví dụ 2
+var ulElement = document.querySelector("ul");
+
+// sự kiện được thực thi vừa ngay khi nhấn chuột xuống
+ulElement.onmousedown = function (e) {
+  // ngăn chặn hành vi mặc định của trình duyệt
+  // ngay khi on mouse dơn lên thẻ <ul>
+  e.preventDefault();
+};
+
+ulElement.onclick = function (e) {
+  console.log(e.target);
+};
+*/
+
+/*
+// ví dụ 3
+document.querySelector("div").onclick = function () {
+  console.log("div");
+};
+
+document.querySelector("button").onclick = function (e) {
+  e.stopPropagation();
+  console.log("click me");
+};
+*/

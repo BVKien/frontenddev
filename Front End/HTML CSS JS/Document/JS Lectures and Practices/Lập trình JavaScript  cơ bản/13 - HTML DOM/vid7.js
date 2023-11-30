@@ -1,0 +1,8 @@
+// Attribute node & Text node
+
+// element
+// attribute
+// text
+
+// Attribute node & Text node
+// dược lấy ra từ node element

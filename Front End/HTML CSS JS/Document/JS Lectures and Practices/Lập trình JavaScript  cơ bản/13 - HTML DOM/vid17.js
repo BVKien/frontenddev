@@ -1,0 +1,91 @@
+/**
++ Event listener
+
+- DOM event / event listener 
+- json
+- promise 
+- fetch
+- DOM location
+- local storage 
+- session storeage 
+- coding convention 
+- best practices 
+- mistakes 
+- performance 
+
++ so sánh trường hợp DOM event / event listener 
+- xử lý nhiều việc khi 1 event xảy ra 
+- lắng nghe / hủy bỏ lắng nghe 
+
+*/
+
+var btn = document.getElementById("btn");
+
+// event listener
+// bóc tách rõ ràng
+// một sự kiện diễn ra, nhưng muốn hủy bỏ lắng nghe
+// 2 đối số
+// .addEventListener('event name', 'callback funtion')
+// có thể add event nhiều lần
+// được add theo thứ tự được gọi
+/*
+btn.addEventListener("click", function (e) {
+  console.log("Event 1");
+});
+
+btn.addEventListener("click", function (e) {
+  console.log("Event 2");
+});
+
+btn.addEventListener("click", function (e) {
+  console.log("Event 3");
+});
+*/
+
+// functon ở đối số t2
+function viec1() {
+  console.log("viec 1");
+}
+
+function viec2() {
+  console.log("viec 2");
+}
+
+// lắng nghe: addEventListener
+// phải tách functon ở đối số t2 mới có thể thực hiện remove
+btn.addEventListener("click", viec1);
+btn.addEventListener("click", viec2);
+
+setTimeout(() => {
+  //hủy bỏ lắng nghe
+  btn.removeEventListener("click", viec1);
+}, 3000);
+
+/*
+// DOM event
+// lắng nghe sự kiện nào đó, ko có nhu cầu gỡ bỏ 
+// xử lý nhiều việc khi 1 event xảy ra
+// phải gán 1 funtion cho DOM event btn.onclick
+// sau đó viết tất cả việc bên trong function
+
+// lắng nghe / hủy bỏ lắng nghe
+// click vào -> hoạt động -> lắng nghe
+// không hoạt động -> không lắng nghe
+btn.onclick = function () {
+  // viec 1
+  console.log("viec 1");
+
+  // viec 2
+  console.log("viec 1");
+
+  // viec 3
+  alert("viec 3");
+};
+
+// hủy bỏ lắng nghe
+// -> gán lại
+setTimeout(() => {
+  // bị ghi đè thành 1 function mới
+  btn.onclick = function () {};
+}, 3000);
+*/

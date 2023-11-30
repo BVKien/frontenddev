@@ -1,0 +1,84 @@
++ ClassList Property
+
+--- các thuộc tính phổ biến 
+
++ add - thêm class vào element 
++ contains - kiểm tra class có nằm trong element hay không 
++ remove - xóa class khỏi element 
+
++ toggle 
+- nghãi đen: chuyển đổi 
+- hiểu đơn giản
+- nếu có class đó trong element -> gọi tới toggle -> xóa class đó
+- nếu không có -> gọi tới toggle -> thêm vào 
+
+- đây là thuộc tính của element node
+- chỉ có thể lấy ra khi truy cập vào element node
+- giống style của vid12
+
+var boxElement = document.querySelector(".box");
+
+- trả về 1 đối tượng DOM Token list
+- đối tượng này giúp quản lý class của element gọi tới thuộc tính này
+console.log(boxElement.classList);
+console.log(boxElement.classList[0]);
+
+- số lượng class
+console.log(boxElement.classList.length);
+
+- value
+- chính xác nó trả về chuỗi nằm trong attribute class
+-     <div class="box     box-3">
+console.log(boxElement.classList.value);
+
+- proto - function
+console.log(boxElement.classList.__proto__);
+
++ add class
+boxElement.classList.add("red");
+- thêm nhiều class phải cách nhau bởi dâu phẩy
+boxElement.classList.add("red", "blue", "violet");
+
++ contains
+- kiểm tra xem class nào đó có tồn tại hay không
+console.log(boxElement.classList.contains("red", "blue"));
+
++ remove class
+console.log(boxElement.classList.remove("violet"));
+
++ setTimeout
+- setTimeout(() => {
+-   boxElement.classList.remove("violet");
+- }, 3000);
+
++ toggle
+- setInterval(() => {
+-   boxElement.classList.toggle("violet");
+- }, 500);
+
+
+--- bai tap 
+/*
+    <div>Box</div>
+    <div>Box</div>
+    <div>Box</div>
+    <div>Box</div>
+    <div>Box</div>
+    <div>Box</div>
+    <div>Box</div>
+    <div>Box</div>
+    <div>Box</div>
+    <div>Box</div>
+
+    <script>
+        // bai tap
+        var boxElements = document.querySelectorAll("div");
+
+        console.log(boxElements.length);
+
+        for (var i = 0; i < boxElements.length; i++) {
+        console.log(boxElements[i]);
+        boxElements[i].classList.add("box");
+        }
+    </script>
+*/

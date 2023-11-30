@@ -1,0 +1,32 @@
+// DOM CSS
+
+// thuộc tính năm trong element node
+
+var boxElement = document.querySelector(".box");
+
+// style -> đối tượng trong web api đượC định nghĩa sẵn
+// quên thì xem lại bài 11
+// console.log([boxElement]); -> xem từ điển trong console
+// console.log(boxElement.style);
+
+// vấn đề hiện h -> viết ra qua nhiều và bị duplicate
+// làm sao để xử lý
+// boxElement.style là 1 Object
+// chỉ cần gán vào 1 Object
+boxElement.style.width = "200px";
+boxElement.style.height = "200px";
+boxElement.style.backgroundColor = "red";
+
+// xử lý
+// Object.assign(Object, giá trị)
+Object.assign(boxElement.style, {
+  width: "200px",
+  height: "200px",
+  backgroundColor: "violet",
+});
+
+// sinh ra css inline
+// đang lấy ra giá trị của thuộc tính css inline của nó
+// không phải lấy ra kích thước của đối tượng
+// nếu không có css inline -> không thể lấy được ra value của nó
+console.log(boxElement.style.height);
