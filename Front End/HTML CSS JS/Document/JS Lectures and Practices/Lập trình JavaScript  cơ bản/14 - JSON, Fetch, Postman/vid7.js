@@ -1,0 +1,160 @@
+// Promise example
+
+/**
+- DOM event / event listener 
+- json
+
++ promise 
+- sync - synchronous - đồng bộ 
+- async - asynchronous - bất đồng bộ 
+- pain 
+- lý thuyết , cách hoạt động
+- thực hành 
+
++ khái niệm promise mới
+1. Promise.resolve
+2. Promise.reject 
+3. Promise.all
+
+- fetch
+- DOM location
+- local storage 
+- session storeage 
+- coding convention 
+- best practices 
+- mistakes 
+- performance 
+*/
+
+// Promise
+// thực hành
+
+// phải nắm chắc
+/*
+1. Array
+2. Function, callback 
+3. Promise 
+4. DOM
+*/
+
+// callback hell
+// promise hell
+// async / await -> gọn hơn cả promise -> rất tuần tự
+
+var users = [
+  {
+    id: 1,
+    name: "Kien Van",
+  },
+  {
+    id: 2,
+    name: "Son Dang",
+  },
+  {
+    id: 3,
+    name: "Hieu Minh",
+  },
+];
+
+var comments = [
+  {
+    id: 1,
+    user_id: 1,
+    content: "Anh son chua ra video a",
+  },
+  {
+    id: 2,
+    user_id: 2,
+    content: "Vua ra xong em oi",
+  },
+  {
+    id: 3,
+    user_id: 3,
+    content: "ok anh",
+  },
+];
+
+// 1. Lấy comments
+// 2. Từ comments lấy ra user_id
+//  từ user_id lấy ra user tương ứng
+
+// Fake API
+// hành động lấy được dữ liệu qua API - URL
+// là 1 hành động xử lý bất đồng bộ trong JavaScript
+function getComments() {
+  return new Promise(function (resolve) {
+    setTimeout(function () {
+      resolve(comments);
+    }, 0); // 1000ms ở đây giả sử qua kết nối internet bị chậm 1s
+  });
+}
+
+function getUsersByIds(userIds) {
+  return new Promise(function (resolve) {
+    var result = users.filter(function (user) {
+      return userIds.includes(user.id);
+    });
+
+    // fake mạng chậm 1s
+    setTimeout(function () {
+      resolve(result);
+    }, 0);
+  });
+}
+
+// đây chính là Promise hell
+// khi bị phụ thuộc nhau quá nhiều
+getComments()
+  .then(function (comments) {
+    //   console.log(comments);
+
+    // lấy list khóa ngoại user_id trong comments
+    var userIds = comments.map(function (comment) {
+      return comment.user_id;
+    });
+
+    //   console.log(userIds);
+
+    // nhận vào 1 mảng
+    // nếu muốn láy chính xác nhau name hay avatar... của user đã comments
+    // phải có so sánh và vòng lặp
+    // return Promise này để nhận thêm .then() để làm giá trị đầu vào cho .then() kết tiếp
+    return getUsersByIds(userIds).then(function (users) {
+      //console.log(users);
+      // return ra 1 object để hiển thị thông tin user và comments
+      return {
+        users: users,
+        comments: comments,
+      };
+    });
+  })
+  .then(function (data) {
+    // console.log(data);
+
+    // get id thẻ ul từ HTML
+    var commentBlock = document.getElementById("comment-block");
+
+    // sinh ra mã html để hiển thị vào comment block
+    var htmls = "";
+    // lặp qua data từ comments -> để render ra comments
+    // nhận lại comments ở đây
+    data.comments.forEach(function (comment) {
+      // phải có so sánh và vòng lặp
+      var user = data.users.find(function (user) {
+        return user.id === comment.user_id;
+      });
+
+      // nối vào chuỗi html
+      htmls += `<li>${user.name}: ${comment.content}</li>`;
+    });
+
+    // .innerHtml để đưa vào html
+    commentBlock.innerHTML = htmls;
+  });
+
+// nhận vào 1 mảng
+// hàm chạy test
+// getUsersByIds([1, 2]).then(function (users) {
+//   console.log(users[index].name);
+//   console.log(users);
+// });

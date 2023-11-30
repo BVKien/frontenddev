@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM events
+    </title>
+</head>
+<body>
+    <!-- chức năng - nhấn vào tag <h1> sẽ sinh 1 dãy số ngẫu nhiên -->
+    <h1 onclick="console.log(Math.random())">DOM events</h1>
+
+    <!-- chức năng - hover vào <h1> sẽ sinh 1 dãy số ngẫu nhiên -->
+    <!-- <h1 onmouseover="console.log(Math.random())">DOM events</h1> -->
+
+    <!-- chức năng - di chuột ra <h1> sẽ sinh 1 dãy số ngẫu nhiên -->
+    <!-- <h1 onmouseout="console.log(Math.random())">DOM events</h1> -->
+    
+    <!-- trả về this -->
+    <!-- this.innerText -->
+    <!-- 
+        khi click vào element con của 1 element ddnag lắNg nghe 1 sự kiện 
+        đầu tiên nó sẽ lắng nghe lên sự kiện của <span>
+        sau đó nổi bọt ra ngoài -> đến thẻ cha của nó vẫn sẽ bị ảnh hưởng 
+    -->
+    <h1 onclick="console.log(this)">
+        <span onclick="console.log(this)">
+            DOM events
+        </span>
+    </h1>
+
+    <h2>
+        <span>DOM events 2</span>
+    </h2>
+
+    <h2>
+        <span>DOM events 3</span>
+    </h2>
+
+    <h2>
+        <span>DOM events 4</span>
+    </h2>
+
+    <h2>
+        <span>DOM events 5</span>
+    </h2>
+
+    <button>ok</button>
+
+    <!-- Script -->
+    <script src="./vid14.js"></script>
+</body>
+</html>

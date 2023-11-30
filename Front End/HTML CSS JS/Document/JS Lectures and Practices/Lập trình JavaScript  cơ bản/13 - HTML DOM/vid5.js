@@ -1,0 +1,28 @@
+/**
++ HTML DOM - quy chuẩn W3C đưa ra - phải tuân theo 
+
++ element
+- id
+- class,
+- tagname
+- css selector
+- html collection
+
++ attribute 
++ text 
+*/
+
+//
+var listItemNodes = document.querySelectorAll(".box-1 li");
+console.log(listItemNodes);
+
+// công việc 1: sử dụng tới 'boxNodes'
+var boxNodes = document.querySelector(".box-1");
+console.log(boxNodes);
+
+// công việc 2: sử dụng tới các li elements
+// là con của '.box-1'
+console.log(boxNodes.querySelectorAll("li"));
+console.log(boxNodes.getElementsByTagName("li"));
+console.log(boxNodes.querySelector("p"));
+console.log(boxNodes.getElementsByTagName("p"));

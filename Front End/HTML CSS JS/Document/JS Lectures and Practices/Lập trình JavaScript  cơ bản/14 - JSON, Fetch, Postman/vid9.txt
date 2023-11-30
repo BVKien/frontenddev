@@ -1,0 +1,26 @@
++ JSON server
+
++ tạo folder json_server
++ tại folder json_server
++ npm -v: check version node 
++ npm init: khởI tạo 1 project -> đặt tên -> enter 
+-> sau đó, có package.json 
+
+- tiếp tục 
++ npm i json-server: chỉ cải trong folder json_server - không cài global 
+
+- tạo file db.json và tạo dữ liệu cho nó -> fake data
+- vào package.json và thêm "start": "json-server --watch db.json",
+
+  "scripts": {
+    "start": "json-server --watch db.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
++ npm start 
+-> done 
+  Resources
+  http://localhost:3000/courses
+
+  Home
+  http://localhost:3000

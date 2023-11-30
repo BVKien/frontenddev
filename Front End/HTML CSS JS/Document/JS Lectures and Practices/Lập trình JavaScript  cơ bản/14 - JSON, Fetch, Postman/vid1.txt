@@ -1,0 +1,90 @@
++ JSON là gì?
+
+- ctrl + B: đóng mở exploer 
+- Stringify / Parse: khi sử dụng không viết hoa 
+
+/**
+- DOM event / event listener 
+- json
+- fetch
+- promise 
+- DOM location
+- local storage 
+- session storeage 
+- coding convention 
+- best practices 
+- mistakes 
+- performance 
+*/
+
+/*
++ Json
++ là một định dạng dữ liệu (chuỗi)
++ viết tắt: JavaScript Object Notation - Ký hiệu đối tượng JavaScript
+
++ thể hiện các dạng dự liệu: 
+- number
+- string
+- boolean 
+- null
+- array 
+- object 
+-> từ các dang này có thể chuyển đổi thành JSON
+-> từ JSON có thể chuyển đổi thành các dạng này 
+-> không thể thể hiện những kiểu dữ liệU khác ngoài những kiểu này 
+- ví dụ function() {} -> không thể - ví dụ phía dưới
+
++ Và chuyển đổi <=> được gọi là 
++ Mã hóa/ Giải mã 
++ Encode / Decode 
++ Stringify / Parse
+
++ chuyển đổi mã khác <=> sang JSON hay Stringify
+- chuyển đổi sang kiểu dữ liệu khác, một bộ mã khác
+
++ từ Stringify để có thể dịch ngược JSON sang <=> mã kiểu dữ liệu ban đầu 
++ bằng thuật ngữ Parse 
+- dịch ngược lại 
+
+*/
+
+- var json = '["JavaScript", "C#"]';
+var json = '{"name":"Kien Van", "age":20}';
+
+- từ JSON chuyển đổi thành JavaScript bằng cách nào?
+
+- Ví dụ 1
+- Stringify / Parse
+- Stringify: từ JavaScript types -> JSON
+- Parse: từ JSON -> JavaScript types
+- giá trị là gì thì kiểu dữ liệu nhận được là kiểu dữ liệu đó
+- thể hiện đạng chuỗi JSON bắt buộc phải thêm dấu nháy
+var json = '{"name":"Kien Van", "age":20}';
+
+var object = JSON.parse(json);
+
+console.log(object);
+
+- Stringify: từ JavaScript types -> JSON
+- trả về chuỗi JSON
+- console.log(typeof JSON.stringify(123));
+- console.log(JSON.stringify(["JavaScript", "C#"])); - trả về JSON ["JavaScript","C#"]
+
+/*
+- object
+console.log(
+  JSON.stringify({
+    name: "Kien Van",
+    age: 20,
+    test: function () {}, - không thể thể hiện
+  })
+);
+*/
+
+- object
+console.log(
+  JSON.stringify({
+    name: "Kien Van",
+    age: 20,
+  })
+);

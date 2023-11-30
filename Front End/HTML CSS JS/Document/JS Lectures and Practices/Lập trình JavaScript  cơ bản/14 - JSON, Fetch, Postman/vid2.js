@@ -1,0 +1,46 @@
+// Promise (sync, async)
+// học thêm về threads
+
+/**
+- DOM event / event listener 
+- json
++ promise 
+- sync - synchronous - đồng bộ 
+- async - asynchronous - bất đồng bộ 
+- pain 
+- lý thuyết , cách hoạt động
+- thực hành 
+
+- fetch
+- DOM location
+- local storage 
+- session storeage 
+- coding convention 
+- best practices 
+- mistakes 
+- performance 
+*/
+
+/// sync / async
+
+// sync
+// đồng bộ là viết trước chạy trước, viết sau chạy sau
+// đây là đồng bộ
+// console.log(1);
+// console.log(2);
+
+// async: bất đồng bộ - viết trước nhưng được chạy sau
+// + các hàm async trong JavaScript
+// -setTimeout, setInterval, fetch,
+// XML HttpRequest, file reading JavaScript,
+// request animation frame
+
+// để JavsScript cho chúng ta biết khi nào là xong
+// JavaScript cung cấp 1 khái niệm gọi là
+// callback
+// callback ở đây là function(){}
+setTimeout(function () {
+  console.log(1);
+});
+
+console.log(2);
