@@ -1,0 +1,88 @@
+// Arrow function
+
+/**
+1. Let, Const --> ok
+2. Template Literals --> ok
+3. Multi-line String --> ok
+4. Arrow function
+5. Classes
+6. Default parameter values 
+7. Destructuring 
+8. Rest parameters 
+9. Spread
+10. Enhanced object literals 
+11. Tagged template literal 
+12. Modules 
+*/
+
+// 4. Arrow function
+
+// function thông thường
+// function logger(log) {
+//   console.log(log);
+// }
+
+// logger("message...");
+
+// arrow funtion
+// mục đích - ngắn gọn hơn
+const logger = (log) => {
+  console.log(log);
+};
+
+logger("message...");
+
+// ví dụ
+// => {
+// code
+// return
+// }
+const sum1 = (a, b) => {
+  return a + b;
+};
+
+// ngắn hơn nữa
+// => được hiểu là return luôn
+// const sum2 = (a, b) => a + b;
+
+// return object
+// const sum2 = (a, b) => ({ a: a, b: b });
+
+const sum2 = (a) => console.log(a);
+
+console.log(sum2(1, 2));
+sum2(1);
+
+// function thường
+// const course = {
+//   name: "JavaScript basic",
+//   getName: function () {
+//     return this.name;
+//   },
+// };
+
+// arrow function
+const course = {
+  name: "JavaScript basic",
+  getName: () => {
+    return this.name;
+  },
+};
+
+console.log(course.getName());
+
+// arrow functon không thể sử dụng làm function construcor được
+// const Course = function (name, price) {
+//   this.name = name;
+//   this.price = price;
+// };
+
+// arrow function sẽ báo lỗi
+const Course = (name, price) => {
+  this.name = name;
+  this.price = price;
+};
+
+const jsCourse = new Course("JavaScript", 20);
+
+console.log(jsCourse);
