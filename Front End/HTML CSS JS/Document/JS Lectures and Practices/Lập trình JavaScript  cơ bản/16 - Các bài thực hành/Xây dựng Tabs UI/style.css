@@ -1,0 +1,85 @@
+/* https://codepen.io/ng-ngc-sn-the-bashful/pen/BaLXJbz */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  font-family: "Poppins", sans-serif;
+}
+
+body > div {
+  min-width: 700px;
+  margin: 5%;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  position: relative;
+}
+
+.tab-item {
+  width: 160px;
+  font-size: 20px;
+  text-align: center;
+  padding: 16px 20px 11px 20px;
+  color: rgb(216, 50, 105);
+  opacity: 0.6;
+  background-color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom: 5px solid transparent;
+  cursor: pointer;
+  transition: all ease 0.5s;
+}
+
+/* Có thể sử dụng 1 màu và dùng cách opacity */
+.tab-item.active {
+  opacity: 1;
+}
+
+.tab-item:hover {
+  opacity: 1;
+  background-color: rgba(246, 168, 193, 0.1);
+  border-color: rgba(194, 53, 100, 0.1);
+}
+
+.tab-icon {
+  font-size: 24px;
+  position: relative;
+  top: 2px;
+}
+
+.tabs .line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 5px;
+  background-color: rgb(216, 50, 105);
+  border-radius: 5px;
+  transition: all ease 0.2s;
+}
+
+.tab-content {
+  padding: 28px 0;
+}
+
+.tab-pane {
+  color: #000;
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+.tab-pane h2 {
+  font-size: 28px;
+  margin: 0 0 12px 0;
+}
