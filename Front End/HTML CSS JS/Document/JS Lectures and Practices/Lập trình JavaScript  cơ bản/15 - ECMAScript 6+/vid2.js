@@ -1,0 +1,91 @@
+// Let & Const
+
+/**
+1. Let, Const
+2. Template Literals
+3. Multi-line String 
+4. Arrow function
+5. Classes
+6. Default parameter values 
+7. Destructuring 
+8. Rest parameters 
+9. Spread
+10. Enhanced object literals 
+11. Tagged template literal 
+12. Modules 
+*/
+
+/// Code thuần JavaScript không qua thư viện hay trình thông dịch khác
+// -> dùng var
+/// thư viện Babel: let, const -> khi nào dùng?
+// const: khi định nghĩa biến và không gán lại biến đó
+// let: khi cần gán lại giá trị cho biến
+
+// Ví dụ
+let isSuccess = false;
+if (isSuccess) {
+  isSuccess = true; // gán lại
+
+  // không gán lại -> const
+}
+
+// 1.Khác nhau giữa Var / Let, Const
+// - Scope - phạm vi
+// - Hosting
+// - Const / Var, Let: Assigment - gán giá trị cho biến khi sử dụng từ khóa này
+
+// Code block: if else, loop, {}, ...
+
+// khác nhau phạm vi truy cập khi định nghĩa 1 biến
+// với từ khóa khác nhau trong 1 code block và truy cập bên ngoài code block
+
+/// Scope
+{
+  // var: khi truy cập bên trong và ngoài block
+  // let, const : không truy cập bên ngoài được
+  let course = "JavaScript basic";
+
+  {
+    {
+      // ưu tiên block gần nhất
+      // không bao giờ bị trùng
+      const course = "Js basic";
+      console.log(course);
+    }
+  }
+}
+
+/// Hoisting
+// là đưa lên trên
+// nhấc định nghĩa biến lên trên đầu
+// chỉ nhấc những thằng được hỗ trợ hoisting - var được hỗ trợ
+// - 2 thăng còn lại thì không -> nhưng báo lỗi khác nhau
+// vì thông dịch sẽ nhấc nó lên trên đầu
+var a;
+a = 1;
+
+a = 1;
+
+var a;
+
+var a = 1;
+console.log(a);
+
+/// Assigment
+// var let tương tự
+// const không thể sử dụng gán thứ 2 cho chính biến const
+var b = 2;
+b = 100;
+console.log(b);
+
+// vẫn gán được
+// vì ở đây đang gán cho thuộc tính object của c cHứ không gán cho c
+const c = {
+  name: "C#",
+};
+
+c.name = "html";
+
+console.log(c.name);
+
+// chủ động tìm hiểu từ khóa - tham trị, tham chiếu
