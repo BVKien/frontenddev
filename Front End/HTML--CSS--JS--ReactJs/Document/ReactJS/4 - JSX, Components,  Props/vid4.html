@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Props là gì? Dùng props khi nào?</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18.0.0/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18.0.0/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- 
+        Props 
+            - Nghĩa đen: đạo cụ 
+            - Là 1 object chứa những thuộc tính mô tả cho react element được tạo ra
+
+        - React elements 
+            - Sử dụng props giống như với attribute của thẻ HTML
+            - 2 props class, for -> className, htmlFor
+            - Phải tuân theo quy ước có sẵn 
+        - React components 
+            - Sử dụng props giống như đối số cho Component
+            - Tự đặt tên cho props
+                - Đặt theo camelCase
+                - Có thể bao gồm dấu gạch ngang
+        - Chú ý
+            - Prop 'key' là prop đặc biệt 
+            - Props cơ bản là đối số của Component
+                -> Props có thể là bất cứ kiểu dữ liệu gì 
+            - Sử dụng destructuring 
+     -->
+
+    <div id="root"></div>
+
+    <!-- script type="text/babel" -->
+    <script type="text/babel">
+      // PostItem.js
+      // destructuring
+      function PostItem({
+        image,
+        title,
+        description,
+        published,
+        // đặt default cho callback
+        callBack = () => {},
+      }) {
+        // callBack(); -> lỗi
+
+        return (
+          <div className="post-item">
+            <label htmlFor="email">Email</label>
+            <input id="email" />
+            <img
+              style={{ width: "100px", height: "100px" }}
+              src={image}
+              alt={title}
+            />
+            <h2 className="post-title">{title}</h2>
+            <p className="post-desc">{description}</p>
+            <p className="post-published">{published}</p>
+          </div>
+        );
+      }
+
+      // App.js
+      function App() {
+        // Bản chất Component nó là Function như mình đã học
+        // props là object rỗng ban đầu
+        // add thêm vài props
+        // console.log(<PostItem title="title" />);
+
+        return (
+          <div id="wrapper">
+            <PostItem
+              // tự đặt props - không tuân quy ước
+              // vì là function tự viết ra
+              title="C# .NET - Tương tác với funtion"
+              image="https://hips.hearstapps.com/ghk.h-cdn.co/assets/16/08/gettyimages-530330473.jpg?crop=0.659xw:0.990xh;0.123xw,0.00779xh&resize=980:*"
+              description="Bạn có kiến thức của ngôn ngữ C#"
+              published="Một ngày trước - 5 phút"
+              callBack={() => {}}
+            />
+
+            {/* Không truyền props -> là object rỗng -> không render nội dung */}
+            <PostItem />
+          </div>
+        );
+      }
+
+      // index.js
+      // import nội dung của file App
+      // lấy root
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

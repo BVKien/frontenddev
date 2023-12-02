@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document.createElement() để làm gì?</title>
+  </head>
+  <body>
+    <!-- 
+        1. document.createElement()
+        2. document.body.apppendChild()
+        3. console.dir()
+        4. innerText, id, className, style
+     -->
+    <!-- <h1 id="heading">Hi ReactJS</h1> -->
+
+    <div id="root"></div>
+
+    <!-- Script -->
+    <script>
+      /*
+      const h1 = document.querySelector("#heading");
+
+      // object
+      console.log(h1);
+
+      // dir - in dưới dạng object
+      console.dir(h1);
+      */
+
+      // trong DOM không có gì
+      // làm sao để tạo ra 1 element và render vào trong đó?
+
+      // đang nằm trong bộ nhớ, chưa render vào DOM
+      // làm cách nào để render vào DOM?
+      // -> chỉ cần get tag body
+      // appendChild() -> thêm vào
+      // baayh giờ muốn render vào cái gì thì lấy d cái đó
+      // như nguyên lý hoạt động của ReactJS
+      // document.body.appendChild(h1);
+
+      const h1 = document.createElement("h1");
+
+      h1.innerText = "Hi ReactJS";
+      h1.id = "heading";
+      h1.className = "test class-2";
+      h1.style.color = "red";
+      h1.style = "color: violet; font-size: 20px;";
+      Object.assign(h1.style, {
+        color: "orange",
+        backgroundColr: "#000",
+      });
+
+      console.log(h1);
+
+      // document.body.appendChild(h1);
+      root.appendChild(h1);
+    </script>
+  </body>
+</html>

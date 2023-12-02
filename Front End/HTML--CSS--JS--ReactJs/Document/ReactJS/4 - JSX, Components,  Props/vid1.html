@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSX là gì? Tại sao cần JSX?</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18.0.0/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18.0.0/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- 
+        JSX - JavaScript XML
+
+        1. Luôn dùng React.createElement()? Vấn đề?
+            - Vì đối số render luôn là element
+            - Nhiều element -> khó để code -> dùng JSX 
+
+        2. JSX? Live demo - https://bit.ly/2VOIMN7
+            - Chuyển đổi JavaScript ES6 -> ES5
+            - Ở đây là JSX 
+            - Test -> paste code ES6 bên trái 
+
+        3. JSX không phải là HTML, 
+            cần có JavaScript, Babel để dùng JSX
+            - JSX không thể truyền thăng đến root element để render 
+            - -> Trung gian qua Babel 
+                - Babel chuyển đổi cú pháp JSX thành JavaScript và ES6 -> ES5 
+
+        4. JSX và React-DOM?
+
+        <ul>
+            <li>JavaScript</li>
+            <li>ReactJS</li>
+        </ul>
+     -->
+
+    <div id="root"></div>
+
+    <!-- script -->
+    <!-- <script>
+      // ES5
+      // React@18
+      // React-DOM
+      const listReactDOM = React.createElement(
+        "ul",
+        null,
+        React.createElement("li", null, "JavaScript"),
+        React.createElement("li", null, "ReactJS")
+      );
+
+      //   // Get id in DOM
+      //   const rootId = document.getElementById("root");
+
+      //   // Get root element
+      //   const root = ReactDOM.createRoot(rootId);
+
+      //   // render element listReactDOM bằng root
+      //   root.render(listReactDOM);
+
+      // Làm tắt
+      // ReactDOM.createRoot(rootId).render(listReactDOM);
+      // element, root
+      ReactDOM.render(listReactDOM, document.getElementById("root"));
+
+      // luồng
+      // const và gán nó = id trong HTML
+      // tạo root chính là cái được khởi tạo với id để render
+      // dùng root render nó với elements đã tạo
+    </script> -->
+
+    <script type="text/babel">
+      // ES6 - JSX
+      // React@18
+      // React-DOM
+      const ul = (
+        <ul>
+          <li>JavaScript</li>
+          <li>ReactJS</li>
+        </ul>
+      );
+
+      ReactDOM.render(ul, document.getElementById("root"));
+    </script>
+  </body>
+</html>
