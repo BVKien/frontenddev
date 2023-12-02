@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReactDOM là gì? Tại sao phải sử dụng?</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18.0.0/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18.0.0/umd/react-dom.production.min.js"
+    ></script>
+  </head>
+  <body>
+    <!-- 
+        1. Tại sao phải sử dụng React-DOM?
+        2. Tại sao phải tách React-DOM ra?
+        3. Render UI
+
+        // mở rộng
+        React-Native -> IOS, Android
+     -->
+
+    <div id="root"></div>
+
+    <!-- script -->
+    <script>
+      // React
+      const postItem = React.createElement(
+        "div",
+        {
+          className: "post-item",
+        },
+        React.createElement(
+          "h2",
+          { title: "Học ReactJs tại F8" },
+          "Học ReactJS"
+        ),
+        React.createElement("p", null, "Học ReactJS để xây dựng website")
+      );
+      //   console.log(postItem);
+
+      // Get root element
+      //   // React@17
+      //   const root = document.getElementById("root");
+
+      //   // React-DOM -> render UI
+      //   //   console.log(React);
+      //   //   console.log(ReactDOM.render);
+      //   //   render(element, container, callback) --> 3 đối số: ReactElement, rootElement, callback
+      //   ReactDOM.render(postItem, root);
+
+      // React@18
+      // Get root element
+      const container = document.getElementById("root");
+
+      const root = ReactDOM.createRoot(container);
+      root.render(postItem);
+    </script>
+  </body>
+</html>

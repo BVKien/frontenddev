@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React element types</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18.0.0/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18.0.0/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- 
+        * Hooks
+            - Chủ yếu 
+            - Component function nhiều
+
+        1. React element types: string, function / class
+            - Wrapper 
+                - Header -> Header component
+                - Content -> Content component
+                - Footer -> Footer component
+        2. Demo với JSX
+     -->
+
+    <div id="app"></div>
+
+    <!-- script type="text/babel" -->
+    <script type="text/babel">
+      // function component
+      // - quy ước - viết hoa chữ cái đầu - PascalCase - nếu function có nhiều từ
+
+      // Header Component
+      function Header() {
+        return <div className="header">header</div>;
+      }
+
+      // class Content
+      class Content extends React.Component {
+        render() {
+          return <div className="content">content</div>;
+        }
+      }
+
+      const app = (
+        <div className="wrapper">
+          <Header />
+          <Content />
+          <div className="footer">footer</div>
+        </div>
+      );
+
+      console.log(app);
+
+      ReactDOM.render(app, document.getElementById("app"));
+    </script>
+  </body>
+</html>
