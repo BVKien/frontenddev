@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quy ước đặt tên components?</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18.0.0/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18.0.0/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- 
+        Làm việc với JSX 
+
+        // Phần I
+        - Xử lý DOM events
+        - Component do chúng ta định nghĩa phải viết in hoa ký tự đầu 
+        - Chọn component trong 1 object
+        - Booleans, Null & Undefined không được render 
+        - Kết hợp toán tử logic để render theo điều kiện 
+
+        // Phần II
+        - Props trong JSX
+            - <YourComponent
+                propName1="String literals"
+                propName2={ẽpression}
+            />
+            - Props default to "true"
+            - Spread/Rest props
+            - Children prop
+                - <YourComponent>String literals</YourComponent>
+                - <YourComponent>{ẽpression}</YourComponent>
+            - Render props
+     -->
+
+    <div id="root"></div>
+
+    <!-- script type="text/babel" -->
+    <!-- <script type="text/babel">
+      const courses = [
+        {
+          id: 15,
+          title: "HTML CSS Pro",
+          slug: "htmlcss",
+          description:
+            "Từ cơ bản tới chuyên sâu, thực hành 8 dự án, hàng trăm bài tập, trang hỏi đáp riêng, cấp chứng chỉ sau khóa học và mua một lần học mãi mãi.",
+          image:
+            "https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*",
+          icon: "courses/15/62385d6c63dfa.png",
+          video_type: "upload",
+          video: null,
+          old_price: 2500000,
+          price: 1299000,
+          pre_order_price: 699000,
+          students_count: 3837,
+          is_pro: true,
+          is_coming_soon: false,
+          is_selling: true,
+          published_at: "2022-08-18T17:00:00.000000Z",
+          is_registered: false,
+          user_progress: 0,
+          last_completed_at: null,
+          image_url:
+            "https://files.fullstack.edu.vn/f8-prod/courses/15/62f13d2424a47.png",
+          icon_url:
+            "https://files.fullstack.edu.vn/f8-prod/courses/15/62385d6c63dfa.png",
+          video_url: "",
+          landing_page_url: "/landing/htmlcss",
+          is_pre_order: false,
+          is_published: true,
+        },
+        {
+          id: 27,
+          title: "Ngôn ngữ tiền xử lý Sass",
+          slug: "sass",
+          description:
+            "Đây là một khóa học nhỏ được tách ra từ 2 chương học trong khóa HTML CSS Pro. Kiến thức về Sass trong khóa này bạn có thể áp dụng ngay vào các dự án của bạn.",
+          image:
+            "https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*",
+          icon: "courses/27/64e0daf212fad.png",
+          video_type: "upload",
+          video: "courses/27/oeT5zTmdk8KlHwU2meMJpnR7uihkX6OvYxnkjiB9.mp4",
+          old_price: 400000,
+          price: 299000,
+          pre_order_price: 0,
+          students_count: 0,
+          is_pro: true,
+          is_coming_soon: false,
+          is_selling: true,
+          published_at: "2023-08-19T15:06:00.000000Z",
+          is_registered: false,
+          user_progress: 0,
+          last_completed_at: null,
+          image_url:
+            "https://files.fullstack.edu.vn/f8-prod/courses/27/64e184ee5d7a2.png",
+          icon_url:
+            "https://files.fullstack.edu.vn/f8-prod/courses/27/64e0daf212fad.png",
+          video_url:
+            "https://videos.fullstack.edu.vn/f8-prod/courses/27/oeT5zTmdk8KlHwU2meMJpnR7uihkX6OvYxnkjiB9.mp4",
+          landing_page_url: "/landing/sass",
+          is_pre_order: false,
+          is_published: true,
+        },
+        {
+          id: 19,
+          title: "JavaScript Pro",
+          slug: "javascript",
+          description: "Khóa học JavaScript Pro",
+          image:
+            "https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*",
+          icon: "courses/19/62f13cb685c81.png",
+          video_type: "upload",
+          video: null,
+          old_price: 0,
+          price: 0,
+          pre_order_price: 0,
+          students_count: 0,
+          is_pro: true,
+          is_coming_soon: true,
+          is_selling: false,
+          published_at: "2024-02-29T17:00:00.000000Z",
+          is_registered: false,
+          user_progress: 0,
+          last_completed_at: null,
+          image_url:
+            "https://files.fullstack.edu.vn/f8-prod/courses/19/62f13cb607b4b.png",
+          icon_url:
+            "https://files.fullstack.edu.vn/f8-prod/courses/19/62f13cb685c81.png",
+          video_url: "",
+          landing_page_url: "/landing/javascript",
+          is_pre_order: false,
+          is_published: false,
+        },
+        {
+          id: 20,
+          title: "NextJS Pro",
+          slug: "reactjs-pro",
+          description: "Khóa học NextJS Pro",
+          image:
+            "https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*",
+          icon: "courses/20/648020fcc8000.png",
+          video_type: "upload",
+          video: null,
+          old_price: 0,
+          price: 0,
+          pre_order_price: 0,
+          students_count: 0,
+          is_pro: true,
+          is_coming_soon: true,
+          is_selling: false,
+          published_at: "2024-05-31T17:00:00.000000Z",
+          is_registered: false,
+          user_progress: 0,
+          last_completed_at: null,
+          image_url:
+            "https://files.fullstack.edu.vn/f8-prod/courses/20/648020fc16597.png",
+          icon_url:
+            "https://files.fullstack.edu.vn/f8-prod/courses/20/648020fcc8000.png",
+          video_url: "",
+          landing_page_url: "/landing/reactjs-pro",
+          is_pre_order: false,
+          is_published: false,
+        },
+      ];
+
+      // UI Component
+      // CourseItem({ props })
+      function CourseItem({ course, onClick }) {
+        return (
+          <div>
+            <h2 onClick={() => onClick(course)}>{course.title}</h2>
+            <img width="20%" src={course.image} />
+            <p>{course.description}</p>
+          </div>
+        );
+      }
+
+      function App() {
+        // quy ước đặt tên khi xử lý events -> on replace thành handle
+        // useCallback
+        const handleClick = (course) => {
+          console.log(course.title);
+        };
+
+        return (
+          <div id="wrapper">
+            {courses.map((course) => (
+              <CourseItem
+                // props của CourseItem = {dữ liệu trả ra từ map}
+                key={course.id}
+                course={course}
+                onClick={handleClick}
+              />
+            ))}
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script> -->
+
+    <!-- <script type="text/babel">
+      // Component phải đặt theo PascalCase
+      // Component theo object
+      const Form = {
+        // enhanced object literals
+        // function Component Input
+        Input() {
+          return <input />;
+        },
+        Checkbox() {
+          return <input type="checkbox" />;
+        },
+      };
+
+      // Button Component
+      // button và thẻ a, nếu App return comment 1 trong 2 -> dùng cái còn lại
+      // không comment -> dùng cả 2
+      // cách trình bày: props nào là function -> viết xuống cuối
+      function Button({ title, href, onClick }) {
+        let Component = "button";
+
+        const props = {};
+
+        if (href) {
+          Component = "a";
+          props.href = href;
+        }
+        if (onClick) {
+          props.onClick = onClick;
+        }
+
+        console.log(props);
+
+        // sử dụng spread ES6 dải vào Component
+        // ...props tương tự với onClick={onClick}
+        // theo mình nghĩ, spread hiện tại trong props chỉ có onClick vì được thêm
+        // nên việc dải ra cũng chỉ có onClick
+        return <Component {...props}>{title}</Component>;
+      }
+
+      function App() {
+        const type = "Input";
+        const Component = Form[type];
+
+        return (
+          <div id="wrapper">
+            <Form.Input />
+            <Form.Checkbox />
+
+            {/* không được - vi phạm - <Form[type] /> */}
+            {/* giải quyết */}
+            <Component />
+
+            <Button
+              title="Click me"
+              href="#"
+              onClick={() => console.log(Math.random())}
+            />
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script> -->
+
+    <script type="text/babel">
+      // Kết hợp toán tử logic để render theo điều kiện
+
+      // trường hợp 1
+      //   // áp dụng toán tử logic -> sử dụng được
+      //   let isAccess = true; // indefined, null
+      //   function App() {
+      //     return (
+      //       <div id="wrapper">
+      //         {/*
+      //             React hỗ trợ khi là false -> không render cái gì hết
+      //             kết quả trả về của vế phải phụ thuộc avfo true false của vế trái
+      //         */}
+      //         {isAccess && <h1>Welcome to F8</h1>}
+      //       </div>
+      //     );
+      //   }
+
+      // trường hợp 2
+      // nhận props
+      function App({ title, content }) {
+        return (
+          <div id="wrapper">
+            {/* Title không có gì -> Gia tri mac dinh */}
+            <h1>{title || "Gia tri mac dinh"}</h1>
+            {/* Title không có gì -> Hiển thị Content 
+            - nếu không còn gì -> trả về undefined
+            */}
+            <h1>{title || content}</h1>
+          </div>
+        );
+      }
+
+      ReactDOM.render(
+        <App title="Welcome back to my chanel" content="Content" />,
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
