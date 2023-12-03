@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Children props? Render props?</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18.0.0/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18.0.0/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- 
+        Làm việc với JSX 
+
+        // Phần I
+        - Xử lý DOM events
+        - Component do chúng ta định nghĩa phải viết in hoa ký tự đầu 
+        - Chọn component trong 1 object
+        - Booleans, Null & Undefined không được render 
+        - Kết hợp toán tử logic để render theo điều kiện 
+
+        // Phần II
+        - Props trong JSX
+            - <YourComponent
+                propName1="String literals" - truyền chuỗi bình thường
+                propName2={expression} - không phải truyền cái gì của JavaScript vào cũng được
+            />
+            - Props default to "true"
+            - Spread/Rest props
+            - Children prop
+                - <YourComponent>String literals</YourComponent>
+                - <YourComponent>{ẽpression}</YourComponent>
+            - Render props
+     -->
+
+    <div id="root"></div>
+
+    <!-- script type="text/babel" -->
+    <!-- <script type="text/babel">
+      function Button({ title, primary }) {
+        console.log(primary);
+        return <button>{title}</button>;
+      }
+
+      function App({ title, content }) {
+        const title2 = "Click me 2";
+        return (
+          <div id="wrapper">
+            {/*title="String literals" - <Button title="Click me" />*/}
+            <Button primary={false} title={title2} />
+            {/* array, object cũng ok 
+            <Button title={[]} />
+            <Button title={{}} />*/}
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script> -->
+
+    <!-- spread, rest -->
+    <!-- <script type="text/babel">
+      // rest
+      function Input({ label, ...inputProps }) {
+        return (
+          <div>
+            <label>{label}</label>
+            {/* spread */}
+            <input {...inputProps} />
+          </div>
+        );
+      }
+
+      function App({ title, content }) {
+        return (
+          <div id="wrapper">
+            <Input
+              label="Full name"
+              type="text"
+              placeholder="Enter name"
+              title="This is input"
+              onFocus={() => {
+                console.log(Math.random());
+              }}
+            />
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+
+    children props
+    <script type="text/babel">
+      // rest
+      function Button({ children }) {
+        return <button>{children}</button>;
+      }
+
+      function App() {
+        return (
+          <div id="wrapper">
+            <Button>{true && "Click me"}</Button>
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script> -->
+
+    <!-- Render props? -->
+    <!-- <script type="text/babel">
+        // rest
+        function List({ data, children }) {
+          console.log(children);
+          // return <ul>{data.map((item, index) => children(item, index))}</ul>;
+          // rest -> spread
+          // return <ul>{data.map((...props) => children(...props))}</ul>;
+  
+          // map đang nhận đối số kiểu dữ liệu function
+          // children đang là function
+          return <ul>{data.map(children)}</ul>;
+        }
+  
+        function App() {
+          const cars = ["Car1", "Car2", "Car3"];
+  
+          // childern: (item) => <li>{item}</li>
+          return (
+            <div id="wrapper">
+              <List data={cars}>
+                {(item, index) => <li key={index}>{item}</li>}
+              </List>
+            </div>
+          );
+        }
+  
+        ReactDOM.render(<App />, document.getElementById("root"));
+      </script> -->
+
+    <!-- Luyện lại - cách 1 -->
+    <!-- <script type="text/babel">
+      // List Component
+      function List({ data }) {
+        return (
+          <ul>
+            {data.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        );
+      }
+
+      function App() {
+        const cars = ["car1", "car2", "car3"];
+
+        return (
+          <div id="wrapper">
+            <List data={cars} />
+          </div>
+        );
+      }
+      // render to DOM id
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script> -->
+
+    <!-- Luyện lại - cách 2 -->
+    <!-- <script type="text/babel">
+      function List({ data, children }) {
+        // return <ul>{data.map((item, index) => children(item, index))}</ul>;
+        // return <ul>{data.map((...props) => children(...props))}</ul>;
+        return <ul>{data.map(children)}</ul>;
+      }
+
+      function App() {
+        const cars = ["Car1", "Car2", "Car3"];
+
+        return (
+          <div id="wrapper">
+            <List data={cars}>
+              {(item, index) => <li key={index}>{item}</li>}
+            </List>
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script> -->
+
+    <script type="text/babel">
+      function List({ data, children }) {
+        // return <ul>{data.map(children)}</ul>;
+        // return <ul>{data.map((item, index) => <li key={index}>{item}</li>)}</ul>
+        return <ul>{data.map((...props) => children(...props))}</ul>;
+      }
+
+      function App() {
+        const cars = ["Car1", "Car2", "Car3"];
+
+        const c = (item, index) => <li key={index}>{item}</li>;
+
+        return (
+          <div id="wrapper">
+            <List data={cars}>{c}</List>
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
