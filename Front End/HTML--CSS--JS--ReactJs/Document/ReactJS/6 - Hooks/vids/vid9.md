@@ -1,4 +1,4 @@
-# useEffect hook
+# useEffect with timer functions
 
 ```jsx
 import React from "react";
@@ -34,6 +34,10 @@ import { useEffect, useState } from "react";
 // - Chỉ gọi callback 1 lần sau khi component mounted
 
 // -3. useEffect(callback, [deps])
+// - deps: đơn giản là 1 cái biến chứa 1 giá trị dữ liệu
+//    - có thể là props từ component vào
+//    - có thể là state
+//  - Callback sẽ được gọi lại mỗi khi deps thay đổi
 
 // useEffect(callback, [deps])
 // callback-tự truyền - tự viết: bắt buộc, [dependances]: không bắt buộc
@@ -41,34 +45,29 @@ import { useEffect, useState } from "react";
 // -------------------------------------------------------
 // 1. Callback luôn được gọi sau khi component mounted
 // đúng với -1 -2 -3
+// 2. Cleanup function luôn được gọi trước khi component unmounted
 
 const Content = () => {
-  const [title, setTitle] = useState("");
-  const [posts, setPosts] = useState([]);
+  const [countDown, setCountDown] = useState(100);
 
   useEffect(() => {
-    // console.log("mounnted, re-render");
-    // document.title = title;
+    const timerId = setInterval(() => {
+      // Đặt prev để tránh setInterval cùng trùng lặp nhiều thời điểm
+      setCountDown((prev) => prev - 1);
+      console.log("coundount...");
+    }, 1000);
 
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((res) => res.json())
-      .then((posts) => {
-        setPosts(posts);
-      });
+    return () => {
+      clearInterval(timerId);
+    };
   }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setCountDown(countDown - 1);
+  //   }, 1000);
+  // }, [countDown]);
 
-  return (
-    <div>
-      <h1>Hi ae F8</h1>
-      <input value={title} onChange={(e) => setTitle(e.target.value)} />
-
-      <ul>
-        {posts.map((post) => (
-          <li key={post.id}>{post.title}</li>
-        ))}
-      </ul>
-    </div>
-  );
+  return <div>{countDown}</div>;
 };
 
 export default Content;

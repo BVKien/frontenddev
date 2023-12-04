@@ -1,4 +1,4 @@
-# useEffect hook
+# useEffect with dependencies
 
 ```jsx
 import React from "react";
@@ -34,6 +34,10 @@ import { useEffect, useState } from "react";
 // - Chỉ gọi callback 1 lần sau khi component mounted
 
 // -3. useEffect(callback, [deps])
+// - deps: đơn giản là 1 cái biến chứa 1 giá trị dữ liệu
+//    - có thể là props từ component vào
+//    - có thể là state
+//  - Callback sẽ được gọi lại mỗi khi deps thay đổi
 
 // useEffect(callback, [deps])
 // callback-tự truyền - tự viết: bắt buộc, [dependances]: không bắt buộc
@@ -42,29 +46,63 @@ import { useEffect, useState } from "react";
 // 1. Callback luôn được gọi sau khi component mounted
 // đúng với -1 -2 -3
 
+const tabs = ["posts", "comments", "albums"];
+
 const Content = () => {
   const [title, setTitle] = useState("");
-  const [posts, setPosts] = useState([]);
+  const [apis, setApis] = useState([]);
+  const [type, setType] = useState("posts");
+
+  console.log(type);
 
   useEffect(() => {
+    document.title = title;
+  });
+
+  useEffect(() => {
+    // Mounted
+    // console.log("type change");
+
+    // Update DOM
     // console.log("mounnted, re-render");
     // document.title = title;
 
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    // Call API
+    fetch(`https://jsonplaceholder.typicode.com/${type}`)
       .then((res) => res.json())
-      .then((posts) => {
-        setPosts(posts);
+      .then((values) => {
+        setApis(values);
       });
-  }, []);
+  }, [type]); // chỉ re-render khi type thay đổi
+  // []: chỉ re-render 1 lần duy nhất
 
   return (
     <div>
       <h1>Hi ae F8</h1>
+
+      {tabs.map((tab) => (
+        <button
+          key={tab}
+          style={
+            type == tab
+              ? {
+                  color: "#fff",
+                  backgroundColor: "#000",
+                }
+              : {}
+          }
+          onClick={() => setType(tab)}
+        >
+          {tab}
+        </button>
+      ))}
+
+      <br />
       <input value={title} onChange={(e) => setTitle(e.target.value)} />
 
       <ul>
-        {posts.map((post) => (
-          <li key={post.id}>{post.title}</li>
+        {apis.map((values) => (
+          <li key={values.id}>{values.title || values.name}</li>
         ))}
       </ul>
     </div>
@@ -72,4 +110,22 @@ const Content = () => {
 };
 
 export default Content;
+
+// App.js
+import { useState } from "react";
+import Content from "./Content";
+
+function App() {
+  const [show, setShow] = useState(false);
+
+  return (
+    <div className="App" style={{ padding: 30 }}>
+      <button onClick={() => setShow(!show)}>Show</button>
+      {show && <Content />}
+    </div>
+  );
+}
+
+export default App;
+
 ```
